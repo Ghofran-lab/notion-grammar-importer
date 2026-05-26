@@ -1,175 +1,134 @@
 /**
- * Script principal d'importation dans Notion
+ * Point d'entrée principal - CLI et affichage d'aide
  *
  * Usage:
- *   npm run import
+ *   node src/index.js
+ *   npm run dev
  *
- * Étapes:
- * 1. Charge les données du seed-data.json
- * 2. Crée les deux bases de données Notion
- * 3. Import les règles de grammaire
- * 4. Import les exercices liés aux règles
+ * Affiche les commandes disponibles et la documentation
  */
 
-import fs from "fs/promises";
-import path from "path";
-import { fileURLToPath } from "url";
+console.log(`
+╔════════════════════════════════════════════════════════════╗
+║    📚 Notion Grammar Importer - Architecture PostgreSQL   ║
+╚════════════════════════════════════════════════════════════╝
 
-import {
-  setupDatabases,
-  createGrammarRulesDatabase,
-  createExercisesDatabase,
-  linkDatabases,
-} from "./createDatabases.js";
-import { importAllRules } from "./importRules.js";
-import { importAllExercises } from "./importExercises.js";
-import { notion } from "./notion.js";
+🎯 COMMANDES DISPONIBLES:
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const SEED_DATA_PATH = path.join(__dirname, "..", "seed-data.json");
+╔══ 🐳 BASE DE DONNÉES ══════════════════════════════════════╗
+║                                                            ║
+║  npm run db:start         Démarre PostgreSQL (Docker)     ║
+║  npm run db:stop          Arrête PostgreSQL               ║
+║  npm run db:reset         Réinitialise (DEV ONLY)         ║
+║  npm run db:init          Crée les tables                 ║
+║  npm run db:check         Vérifie l'intégrité             ║
+║                                                            ║
+╚════════════════════════════════════════════════════════════╝
 
-/**
- * Charge les données du fichier seed-data.json
- * @returns {Promise<Object>} Les données {rules, exercises}
- */
-async function loadSeedData() {
-  try {
-    const data = await fs.readFile(SEED_DATA_PATH, "utf-8");
-    return JSON.parse(data);
-  } catch (error) {
-    console.error(`❌ Erreur lors du chargement de seed-data.json:`);
-    console.error(`   ${error.message}`);
-    process.exit(1);
-  }
-}
+╔══ 📥 IMPORT DONNÉES ══════════════════════════════════════╗
+║                                                            ║
+║  npm run seed:import      JSON → PostgreSQL               ║
+║  npm run seed:validate    Valide seed-data.json           ║
+║                                                            ║
+╚════════════════════════════════════════════════════════════╝
 
-/**
- * Valide les données du seed
- * @param {Object} data - Les données chargées
- * @returns {boolean} True si valide
- */
-function validateSeedData(data) {
-  if (!data.rules || !Array.isArray(data.rules)) {
-    console.error(`❌ seed-data.json: 'rules' doit être un tableau`);
-    return false;
-  }
+╔══ 📤 EXPORT NOTION ═══════════════════════════════════════╗
+║                                                            ║
+║  npm run notion:export    PostgreSQL → Notion             ║
+║  npm run notion:sync      Synchronisation bidirectionnelle║
+║                                                            ║
+╚════════════════════════════════════════════════════════════╝
 
-  if (!data.exercises || !Array.isArray(data.exercises)) {
-    console.error(`❌ seed-data.json: 'exercises' doit être un tableau`);
-    return false;
-  }
+╔══ 📊 INFORMATIONS ════════════════════════════════════════╗
+║                                                            ║
+║  npm run info             Statistiques de la base          ║
+║  npm run dev              Mode watch                       ║
+║                                                            ║
+╚════════════════════════════════════════════════════════════╝
 
-  if (data.rules.length === 0) {
-    console.error(`❌ seed-data.json: au moins une règle est requise`);
-    return false;
-  }
+╔══ 🚀 DÉMARRAGE RAPIDE ════════════════════════════════════╗
+║                                                            ║
+║  ./start.sh               Tous les étapes automatiquement  ║
+║                                                            ║
+║  OU manuellement:                                          ║
+║  1. npm install                                            ║
+║  2. npm run db:start                                       ║
+║  3. npm run db:init                                        ║
+║  4. npm run seed:import                                    ║
+║  5. npm run info                                           ║
+║  6. npm run notion:export  (optionnel)                     ║
+║                                                            ║
+╚════════════════════════════════════════════════════════════╝
 
-  // Vérifier que tous les exercices ont une règle associée
-  const ruleIds = new Set(data.rules.map((r) => r.id));
-  for (const exercise of data.exercises) {
-    if (!ruleIds.has(exercise.rule_id)) {
-      console.warn(
-        `⚠️  Exercice '${exercise.id}': règle '${exercise.rule_id}' non trouvée`
-      );
-    }
-  }
+📖 DOCUMENTATION COMPLÈTE: Voir README.md
 
-  return true;
-}
+════════════════════════════════════════════════════════════
 
-/**
- * Fonction principale
- */
-async function main() {
-  console.clear();
-  console.log("╔════════════════════════════════════════════════════════════╗");
-  console.log("║     📚 Notion Grammar Importer - Importation Notion     ║");
-  console.log("╚════════════════════════════════════════════════════════════╝\n");
+🏗️  ARCHITECTURE:
 
-  try {
-    // Charger les données
-    console.log("📂 Chargement des données...");
-    const seedData = await loadSeedData();
-    console.log(`✅ ${seedData.rules.length} règles chargées`);
-    console.log(`✅ ${seedData.exercises.length} exercices chargés\n`);
+  seed-data.json
+        ↓
+  PostgreSQL (Source of Truth)
+  ├── tables
+  ├── views
+  └── indexes
+        ↓
+  Notion (optionnel)
 
-    // Valider les données
-    console.log("🔍 Validation des données...");
-    if (!validateSeedData(seedData)) {
-      process.exit(1);
-    }
-    console.log("✅ Données valides\n");
+════════════════════════════════════════════════════════════
 
-    // Vérifier la connexion Notion
-    console.log("🔗 Vérification de la connexion Notion...");
-    await notion.users.me();
-    console.log("✅ Connexion établie\n");
+💾 BASE DE DONNÉES:
 
-    // Créer les bases
-    console.log("═════════════════════════════════════════════════════════════");
-    const { rulesDbId, exercisesDbId } = await setupDatabases();
+  Tables:
+  • rules              - Règles de grammaire
+  • rule_examples      - Exemples des règles
+  • rule_mistakes      - Erreurs fréquentes
+  • exercises          - Exercices d'entraînement
+  • sync_log          - Log de synchronisation Notion
+  • audit_log         - Audit complet
 
-    // Importer les règles
-    console.log("═════════════════════════════════════════════════════════════");
-    const rulesMap = await importAllRules(rulesDbId, seedData.rules);
+  Vues:
+  • exercises_with_rules   - Exercices + infos règles
+  • rules_statistics       - Stats par règle
 
-    // Importer les exercices
-    console.log("═════════════════════════════════════════════════════════════");
-    const exercisesCount = await importAllExercises(
-      exercisesDbId,
-      seedData.exercises,
-      rulesMap
-    );
+════════════════════════════════════════════════════════════
 
-    // Résumé final
-    console.log("═════════════════════════════════════════════════════════════");
-    console.log("\n✨ SUCCÈS! Importation terminée avec succès!\n");
-    console.log("📊 Résumé:");
-    console.log(`   • ${seedData.rules.length} règles de grammaire créées`);
-    console.log(`   • ${exercisesCount} exercices créés`);
-    console.log(
-      `   • ${seedData.rules.length} pages reliées aux exercices\n`
-    );
+🔧 PRÉREQUIS:
 
-    console.log("🎯 Prochaines étapes:");
-    console.log(
-      `   1. Ouvrez Notion et naviguez à votre page parente`
-    );
-    console.log(
-      `   2. Vous verrez deux nouvelles bases : "Règles de Grammaire" et "Exercices"`
-    );
-    console.log(
-      `   3. Cliquez sur une règle pour voir ses exercices associés\n`
-    );
+  • Node.js 16+
+  • Docker & Docker Compose
+  • Compte Notion (optionnel)
 
-    console.log("📚 Conseils:");
-    console.log(`   • Vous pouvez ajouter plus de données dans seed-data.json`);
-    console.log(`   • Réexécutez 'npm run import' pour ajouter plus de contenu`);
-    console.log(`   • Créez des vues personnalisées dans Notion\n`);
+════════════════════════════════════════════════════════════
 
-    console.log("═════════════════════════════════════════════════════════════\n");
-  } catch (error) {
-    console.error(`\n❌ Erreur lors de l'importation:`);
-    console.error(`   ${error.message}\n`);
+📝 CONFIGURATION:
 
-    if (error.code === "invalid_grant") {
-      console.error("💡 Conseil: Vérifiez votre NOTION_TOKEN dans .env\n");
-    } else if (error.code === "unauthorized") {
-      console.error(
-        "💡 Conseil: Assurez-vous que l'intégration a accès à votre page parente\n"
-      );
-    } else if (error.code === "not_found") {
-      console.error(
-        "💡 Conseil: Vérifiez votre NOTION_PARENT_PAGE_ID dans .env\n"
-      );
-    }
+  1. Copier .env.example vers .env.local
+  2. Configurer DATABASE_URL (PostgreSQL local)
+  3. (Optionnel) Configurer NOTION_TOKEN et NOTION_PARENT_PAGE_ID
 
-    process.exit(1);
-  }
-}
+════════════════════════════════════════════════════════════
 
-// Exécuter
-main().catch((error) => {
-  console.error(error);
-  process.exit(1);
-});
+💡 CONSEILS:
+
+  • Commencez par: npm run db:start && npm run db:init
+  • Puis: npm run seed:import pour charger les données
+  • Utilisez: npm run db:check pour vérifier l'intégrité
+  • Visualisez: npm run info pour les statistiques
+
+════════════════════════════════════════════════════════════
+
+🚀 MIGRATION VERS LE CLOUD:
+
+  1. Créer une base PostgreSQL cloud (Render, Railway, etc.)
+  2. Récupérer la DATABASE_URL
+  3. Changer DATABASE_URL dans .env
+  4. npm run db:init  (crée les tables sur le cloud)
+  5. npm run seed:import  (importe les données)
+  
+  C'est tout! Même code, juste une connexion différente.
+
+════════════════════════════════════════════════════════════
+`);
+
+export default true;
