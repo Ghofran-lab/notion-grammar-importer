@@ -34,8 +34,8 @@ console.log(`
 
 ╔══ 📤 EXPORT NOTION ═══════════════════════════════════════╗
 ║                                                            ║
-║  npm run notion:export    PostgreSQL → Notion             ║
-║  npm run notion:sync      Synchronisation bidirectionnelle║
+║  # npm run notion:export    PostgreSQL → Notion (désactivé)║
+║  # npm run notion:sync      Synchronisation bidirectionnelle║
 ║                                                            ║
 ╚════════════════════════════════════════════════════════════╝
 
@@ -56,7 +56,7 @@ console.log(`
 ║  3. npm run db:init                                        ║
 ║  4. npm run seed:import                                    ║
 ║  5. npm run info                                           ║
-║  6. npm run notion:export  (optionnel)                     ║
+║  # 6. npm run notion:export  (optionnel, plus tard)        ║
 ║                                                            ║
 ╚════════════════════════════════════════════════════════════╝
 

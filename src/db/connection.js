@@ -9,6 +9,7 @@
 import pg from "pg";
 import dotenv from "dotenv";
 
+dotenv.config({ path: process.env.DOTENV_CONFIG_PATH || ".env.local" });
 dotenv.config();
 
 const { Pool } = pg;
@@ -26,7 +27,7 @@ if (!databaseUrl) {
 
 console.log(`📦 Connexion à PostgreSQL...`);
 console.log(
-  `   URL: ${databaseUrl.replace(/password:[^@]*@/, "password:***@")})`
+  `   URL: ${databaseUrl.replace(/:[^:@/]+@/, ":***@")}`
 );
 
 // Créer le pool de connexions
