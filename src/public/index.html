@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Module GRAMMAIRE - Interface</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+      .app { display:flex; height:100vh; }
+      .sidebar { width:320px; border-right:1px solid #ddd; padding:16px; overflow:auto; }
+      .main { flex:1; padding:16px; overflow:auto; }
+      h1{font-size:18px;margin:0 0 12px}
+      .level { margin-bottom:12px }
+      .rule { padding:8px; border:1px solid #eee; margin:6px 0; cursor:pointer; }
+      .rule:hover{background:#f6f6f6}
+      .back { cursor:pointer; color:#0366d6; }
+      pre{background:#fafafa;padding:12px;border:1px solid #eee}
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <div class="sidebar">
+        <h1>Module GRAMMAIRE</h1>
+        <div>
+          <label for="levelSelect">Niveau:</label>
+          <select id="levelSelect"></select>
+        </div>
+        <div id="rulesList"></div>
+      </div>
+      <div class="main">
+        <div id="content">
+          <h2>Bienvenue</h2>
+          <p>Sélectionnez un niveau puis une règle pour voir les leçons et exercices.</p>
+        </div>
+      </div>
+    </div>
+    <script src="/main.js"></script>
+  </body>
+</html>

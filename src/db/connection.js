@@ -14,25 +14,27 @@ dotenv.config();
 
 const { Pool } = pg;
 
-// Récupérer la DATABASE_URL
-const databaseUrl = process.env.DATABASE_URL;
+// Récupérer la DATABASE_URL ou construire à partir des variables DB_*
+let databaseUrl = process.env.DATABASE_URL;
 
 if (!databaseUrl) {
-  throw new Error(
-    `DATABASE_URL non configuré dans .env\n` +
-      `Local: postgresql://postgres:password@localhost:5432/grammar\n` +
-      `Cloud: postgresql://user:pass@hostname:5432/grammar`
-  );
+  const user = process.env.DB_USER || process.env.PGUSER || "postgres";
+  const password = process.env.DB_PASSWORD || process.env.PGPASSWORD || process.env.POSTGRES_PASSWORD || "postgres";
+  const host = process.env.DB_HOST || process.env.PGHOST || "localhost";
+  const port = process.env.DB_PORT || process.env.PGPORT || 5432;
+  const db = process.env.DB_NAME || process.env.PGDATABASE || process.env.POSTGRES_DB || "grammar_app";
+
+  databaseUrl = `postgresql://${user}:${password}@${host}:${port}/${db}`;
 }
 
 console.log(`📦 Connexion à PostgreSQL...`);
-console.log(
-  `   URL: ${databaseUrl.replace(/:[^:@/]+@/, ":***@")}`
-);
+console.log(`   URL: ${databaseUrl.replace(/:[^:@/]+@/, ":***@")}`);
 
 // Créer le pool de connexions
 const pool = new Pool({
   connectionString: databaseUrl,
+  // Activer SSL si DATABASE_URL contient 'sslmode=require' ou si explicitement demandé
+  ssl: process.env.DB_SSL === 'true' || /sslmode=require/.test(databaseUrl) ? { rejectUnauthorized: false } : false,
   // Pour éviter les timeouts en production
   max: 20,
   idleTimeoutMillis: 30000,

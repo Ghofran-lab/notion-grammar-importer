@@ -10,10 +10,14 @@
     "dev": "node --watch src/index.js",
     "check:syntax": "node --check src/index.js && node --check src/db/connection.js && node --check src/db/queries/exercises.js && node --check src/db/queries/rules.js && node --check src/services/seedService.js",
     "db:init": "node scripts/01-init-db.js",
+    "db:init:grammar": "node scripts/00-init-grammar-db.js",
     "seed:validate": "node scripts/validate-seed.js",
     "seed:import": "node scripts/02-seed-from-json.js",
+    "seed:grammar": "node scripts/04-seed-grammar.js",
     "db:check": "node scripts/03-check-data.js",
-    "info": "node scripts/info.js"
+    "db:check:grammar": "node scripts/05-check-grammar.js",
+    "info": "node scripts/info.js",
+    "serve": "node src/server.js"
   },
   "engines": {
     "node": ">=18"
@@ -21,6 +25,7 @@
   "dependencies": {
     "@notionhq/client": "^2.2.15",
     "dotenv": "^16.3.1",
+    "express": "^4.22.2",
     "pg": "^8.11.0"
   }
 }

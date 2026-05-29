@@ -1,0 +1,332 @@
+{
+  "grammar_rules": [
+    {
+      "level": "A1",
+      "title": "Les articles définis et indéfinis",
+      "category": "Articles",
+      "learning_objective": "Identifier et utiliser les articles définis (le, la, les) et indéfinis (un, une, des)",
+      "short_description": "Les articles se placent avant le nom pour indiquer s'il est connu ou nouveau",
+      "order_index": 1
+    },
+    {
+      "level": "A1",
+      "title": "Le présent des verbes réguliers",
+      "category": "Verbes",
+      "learning_objective": "Conjuguer les verbes du 1er, 2e et 3e groupe au présent",
+      "short_description": "Les trois groupes de verbes réguliers avec leurs terminaisons spécifiques",
+      "order_index": 2
+    },
+    {
+      "level": "A1",
+      "title": "Être et avoir",
+      "category": "Verbes",
+      "learning_objective": "Utiliser les verbes auxiliaires 'être' et 'avoir' à tous les temps",
+      "short_description": "Les deux verbes les plus importants du français et leur conjugaison",
+      "order_index": 3
+    },
+    {
+      "level": "A1",
+      "title": "Les pronoms sujets",
+      "category": "Pronoms",
+      "learning_objective": "Identifier et utiliser les pronoms sujets : je, tu, il, elle, nous, vous, ils, elles",
+      "short_description": "Les pronoms qui remplacent le sujet d'une phrase",
+      "order_index": 4
+    },
+    {
+      "level": "A1",
+      "title": "La négation simple",
+      "category": "Structure grammaticale",
+      "learning_objective": "Former la négation avec 'ne...pas' et comprendre son utilisation",
+      "short_description": "Comment dire non en français de façon correcte",
+      "order_index": 5
+    },
+    {
+      "level": "A1",
+      "title": "Les questions simples",
+      "category": "Structure grammaticale",
+      "learning_objective": "Poser des questions avec l'inversion sujet-verbe et les mots interrogatifs basiques",
+      "short_description": "Formules pour poser des questions en français (Qui? Quoi? Où? Quand?)",
+      "order_index": 6
+    },
+    {
+      "level": "A1",
+      "title": "Les adjectifs qualificatifs",
+      "category": "Adjectifs",
+      "learning_objective": "Accorder les adjectifs en genre et nombre avec le nom",
+      "short_description": "L'accord des adjectifs et leur place dans la phrase",
+      "order_index": 7
+    },
+    {
+      "level": "A1",
+      "title": "Les déterminants démonstratifs",
+      "category": "Déterminants",
+      "learning_objective": "Utiliser ce, cet, cette, ces pour montrer quelque chose",
+      "short_description": "Les déterminants qui montrent ou désignent un nom",
+      "order_index": 8
+    },
+    {
+      "level": "A2",
+      "title": "Le passé composé",
+      "category": "Verbes",
+      "learning_objective": "Conjuguer au passé composé avec avoir ou être",
+      "short_description": "Le temps passé composé d'avoir/être + participe passé",
+      "order_index": 1
+    },
+    {
+      "level": "A2",
+      "title": "L'accord des adjectifs",
+      "category": "Adjectifs",
+      "learning_objective": "Maîtriser l'accord complet des adjectifs et les cas particuliers",
+      "short_description": "Règles avancées d'accord au féminin et pluriel",
+      "order_index": 2
+    },
+    {
+      "level": "A2",
+      "title": "Les pronoms COD",
+      "category": "Pronoms",
+      "learning_objective": "Remplacer le complément d'objet direct par le, la, les, l'",
+      "short_description": "Pronoms qui remplacent le complément d'objet direct",
+      "order_index": 3
+    },
+    {
+      "level": "A2",
+      "title": "Les pronoms COI",
+      "category": "Pronoms",
+      "learning_objective": "Remplacer le complément d'objet indirect par lui, leur",
+      "short_description": "Pronoms qui remplacent le complément d'objet indirect",
+      "order_index": 4
+    },
+    {
+      "level": "A2",
+      "title": "Le futur proche",
+      "category": "Verbes",
+      "learning_objective": "Exprimer une action très proche avec 'aller + infinitif'",
+      "short_description": "La construction aller + infinitif pour l'avenir immédiat",
+      "order_index": 5
+    },
+    {
+      "level": "A2",
+      "title": "Les comparatifs",
+      "category": "Adjectifs",
+      "learning_objective": "Former et utiliser les comparatifs : plus, moins, aussi",
+      "short_description": "Comparer deux éléments avec les adjectifs",
+      "order_index": 6
+    },
+    {
+      "level": "A2",
+      "title": "Les prépositions de lieu",
+      "category": "Prépositions",
+      "learning_objective": "Utiliser les prépositions : à, en, dans, sur, sous, devant, derrière, etc.",
+      "short_description": "Indiquer la localisation et la position des objets",
+      "order_index": 7
+    },
+    {
+      "level": "A2",
+      "title": "Les déterminants possessifs",
+      "category": "Déterminants",
+      "learning_objective": "Utiliser mon, ton, son, notre, votre, leur pour indiquer la possession",
+      "short_description": "Les déterminants qui indiquent la possession",
+      "order_index": 8
+    },
+    {
+      "level": "B1",
+      "title": "L'imparfait",
+      "category": "Verbes",
+      "learning_objective": "Conjuguer et utiliser l'imparfait pour décrire le passé",
+      "short_description": "Temps du passé pour les descriptions, habitudes et actions répétées",
+      "order_index": 1
+    },
+    {
+      "level": "B1",
+      "title": "Le futur simple",
+      "category": "Verbes",
+      "learning_objective": "Conjuguer et utiliser le futur simple pour exprimer l'avenir",
+      "short_description": "Temps de l'avenir pour des actions futures certaines ou probables",
+      "order_index": 2
+    },
+    {
+      "level": "B1",
+      "title": "Le conditionnel présent",
+      "category": "Verbes",
+      "learning_objective": "Former et utiliser le conditionnel pour exprimer l'hypothèse et la politesse",
+      "short_description": "Temps pour exprimer une condition, un souhait ou une demande polite",
+      "order_index": 3
+    },
+    {
+      "level": "B1",
+      "title": "Le subjonctif présent",
+      "category": "Verbes",
+      "learning_objective": "Conjuguer et utiliser le subjonctif après des verbes d'émotion, de doute, de volonté",
+      "short_description": "Mode pour exprimer l'incertitude, la volonté, l'émotion",
+      "order_index": 4
+    },
+    {
+      "level": "B1",
+      "title": "Les connecteurs logiques",
+      "category": "Structure grammaticale",
+      "learning_objective": "Utiliser car, donc, mais, et, ou, cependant pour lier les idées",
+      "short_description": "Mots qui relient les propositions et expriment les relations logiques",
+      "order_index": 5
+    },
+    {
+      "level": "B1",
+      "title": "Les pronoms relatifs simples",
+      "category": "Pronoms",
+      "learning_objective": "Utiliser qui, que, où, dont pour construire des phrases relatives",
+      "short_description": "Pronoms qui relient une proposition relative au nom",
+      "order_index": 6
+    },
+    {
+      "level": "B1",
+      "title": "Le discours indirect au présent",
+      "category": "Structure grammaticale",
+      "learning_objective": "Rapporter les paroles d'une autre personne au présent",
+      "short_description": "Rapporter ce que quelqu'un a dit sans guillemets",
+      "order_index": 7
+    },
+    {
+      "level": "B2",
+      "title": "Le subjonctif avancé",
+      "category": "Verbes",
+      "learning_objective": "Maîtriser tous les cas d'emploi du subjonctif",
+      "short_description": "Cas avancés et subtilités du subjonctif",
+      "order_index": 1
+    },
+    {
+      "level": "B2",
+      "title": "La voix passive",
+      "category": "Verbes",
+      "learning_objective": "Transformer des phrases actives en phrases passives",
+      "short_description": "Construction : être + participe passé",
+      "order_index": 2
+    },
+    {
+      "level": "B2",
+      "title": "Les nuances de temps",
+      "category": "Verbes",
+      "learning_objective": "Choisir le temps correct en fonction du contexte et de la nuance",
+      "short_description": "Distinguer entre passé simple, imparfait, passé composé, plus-que-parfait",
+      "order_index": 3
+    },
+    {
+      "level": "B2",
+      "title": "Le discours indirect au passé",
+      "category": "Structure grammaticale",
+      "learning_objective": "Rapporter les paroles au passé avec les changements de temps",
+      "short_description": "Rapporter au passé avec concordance des temps",
+      "order_index": 4
+    },
+    {
+      "level": "B2",
+      "title": "Les structures complexes",
+      "category": "Structure grammaticale",
+      "learning_objective": "Utiliser les constructions avancées : c'est... que, il y a... que",
+      "short_description": "Mises en relief et inversions stylistiques",
+      "order_index": 5
+    },
+    {
+      "level": "B2",
+      "title": "Les connecteurs argumentatifs",
+      "category": "Structure grammaticale",
+      "learning_objective": "Utiliser les connecteurs pour argumenter : en effet, par ailleurs, autrement dit",
+      "short_description": "Connecteurs pour construire une argumentation",
+      "order_index": 6
+    },
+    {
+      "level": "B2",
+      "title": "La concordance des temps",
+      "category": "Verbes",
+      "learning_objective": "Respecter la concordance des temps dans les subordonnées",
+      "short_description": "Règles de concordance entre principale et subordonnée",
+      "order_index": 7
+    },
+    {
+      "level": "C1",
+      "title": "Le subjonctif avancé",
+      "category": "Verbes",
+      "learning_objective": "Maîtriser le subjonctif imparfait et plus-que-parfait",
+      "short_description": "Formes avancées et rares du subjonctif",
+      "order_index": 1
+    },
+    {
+      "level": "C1",
+      "title": "La concordance des temps avancée",
+      "category": "Verbes",
+      "learning_objective": "Utiliser les formes rares et la concordance au passé",
+      "short_description": "Subjonctif imparfait, plus-que-parfait, concordance complète",
+      "order_index": 2
+    },
+    {
+      "level": "C1",
+      "title": "Le discours indirect avancé",
+      "category": "Structure grammaticale",
+      "learning_objective": "Rapporter des paroles avec toutes les nuances",
+      "short_description": "Rapport de paroles avancé avec styles mixtes",
+      "order_index": 3
+    },
+    {
+      "level": "C1",
+      "title": "Les connecteurs logiques avancés",
+      "category": "Structure grammaticale",
+      "learning_objective": "Utiliser les connecteurs avancés pour l'argumentation sophistiquée",
+      "short_description": "Connecteurs rares et nuancés : ainsi que, en outre, de surcroît",
+      "order_index": 4
+    },
+    {
+      "level": "C1",
+      "title": "Les structures complexes",
+      "category": "Structure grammaticale",
+      "learning_objective": "Maîtriser les constructions les plus complexes",
+      "short_description": "Inversions multiples, clivées avancées, détachements",
+      "order_index": 5
+    },
+    {
+      "level": "C1",
+      "title": "La mise en relief",
+      "category": "Structure grammaticale",
+      "learning_objective": "Utiliser les différentes techniques de mise en relief",
+      "short_description": "C'est...que, c'est...qui, c'est...dont, détachement",
+      "order_index": 6
+    },
+    {
+      "level": "C1",
+      "title": "Les inversions stylistiques",
+      "category": "Structure grammaticale",
+      "learning_objective": "Utiliser les inversions du sujet pour des effets stylistiques",
+      "short_description": "Inversion simple, inversion complexe, inversion narrative",
+      "order_index": 7
+    },
+    {
+      "level": "C1",
+      "title": "La double négation",
+      "category": "Structure grammaticale",
+      "learning_objective": "Utiliser les structures à double négation",
+      "short_description": "Ne...pas que, ne...guère, ne...nullement",
+      "order_index": 8
+    },
+    {
+      "level": "C1",
+      "title": "La voix passive avancée",
+      "category": "Verbes",
+      "learning_objective": "Utiliser la voix passive dans tous les temps et modes",
+      "short_description": "Passive avec pronoms, passive au subjonctif, se faire + infinitif",
+      "order_index": 9
+    },
+    {
+      "level": "C1",
+      "title": "La nominalisation",
+      "category": "Structure grammaticale",
+      "learning_objective": "Transformer des verbes en noms et utiliser cette transformation",
+      "short_description": "Formation et utilisation des noms dérivés de verbes",
+      "order_index": 10
+    },
+    {
+      "level": "C1",
+      "title": "Le registre de langue",
+      "category": "Lexique",
+      "learning_objective": "Distinguer et utiliser les différents registres : familier, courant, soutenu",
+      "short_description": "Adaptation du langage selon le contexte et l'interlocuteur",
+      "order_index": 11
+    }
+  ]
+}
