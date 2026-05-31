@@ -1,31 +1,26 @@
 {
   "name": "notion-grammar-importer",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "type": "module",
-  "description": "Importer de grammaire française vers PostgreSQL avec export Notion optionnel.",
+  "description": "Importer des règles de grammaire française dans Google Sheets.",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "node --watch src/index.js",
-    "check:syntax": "node --check src/index.js && node --check src/db/connection.js && node --check src/db/queries/exercises.js && node --check src/db/queries/rules.js && node --check src/services/seedService.js",
-    "db:init": "node scripts/01-init-db.js",
-    "db:init:grammar": "node scripts/00-init-grammar-db.js",
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "check:syntax": "node --check src/server.js && node --check src/services/googleSheetsService.js && node --check src/repositories/grammarRepository.js && node --check scripts/00-init-google-sheets.js && node --check scripts/04-seed-grammar.js && node --check scripts/05-check-grammar.js",
+    "test": "node --test",
+    "sheets:init": "node scripts/00-init-google-sheets.js",
     "seed:validate": "node scripts/validate-seed.js",
-    "seed:import": "node scripts/02-seed-from-json.js",
     "seed:grammar": "node scripts/04-seed-grammar.js",
-    "db:check": "node scripts/03-check-data.js",
-    "db:check:grammar": "node scripts/05-check-grammar.js",
-    "info": "node scripts/info.js",
-    "serve": "node src/server.js"
+    "sheets:check": "node scripts/05-check-grammar.js",
+    "info": "node scripts/info.js"
   },
   "engines": {
     "node": ">=18"
   },
   "dependencies": {
-    "@notionhq/client": "^2.2.15",
     "dotenv": "^16.3.1",
-    "express": "^4.22.2",
-    "pg": "^8.11.0"
+    "express": "^4.22.2"
   }
 }

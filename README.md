@@ -1,31 +1,58 @@
-# Notion Grammar Importer
+# Grammar Importer vers Google Sheets
 
-## Focus actuel
-Ce projet est actuellement focalisé sur **la génération de la base PostgreSQL** et l'import des données seed.
+Cette application importe les règles de grammaire françaises dans un Google Sheet puis utilise ce tableur comme source de données pour l'API et l'interface web. PostgreSQL n'est plus nécessaire.
 
-> Les parties Notion sont conservées dans le schéma pour compatibilité future, mais la synchro Notion est reportée à une prochaine étape.
+## Configuration rapide
 
-## Prérequis
-- Node.js 18+
-- PostgreSQL accessible via `DATABASE_URL`
+Le chemin recommandé évite de copier manuellement une clé privée multilignes :
 
-## Configuration
-1. Copier `.env.example` vers `.env.local`
-2. Ajuster `DATABASE_URL`
+1. Suivre le guide [Activer Google Sheets avec Google Cloud Shell](./GOOGLE_SHEETS_SETUP.md).
+2. Télécharger la clé JSON du compte de service dans `credentials/google-service-account.json`.
+3. Partager le Google Sheet avec l’adresse e-mail du compte de service en lui donnant le rôle **Éditeur**.
+4. Copier `.env.example` vers `.env.local` et renseigner l’identifiant du tableur :
 
-## Commandes
-- `npm run db:init` : crée tables/vues/index depuis `database/schema.sql`
-- `npm run seed:validate` : valide le format de `seed-data.json`
-- `npm run seed:import` : importe le JSON en base
-- `npm run db:check` : vérifie les comptes et orphelins
-- `npm run info` : affiche des stats rapides
+```env
+GOOGLE_SHEETS_SPREADSHEET_ID=identifiant-dans-url-du-tableur
+GOOGLE_SERVICE_ACCOUNT_KEY_FILE=./credentials/google-service-account.json
+```
 
-## Exécution rapide
+Le fichier JSON et `.env.local` sont ignorés par Git. Ne jamais committer la clé. Pour un hébergeur qui ne permet pas d’ajouter un fichier secret, les anciennes variables `GOOGLE_SERVICE_ACCOUNT_EMAIL` et `GOOGLE_PRIVATE_KEY` restent disponibles comme alternative.
+
+## Initialiser et alimenter le tableur
+
 ```bash
 npm install
-npm run db:init
+npm run sheets:init
 npm run seed:validate
-npm run seed:import
-npm run db:check
-npm run info
+npm run seed:grammar
+npm run sheets:check
 ```
+
+La commande `sheets:init` crée, si nécessaire, les quatre onglets suivants avec leurs en-têtes :
+
+- `grammar_rules`
+- `grammar_lessons`
+- `exercises`
+- `exercise_questions`
+
+La commande `seed:grammar` ajoute ou met à jour les règles de `seed-grammar.json` en conservant les lignes éventuellement ajoutées manuellement. Elle peut donc être relancée sans dupliquer les règles importées.
+
+## Lancer l'application
+
+```bash
+npm start
+```
+
+Puis ouvrir <http://localhost:3000>.
+
+## Commandes disponibles
+
+| Commande | Description |
+| --- | --- |
+| `npm run sheets:init` | Crée les onglets manquants et vérifie les en-têtes |
+| `npm run seed:validate` | Valide `seed-grammar.json` localement |
+| `npm run seed:grammar` | Importe ou met à jour les règles dans Google Sheets |
+| `npm run sheets:check` | Vérifie l'accès au tableur et affiche les compteurs |
+| `npm run info` | Affiche les statistiques du tableur |
+| `npm test` | Exécute les tests automatisés sans contacter Google |
+| `npm run check:syntax` | Vérifie la syntaxe JavaScript |
