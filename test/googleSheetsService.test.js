@@ -4,6 +4,8 @@ import os from "node:os";
 import path from "node:path";
 import test from "node:test";
 import { GoogleSheetsService, loadServiceAccountCredentials } from "../src/services/googleSheetsService.js";
+import test from "node:test";
+import { GoogleSheetsService } from "../src/services/googleSheetsService.js";
 
 test("readRows requests an encoded A1 range with the cached access token", async () => {
   const calls = [];

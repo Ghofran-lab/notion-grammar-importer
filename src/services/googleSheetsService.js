@@ -60,6 +60,8 @@ export class GoogleSheetsService {
 
     const now = Math.floor(Date.now() / 1000);
     const { email, privateKey } = loadServiceAccountCredentials();
+    const email = required("GOOGLE_SERVICE_ACCOUNT_EMAIL", process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL);
+    const privateKey = required("GOOGLE_PRIVATE_KEY", process.env.GOOGLE_PRIVATE_KEY).replace(/\\n/g, "\n");
     const header = base64url(JSON.stringify({ alg: "RS256", typ: "JWT" }));
     const claims = base64url(JSON.stringify({ iss: email, scope: SHEETS_SCOPE, aud: TOKEN_URL, exp: now + 3600, iat: now }));
     const unsignedJwt = `${header}.${claims}`;
