@@ -2,6 +2,22 @@
 
 Cette application importe les règles de grammaire françaises dans un Google Sheet puis utilise ce tableur comme source de données pour l'API et l'interface web. PostgreSQL n'est plus nécessaire.
 
+## Configuration rapide
+
+Le chemin recommandé évite de copier manuellement une clé privée multilignes :
+
+1. Suivre le guide [Activer Google Sheets avec Google Cloud Shell](./GOOGLE_SHEETS_SETUP.md).
+2. Télécharger la clé JSON du compte de service dans `credentials/google-service-account.json`.
+3. Partager le Google Sheet avec l’adresse e-mail du compte de service en lui donnant le rôle **Éditeur**.
+4. Copier `.env.example` vers `.env.local` et renseigner l’identifiant du tableur :
+
+```env
+GOOGLE_SHEETS_SPREADSHEET_ID=identifiant-dans-url-du-tableur
+GOOGLE_SERVICE_ACCOUNT_KEY_FILE=./credentials/google-service-account.json
+```
+
+Le fichier JSON et `.env.local` sont ignorés par Git. Ne jamais committer la clé. Pour un hébergeur qui ne permet pas d’ajouter un fichier secret, les anciennes variables `GOOGLE_SERVICE_ACCOUNT_EMAIL` et `GOOGLE_PRIVATE_KEY` restent disponibles comme alternative.
+
 ## Prérequis
 
 - Node.js 18+
@@ -32,6 +48,23 @@ npm run sheets:init
 npm run seed:validate
 npm run seed:grammar
 npm run sheets:check
+```
+
+La commande `sheets:init` crée, si nécessaire, les quatre onglets suivants avec leurs en-têtes :
+
+- `grammar_rules`
+- `grammar_lessons`
+- `exercises`
+- `exercise_questions`
+
+La commande `seed:grammar` ajoute ou met à jour les règles de `seed-grammar.json` en conservant les lignes éventuellement ajoutées manuellement. Elle peut donc être relancée sans dupliquer les règles importées.
+
+## Lancer l'application
+
+```bash
+npm start
+```
+
 ```
 
 La commande `sheets:init` crée, si nécessaire, les quatre onglets suivants avec leurs en-têtes :

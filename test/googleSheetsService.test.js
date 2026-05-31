@@ -1,4 +1,9 @@
 import assert from "node:assert/strict";
+import fs from "node:fs";
+import os from "node:os";
+import path from "node:path";
+import test from "node:test";
+import { GoogleSheetsService, loadServiceAccountCredentials } from "../src/services/googleSheetsService.js";
 import test from "node:test";
 import { GoogleSheetsService } from "../src/services/googleSheetsService.js";
 
@@ -37,4 +42,27 @@ test("writeRows clears the tab before replacing its values", async () => {
   assert.equal(calls[0].options.method, "POST");
   assert.match(calls[1].url, /!A1\?valueInputOption=RAW$/);
   assert.equal(calls[1].options.method, "PUT");
+});
+
+
+test("loadServiceAccountCredentials reads the downloaded JSON key file", () => {
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), "grammar-sheets-"));
+  const credentialFile = path.join(directory, "service-account.json");
+  fs.writeFileSync(credentialFile, JSON.stringify({ client_email: "writer@example.test", private_key: "private-key" }));
+
+  try {
+    assert.deepEqual(loadServiceAccountCredentials({ credentialFile }), {
+      email: "writer@example.test",
+      privateKey: "private-key",
+    });
+  } finally {
+    fs.rmSync(directory, { recursive: true, force: true });
+  }
+});
+
+test("loadServiceAccountCredentials keeps environment variables as a hosting fallback", () => {
+  assert.deepEqual(loadServiceAccountCredentials({ email: "writer@example.test", privateKey: "line-1\\nline-2" }), {
+    email: "writer@example.test",
+    privateKey: "line-1\nline-2",
+  });
 });

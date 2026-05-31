@@ -1,4 +1,5 @@
 import crypto from "crypto";
+import fs from "fs";
 import dotenv from "dotenv";
 
 dotenv.config({ path: process.env.DOTENV_CONFIG_PATH || ".env.local" });
@@ -15,6 +16,27 @@ function required(name, value) {
 
 function base64url(value) {
   return Buffer.from(value).toString("base64url");
+}
+
+export function loadServiceAccountCredentials({ credentialFile, email, privateKey } = {}) {
+  const file = credentialFile || process.env.GOOGLE_SERVICE_ACCOUNT_KEY_FILE;
+  if (file) {
+    let credentials;
+    try {
+      credentials = JSON.parse(fs.readFileSync(file, "utf-8"));
+    } catch (error) {
+      throw new Error(`Impossible de lire GOOGLE_SERVICE_ACCOUNT_KEY_FILE (${file}): ${error.message}`);
+    }
+    return {
+      email: required("client_email dans le fichier JSON du compte de service", credentials.client_email),
+      privateKey: required("private_key dans le fichier JSON du compte de service", credentials.private_key),
+    };
+  }
+
+  return {
+    email: required("GOOGLE_SERVICE_ACCOUNT_EMAIL ou GOOGLE_SERVICE_ACCOUNT_KEY_FILE", email || process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL),
+    privateKey: required("GOOGLE_PRIVATE_KEY ou GOOGLE_SERVICE_ACCOUNT_KEY_FILE", privateKey || process.env.GOOGLE_PRIVATE_KEY).replace(/\\n/g, "\n"),
+  };
 }
 
 function quoteSheetName(sheetName) {
@@ -37,6 +59,7 @@ export class GoogleSheetsService {
     if (this.accessToken && Date.now() < this.accessTokenExpiresAt - 60_000) return this.accessToken;
 
     const now = Math.floor(Date.now() / 1000);
+    const { email, privateKey } = loadServiceAccountCredentials();
     const email = required("GOOGLE_SERVICE_ACCOUNT_EMAIL", process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL);
     const privateKey = required("GOOGLE_PRIVATE_KEY", process.env.GOOGLE_PRIVATE_KEY).replace(/\\n/g, "\n");
     const header = base64url(JSON.stringify({ alg: "RS256", typ: "JWT" }));
