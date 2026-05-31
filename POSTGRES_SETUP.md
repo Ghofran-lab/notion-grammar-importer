@@ -1,110 +1,77 @@
-# ⚙️ PostgreSQL Setup Guide
+# PostgreSQL et Adminer avec Docker
 
-## Option 1: Avec Docker (Recommandé)
+## Démarrage recommandé
 
-### 1. Démarrer PostgreSQL avec Docker
+Docker Compose démarre deux services :
 
-```bash
-docker-compose up -d
-```
-
-**Vérifier que PostgreSQL démarre:**
-```bash
-docker-compose logs -f postgres
-```
-
-Attendez que vous voyez: `"database system is ready to accept connections"`
-
-### 2. Vérifier la connexion
+- `postgres` : la base PostgreSQL persistante ;
+- `adminer` : l'interface web permettant de parcourir les tables depuis un navigateur.
 
 ```bash
-docker-compose exec postgres psql -U postgres -d grammar_app -c "SELECT 1;"
-```
-
-### 3. Exécuter l'initialisation
-
-```bash
+cp .env.example .env.local
+npm install
+npm run db:start
 npm run db:init:grammar
 npm run seed:grammar
 npm run db:check:grammar
 ```
 
-### 4. Arrêter PostgreSQL (quand terminé)
+Attendre que PostgreSQL soit prêt si l'initialisation est lancée immédiatement après le premier démarrage. Pour suivre ses logs :
 
 ```bash
-docker-compose down
+npm run db:logs
 ```
 
-Pour supprimer aussi les données:
-```bash
-docker-compose down -v
-```
+## Visualiser les données dans Adminer
 
----
+Ouvrir <http://localhost:8080>, puis saisir :
 
-## Option 2: Installation locale de PostgreSQL
+| Champ | Valeur |
+| --- | --- |
+| Système | `PostgreSQL` |
+| Serveur | `postgres` |
+| Utilisateur | `postgres` |
+| Mot de passe | `postgres` |
+| Base de données | `grammar_app` |
 
-### Sur Ubuntu/Debian
+Après la connexion, ouvrir `grammar_rules`, puis choisir **Sélectionner les données**.
 
-```bash
-sudo apt update
-sudo apt install -y postgresql postgresql-contrib
-sudo service postgresql start
-sudo -u postgres psql -c "CREATE DATABASE grammar_app;"
-```
+### Depuis Google Cloud Shell
 
-### Sur macOS (avec Homebrew)
+1. Exécuter `npm run db:start`.
+2. Ouvrir **Aperçu Web** (*Web Preview*) dans la barre Cloud Shell.
+3. Choisir **Changer de port**.
+4. Saisir `8080`.
 
-```bash
-brew install postgresql
-brew services start postgresql
-createdb grammar_app
-```
-
-### Ensuite
+## Vérifier PostgreSQL dans le terminal
 
 ```bash
-npm run db:init:grammar
-npm run seed:grammar
-npm run db:check:grammar
+docker compose exec postgres psql -U postgres -d grammar_app -c "SELECT 1;"
 ```
 
----
+## Arrêter les conteneurs
 
-## Dépannage
+Conserver les données :
 
-### Erreur: "ECONNREFUSED"
-→ PostgreSQL n'est pas en cours d'exécution
 ```bash
-# Vérifier le statut avec Docker
-docker-compose logs postgres
-
-# Ou relancer
-docker-compose down
-docker-compose up -d
+npm run db:stop
 ```
 
-### Erreur: "Port 5432 already in use"
+Supprimer également les données PostgreSQL locales :
+
 ```bash
-# Arrêter le conteneur existant
-docker-compose down
-
-# Ou changer le port dans docker-compose.yml
-# Port changé de "5432:5432" à "5433:5432"
+docker compose down -v
 ```
 
-### Erreur: "Database grammar_app does not exist"
-```bash
-# Créer la base
-docker-compose exec postgres createdb -U postgres grammar_app
+## Variables d'environnement
 
-# Puis réessayer
-npm run db:init:grammar
+La configuration Docker locale correspond à :
+
+```env
+DATABASE_URL=postgresql://postgres:postgres@localhost:5432/grammar_app
 ```
 
----
-
-## Variables d'environnement (.env)
+Les scripts du module grammaire utilisent par défaut les valeurs équivalentes :
 
 ```env
 DB_USER=postgres
@@ -114,43 +81,25 @@ DB_PORT=5432
 DB_NAME=grammar_app
 ```
 
-Assurez-vous que `.env` contient ces valeurs.
+## Dépannage
 
----
+### `ECONNREFUSED`
 
-## Commandes utiles
+PostgreSQL n'est pas encore prêt ou n'est pas démarré :
 
 ```bash
-# Démarrer PostgreSQL
-docker-compose up -d
-
-# Voir les logs
-docker-compose logs -f postgres
-
-# Accéder à psql
-docker-compose exec postgres psql -U postgres -d grammar_app
-
-# Arrêter
-docker-compose down
-
-# Arrêter et nettoyer les données
-docker-compose down -v
-
-# Vérifier l'état
-docker-compose ps
+npm run db:start
+npm run db:logs
 ```
 
----
+### Le port `5432` est déjà utilisé
 
-## Prochaines étapes
+Arrêter l'ancien service ou modifier le port PostgreSQL exposé dans `docker-compose.yml`.
 
-1. **Démarrer PostgreSQL** (voir Option 1 ou 2 ci-dessus)
-2. **Vérifier la connexion**
-3. **Exécuter:**
-   ```bash
-   npm run db:init:grammar
-   npm run seed:grammar
-   npm run db:check:grammar
-   ```
+### Le port `8080` est déjà utilisé
 
-C'est tout! 🎉
+Arrêter l'ancien service Adminer ou modifier le port exposé, par exemple de `8080:8080` vers `8081:8080`.
+
+### Adminer ne se connecte pas
+
+Dans Adminer, utiliser `postgres` comme serveur. Ne pas utiliser `localhost` : depuis le conteneur Adminer, PostgreSQL est joignable par le nom du service Docker Compose.
