@@ -1,13 +1,21 @@
 import express from 'express';
+import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import pool from './db/connection.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
-const port = process.env.PORT || 3000;
+const port = Number(process.env.PORT) || 3000;
+const publicDirectory = path.join(__dirname, 'public');
+const indexFile = path.join(publicDirectory, 'index.html');
+
+if (!fs.existsSync(indexFile)) {
+  throw new Error(`Interface web introuvable : ${indexFile}`);
+}
 
 app.use(express.json());
+app.use(express.static(publicDirectory));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/api/levels', async (_req, res) => {
@@ -72,6 +80,21 @@ app.get('/api/rules/:id', async (req, res) => {
   }
 });
 
+app.get('*', (_req, res) => res.sendFile(indexFile));
+
+const server = app.listen(port, () => {
+  console.log(`🚀 Application disponible sur http://localhost:${port}`);
+  console.log(`📁 Interface web servie depuis ${publicDirectory}`);
+});
+
+server.on('error', (error) => {
+  if (error.code === 'EADDRINUSE') {
+    console.error(`❌ Le port ${port} est déjà utilisé par une autre instance.`);
+    console.error('   Exécutez « npm run serve:stop », puis relancez « npm run serve ».');
+    process.exit(1);
+  }
+  throw error;
+});
 app.get('*', (_req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html')));
 
 app.listen(port, () => console.log(`🚀 Application disponible sur http://localhost:${port}`));

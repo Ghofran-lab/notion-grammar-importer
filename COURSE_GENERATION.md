@@ -73,3 +73,16 @@ La validation automatique contrôle la structure, mais elle ne remplace pas la r
 - les transcriptions de prononciation ;
 - les difficultés propres aux italophones ;
 - les consignes et réponses des exercices.
+
+## Dépannage de l'aperçu Web sur le port 3000
+
+Après une mise à jour du dépôt, arrêter l'ancienne instance de l'application avant de relancer le serveur :
+
+```bash
+npm run serve:stop
+npm run serve
+```
+
+L'application sert les fichiers présents dans `src/public`. Si l'ancienne page affiche une erreur mentionnant un fichier inexistant comme `public/index.html`, un ancien processus Node.js est encore actif sur le port `3000`. La commande `npm run serve:stop` libère ce port ; `npm run serve` redémarre ensuite la version à jour.
+
+Le message `EADDRINUSE: address already in use :::3000` a la même cause : une instance écoute déjà sur le port `3000`.

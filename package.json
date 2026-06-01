@@ -22,6 +22,7 @@
     "db:check:grammar": "node scripts/05-check-grammar.js",
     "info": "node scripts/info.js",
     "serve": "node src/server.js",
+    "serve:stop": "pkill -f '[n]ode src/server.js' || true",
     "courses:validate": "node scripts/06-validate-courses.js",
     "courses:import": "node scripts/07-import-courses.js"
   },

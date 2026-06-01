@@ -80,3 +80,14 @@ Le flux de travail recommandé pour les futurs contenus générés est :
 ```text
 Génération IA → seed-courses.json → courses:validate → relecture pédagogique → courses:import → application web
 ```
+
+### Si le port 3000 est déjà occupé
+
+Après une mise à jour du dépôt, une ancienne instance Node.js peut encore servir l'ancienne interface. Redémarrer l'application avec :
+
+```bash
+npm run serve:stop
+npm run serve
+```
+
+La nouvelle interface est servie depuis `src/public`. Si l'aperçu Web mentionne par erreur `public/index.html` ou affiche `EADDRINUSE`, arrêter l'ancien processus avec `npm run serve:stop` avant de relancer le serveur.
