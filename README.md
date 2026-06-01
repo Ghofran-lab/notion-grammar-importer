@@ -58,3 +58,25 @@ Après `npm run db:start`, utiliser **Aperçu Web** (*Web Preview*) dans la barr
 | `npm run info` | Affiche des statistiques rapides |
 
 Consulter [POSTGRES_SETUP.md](./POSTGRES_SETUP.md) pour les instructions détaillées et le dépannage.
+
+## Prototype de cours générés par IA
+
+Le fichier `seed-courses.json` est la source relisible et versionnée des cours enrichis avant leur import dans PostgreSQL. Le prototype contient le module **Prononciation** et le cours **Les lettres finales muettes** avec ses sections, tableaux, erreurs fréquentes et exercice.
+
+Après le démarrage de PostgreSQL, initialiser le schéma, valider le JSON puis importer le cours :
+
+```bash
+npm run db:start
+npm run db:init:grammar
+npm run courses:validate
+npm run courses:import
+npm run serve
+```
+
+Dans Google Cloud Shell, ouvrir **Aperçu Web**, choisir **Changer de port**, puis saisir `3000` pour afficher l'application pédagogique. Le port `8080` reste réservé à Adminer.
+
+Le flux de travail recommandé pour les futurs contenus générés est :
+
+```text
+Génération IA → seed-courses.json → courses:validate → relecture pédagogique → courses:import → application web
+```
