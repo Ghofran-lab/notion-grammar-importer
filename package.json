@@ -12,7 +12,7 @@
     "db:adminer": "docker compose up -d adminer",
     "start": "node src/index.js",
     "dev": "node --watch src/index.js",
-    "check:syntax": "node --check src/index.js && node --check src/db/connection.js && node --check src/db/queries/exercises.js && node --check src/db/queries/rules.js && node --check src/services/seedService.js",
+    "check:syntax": "node --check src/index.js && node --check src/db/connection.js && node --check src/db/queries/exercises.js && node --check src/db/queries/rules.js && node --check src/services/seedService.js && node --check src/services/courseSeedService.js && node --check src/server.js && node --check src/public/main.js && node --check src/services/courseGenerationSchema.js && node --check src/services/courseGenerationService.js && node --check scripts/08-generate-course.js && node --check scripts/09-test-course-generation.js",
     "db:init": "node scripts/01-init-db.js",
     "db:init:grammar": "node scripts/00-init-grammar-db.js",
     "seed:validate": "node scripts/validate-seed.js",
@@ -21,7 +21,12 @@
     "db:check": "node scripts/03-check-data.js",
     "db:check:grammar": "node scripts/05-check-grammar.js",
     "info": "node scripts/info.js",
-    "serve": "node src/server.js"
+    "serve": "node src/server.js",
+    "serve:stop": "pkill -f '[n]ode src/server.js' || true",
+    "courses:validate": "node scripts/06-validate-courses.js",
+    "courses:import": "node scripts/07-import-courses.js",
+    "courses:generate": "node scripts/08-generate-course.js",
+    "courses:test-generation": "node scripts/09-test-course-generation.js"
   },
   "engines": {
     "node": ">=18"

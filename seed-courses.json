@@ -1,0 +1,93 @@
+{
+  "modules": [
+    {
+      "internal_id": "MOD-PRON-A1",
+      "title": "Prononciation",
+      "description": "Comprendre les différences essentielles entre le français écrit et oral.",
+      "order_index": 1,
+      "rules": [
+        {
+          "internal_id": "R-A1-PRON-001",
+          "level": "A1",
+          "title": "Les consonnes finales souvent muettes",
+          "category": "Prononciation",
+          "learning_objective": "Appliquer la règle DePoSiTo pour reconnaître des consonnes finales généralement muettes et identifier quelques cas fréquents avec x.",
+          "short_description": "Les consonnes finales d, p, s et t sont généralement muettes. La lettre x est également souvent muette.",
+          "order_index": 1,
+          "sections": [
+            {
+              "type": "lesson",
+              "title": "Règle à retenir",
+              "order_index": 1,
+              "content": [
+                "En français, les consonnes finales d, p, s et t ne se prononcent généralement pas à la fin d’un mot.",
+                "Pour les mémoriser, retiens le mot DePoSiTo : D, P, S, T.",
+                "La lettre x est également souvent muette à la fin d’un mot, par exemple dans « deux », « prix » et « choix »."
+              ]
+            },
+            {
+              "type": "examples_table",
+              "title": "Exemples essentiels",
+              "order_index": 2,
+              "columns": ["Français écrit", "Prononciation approximative", "Remarque"],
+              "rows": [
+                ["grand", "gran", "Le d final ne se prononce généralement pas."],
+                ["beaucoup", "bocou", "Le p final ne se prononce généralement pas."],
+                ["temps", "tan", "Le p et le s finaux ne se prononcent généralement pas."],
+                ["petit", "peti", "Le t final ne se prononce généralement pas."],
+                ["froid", "froi", "Le d final ne se prononce généralement pas."],
+                ["deux", "deu", "Le x final ne se prononce généralement pas."],
+                ["prix", "pri", "Le x final ne se prononce généralement pas."],
+                ["choix", "choi", "Le x final ne se prononce généralement pas."]
+              ]
+            },
+            {
+              "type": "warning",
+              "title": "Attention à la liaison",
+              "order_index": 3,
+              "content": [
+                "Devant une voyelle, une consonne finale peut parfois devenir audible : « un petit appartement ».",
+                "Cette notion s’appelle la liaison et sera étudiée dans une prochaine leçon."
+              ]
+            },
+            {
+              "type": "comparison_table",
+              "title": "Masculin et féminin",
+              "order_index": 4,
+              "introduction": "Dans certains adjectifs, la consonne finale muette au masculin devient audible au féminin.",
+              "columns": ["Masculin écrit", "Prononciation", "Féminin écrit", "Prononciation"],
+              "rows": [
+                ["petit", "peti", "petite", "petit"],
+                ["grand", "gran", "grande", "grand"],
+                ["froid", "froi", "froide", "froid"]
+              ]
+            },
+            {
+              "type": "common_mistakes",
+              "title": "Erreurs fréquentes selon la langue maternelle",
+              "order_index": 5,
+              "items": [
+                {"audience": "Tous les apprenants", "written_form": "Il est petit.", "correct_pronunciation": "il é peti", "common_mistake": "Prononcer le t final de « petit »."},
+                {"audience": "Italophones", "written_form": "Il fait froid.", "correct_pronunciation": "il fè froi", "common_mistake": "Prononcer le d final de « froid », car l’italien se prononce généralement plus près de l’écriture."},
+                {"audience": "Anglophones", "written_form": "J’en veux deux.", "correct_pronunciation": "jan veu deu", "common_mistake": "Prononcer le x final de « deux » par analogie avec certaines consonnes finales audibles en anglais."}
+              ]
+            }
+          ],
+          "exercises": [
+            {
+              "internal_id": "E-A1-PRON-001",
+              "title": "Lis sans prononcer les consonnes finales muettes",
+              "type": "READ_ALOUD",
+              "instructions": "Lis les phrases à voix haute. Ne prononce pas les consonnes finales muettes.",
+              "order_index": 1,
+              "questions": [
+                "Il est petit.", "Il est grand.", "Il fait froid.", "J’en veux deux.",
+                "Le prix est bas.", "J’ai beaucoup de temps.", "Quel est ton choix ?", "Elle a deux livres."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
