@@ -16,6 +16,7 @@ if (!fs.existsSync(indexFile)) {
 
 app.use(express.json());
 app.use(express.static(publicDirectory));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/api/levels', async (_req, res) => {
   try {
@@ -94,3 +95,6 @@ server.on('error', (error) => {
   }
   throw error;
 });
+app.get('*', (_req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html')));
+
+app.listen(port, () => console.log(`🚀 Application disponible sur http://localhost:${port}`));
