@@ -1,0 +1,26 @@
+{
+  "module": {
+    "internal_id": "MOD-PRON-A1",
+    "title": "Prononciation",
+    "description": "Comprendre les différences essentielles entre le français écrit et oral.",
+    "order_index": 1
+  },
+  "rule": {
+    "internal_id": "R-A1-PRON-001",
+    "level": "A1",
+    "title": "Les consonnes finales souvent muettes",
+    "category": "Prononciation",
+    "order_index": 1
+  },
+  "exercise_internal_id": "E-A1-PRON-001",
+  "requirements": [
+    "Présenter immédiatement la règle principale : en français, les consonnes finales d, p, s et t ne se prononcent généralement pas à la fin d’un mot.",
+    "Utiliser le moyen mnémotechnique DePoSiTo pour mémoriser d, p, s et t.",
+    "Présenter x séparément comme un complément souvent utile, avec les exemples deux, prix, choix et heureux.",
+    "Utiliser au minimum les exemples grand, beaucoup, temps, petit, froid, deux et prix.",
+    "Expliquer brièvement que dans certains adjectifs la consonne muette au masculin devient audible au féminin : petit/petite, grand/grande et froid/froide.",
+    "Ajouter uniquement un avertissement court sur la liaison avec l’exemple un petit appartement et indiquer que la liaison sera étudiée dans une prochaine leçon.",
+    "Ne pas développer la terminaison verbale -ent, la prononciation particulière du mot plus ou une liste détaillée d’exceptions lexicales.",
+    "Créer un exercice READ_ALOUD contenant au moins huit phrases courtes."
+  ]
+}

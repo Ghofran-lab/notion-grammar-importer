@@ -16,7 +16,6 @@ if (!fs.existsSync(indexFile)) {
 
 app.use(express.json());
 app.use(express.static(publicDirectory));
-app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/api/levels', async (_req, res) => {
   try {

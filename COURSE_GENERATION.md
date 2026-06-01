@@ -86,3 +86,48 @@ npm run serve
 L'application sert les fichiers présents dans `src/public`. Si l'ancienne page affiche une erreur mentionnant un fichier inexistant comme `public/index.html`, un ancien processus Node.js est encore actif sur le port `3000`. La commande `npm run serve:stop` libère ce port ; `npm run serve` redémarre ensuite la version à jour.
 
 Le message `EADDRINUSE: address already in use :::3000` a la même cause : une instance écoute déjà sur le port `3000`.
+
+## Générer automatiquement un brouillon avec OpenAI
+
+La génération automatisée utilise l'API OpenAI Responses et un Structured Output JSON. Le prompt pédagogique versionné se trouve dans `prompts/course-generation-prompt.md`. Les paramètres propres à chaque cours se trouvent dans `course-requests/`.
+
+Créer `.env.local` à partir de l'exemple et renseigner votre clé API OpenAI :
+
+```bash
+cp .env.example .env.local
+nano .env.local
+```
+
+Ajouter votre clé sans jamais la publier dans Git :
+
+```env
+OPENAI_API_KEY=sk-proj-...
+OPENAI_MODEL=gpt-5.5
+```
+
+Vérifier la requête sans appeler l'API :
+
+```bash
+npm run courses:generate -- --request course-requests/R-A1-PRON-001.json --dry-run
+```
+
+Générer un brouillon :
+
+```bash
+npm run courses:generate -- --request course-requests/R-A1-PRON-001.json
+```
+
+La réponse est enregistrée dans `generated/R-A1-PRON-001.json`. Le dossier `generated/` contient des brouillons ignorés par Git : une génération n'est jamais publiée automatiquement. Relire le brouillon, corriger les éventuelles erreurs pédagogiques, puis copier explicitement le contenu approuvé dans `seed-courses.json` avant l'import :
+
+```bash
+npm run courses:validate
+npm run courses:import
+```
+
+Le modèle peut être changé avec `OPENAI_MODEL`. La valeur par défaut utilisée par le script est `gpt-5.5`.
+
+Tester localement le pipeline de génération sans contacter OpenAI et sans consommer de crédits :
+
+```bash
+npm run courses:test-generation
+```

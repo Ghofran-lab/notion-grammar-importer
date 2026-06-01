@@ -91,3 +91,13 @@ npm run serve
 ```
 
 La nouvelle interface est servie depuis `src/public`. Si l'aperçu Web mentionne par erreur `public/index.html` ou affiche `EADDRINUSE`, arrêter l'ancien processus avec `npm run serve:stop` avant de relancer le serveur.
+
+### Générer un brouillon avec OpenAI
+
+Le prompt de génération est versionné dans `prompts/course-generation-prompt.md`. Chaque fiche située dans `course-requests/` décrit un cours à produire. Après avoir ajouté `OPENAI_API_KEY` dans `.env.local`, générer un brouillon avec :
+
+```bash
+npm run courses:generate -- --request course-requests/R-A1-PRON-001.json
+```
+
+Le brouillon est enregistré dans `generated/` et n'est jamais importé automatiquement. Relire le contenu, copier explicitement la version approuvée dans `seed-courses.json`, puis exécuter `npm run courses:validate` et `npm run courses:import`.
