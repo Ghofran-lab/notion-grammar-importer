@@ -101,3 +101,8 @@ npm run courses:generate -- --request course-requests/R-A1-PRON-001.json
 ```
 
 Le brouillon est enregistré dans `generated/` et n'est jamais importé automatiquement. Relire le contenu, copier explicitement la version approuvée dans `seed-courses.json`, puis exécuter `npm run courses:validate` et `npm run courses:import`.
+
+
+### Publics linguistiques pris en charge
+
+Les cours générés s'adressent aux apprenants italophones et anglophones. Les erreurs fréquentes peuvent être communes à tous les apprenants ou ciblées par langue maternelle grâce au champ `audience`.

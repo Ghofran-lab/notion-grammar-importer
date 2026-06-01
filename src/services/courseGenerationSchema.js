@@ -40,6 +40,7 @@ const mistakesSection = object({
     type: 'array',
     minItems: 1,
     items: object({
+      audience: { type: 'string', enum: ['Tous les apprenants', 'Italophones', 'Anglophones'] },
       written_form: nonEmptyString,
       correct_pronunciation: nonEmptyString,
       common_mistake: nonEmptyString,

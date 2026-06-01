@@ -40,6 +40,7 @@ function validateSection(section, path) {
   if (section.type === 'common_mistakes') {
     assert(Array.isArray(section.items) && section.items.length > 0, `${path}.items doit contenir au moins une erreur fréquente.`);
     section.items.forEach((item, index) => {
+      requireString(item.audience, `${path}.items[${index}].audience`);
       requireString(item.written_form, `${path}.items[${index}].written_form`);
       requireString(item.correct_pronunciation, `${path}.items[${index}].correct_pronunciation`);
       requireString(item.common_mistake, `${path}.items[${index}].common_mistake`);

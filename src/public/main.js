@@ -49,7 +49,7 @@ function renderSection(section) {
   if (section.type === 'lesson') return data.content.map(paragraph => `<p>${escapeHtml(paragraph)}</p>`).join('');
   if (section.type === 'warning') return `<div class="warning">${data.content.map(paragraph => `<p>${escapeHtml(paragraph)}</p>`).join('')}</div>`;
   if (section.type === 'examples_table' || section.type === 'comparison_table') return renderTable(data);
-  if (section.type === 'common_mistakes') return data.items.map((item, index) => `<article class="mistake"><strong>Exemple ${index + 1}</strong><p><b>Français écrit :</b> ${escapeHtml(item.written_form)}</p><p><b>Prononciation correcte :</b> ${escapeHtml(item.correct_pronunciation)}</p><p><b>Erreur fréquente :</b> ${escapeHtml(item.common_mistake)}</p></article>`).join('');
+  if (section.type === 'common_mistakes') return data.items.map((item, index) => `<article class="mistake"><strong>Exemple ${index + 1} · ${escapeHtml(item.audience)}</strong><p><b>Français écrit :</b> ${escapeHtml(item.written_form)}</p><p><b>Prononciation correcte :</b> ${escapeHtml(item.correct_pronunciation)}</p><p><b>Erreur fréquente :</b> ${escapeHtml(item.common_mistake)}</p></article>`).join('');
   return '<p class="empty">Section non prise en charge.</p>';
 }
 

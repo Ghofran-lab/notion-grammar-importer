@@ -64,12 +64,12 @@
             },
             {
               "type": "common_mistakes",
-              "title": "Erreurs fréquentes chez les italophones",
+              "title": "Erreurs fréquentes selon la langue maternelle",
               "order_index": 5,
               "items": [
-                {"written_form": "Il est petit.", "correct_pronunciation": "il é peti", "common_mistake": "Prononcer le t final de « petit »."},
-                {"written_form": "Il fait froid.", "correct_pronunciation": "il fè froi", "common_mistake": "Prononcer le d final de « froid »."},
-                {"written_form": "J’en veux deux.", "correct_pronunciation": "jan veu deu", "common_mistake": "Prononcer le x final de « deux » lorsqu’il n’y a pas de liaison."}
+                {"audience": "Tous les apprenants", "written_form": "Il est petit.", "correct_pronunciation": "il é peti", "common_mistake": "Prononcer le t final de « petit »."},
+                {"audience": "Italophones", "written_form": "Il fait froid.", "correct_pronunciation": "il fè froi", "common_mistake": "Prononcer le d final de « froid », car l’italien se prononce généralement plus près de l’écriture."},
+                {"audience": "Anglophones", "written_form": "J’en veux deux.", "correct_pronunciation": "jan veu deu", "common_mistake": "Prononcer le x final de « deux » par analogie avec certaines consonnes finales audibles en anglais."}
               ]
             }
           ],

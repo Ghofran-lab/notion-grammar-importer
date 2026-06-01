@@ -2,7 +2,7 @@
 
 ## Vue d'ensemble
 
-Le module GRAMMAIRE fournit une structure PostgreSQL propre pour stocker des règles de grammaire françaises destinées à des apprenants italophones, organisées par niveaux CECRL (A1, A2, B1, B2, C1).
+Le module GRAMMAIRE fournit une structure PostgreSQL propre pour stocker des règles de grammaire françaises destinées à des apprenants italophones et anglophones, organisées par niveaux CECRL (A1, A2, B1, B2, C1).
 
 ## Structure de la base de données
 

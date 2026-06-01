@@ -24,6 +24,8 @@ Le fichier JSON contient des modules. Chaque module contient des règles ou suje
 - des sections ordonnées ;
 - au moins un exercice avec ses questions.
 
+Les cours s'adressent aux apprenants italophones et anglophones. Dans une section `common_mistakes`, chaque erreur possède un champ `audience` valant `Tous les apprenants`, `Italophones` ou `Anglophones`. Une difficulté propre à une langue maternelle peut ainsi être affichée sans dupliquer la règle générale.
+
 Les types de sections acceptés sont :
 
 | Type | Usage |
@@ -71,7 +73,7 @@ La validation automatique contrôle la structure, mais elle ne remplace pas la r
 - l'exactitude des règles ;
 - la difficulté adaptée au niveau CECRL ;
 - les transcriptions de prononciation ;
-- les difficultés propres aux italophones ;
+- les difficultés propres aux italophones et aux anglophones ;
 - les consignes et réponses des exercices.
 
 ## Dépannage de l'aperçu Web sur le port 3000
