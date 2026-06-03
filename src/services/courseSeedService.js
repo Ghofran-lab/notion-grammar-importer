@@ -2,7 +2,7 @@ import fs from 'fs/promises';
 import { transaction } from '../db/connection.js';
 
 const LEVELS = new Set(['A1', 'A2', 'B1', 'B2', 'C1']);
-const SECTION_TYPES = new Set(['lesson', 'examples_table', 'warning', 'common_mistakes', 'comparison_table']);
+const SECTION_TYPES = new Set(['lesson', 'examples_table', 'warning', 'common_mistakes', 'comparison_table', 'story', 'analogy']);
 
 function assert(condition, message) {
   if (!condition) throw new Error(message);
@@ -45,6 +45,18 @@ function validateSection(section, path) {
       requireString(item.correct_pronunciation, `${path}.items[${index}].correct_pronunciation`);
       requireString(item.common_mistake, `${path}.items[${index}].common_mistake`);
     });
+  }
+  if (section.type === 'story') {
+    requireString(section.scenario, `${path}.scenario`);
+    assert(Array.isArray(section.characters) && section.characters.length > 0, `${path}.characters doit contenir au moins un personnage.`);
+    section.characters.forEach((c, i) => {
+      requireString(c.name,  `${path}.characters[${i}].name`);
+      requireString(c.says,  `${path}.characters[${i}].says`);
+      requireString(c.label, `${path}.characters[${i}].label`);
+    });
+  }
+  if (section.type === 'analogy') {
+    requireString(section.metaphor, `${path}.metaphor`);
   }
 }
 
