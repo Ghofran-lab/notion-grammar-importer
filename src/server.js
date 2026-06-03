@@ -94,6 +94,3 @@ server.on('error', (error) => {
   }
   throw error;
 });
-app.get('*', (_req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html')));
-
-app.listen(port, () => console.log(`🚀 Application disponible sur http://localhost:${port}`));

@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS grammar_sections (
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
   CONSTRAINT grammar_sections_unique UNIQUE (rule_id, section_order),
-  CONSTRAINT grammar_sections_type_check CHECK (section_type IN ('lesson', 'examples_table', 'warning', 'common_mistakes', 'comparison_table'))
+  CONSTRAINT grammar_sections_type_check CHECK (section_type IN ('lesson', 'examples_table', 'warning', 'common_mistakes', 'comparison_table', 'story', 'analogy'))
 );
 CREATE INDEX IF NOT EXISTS idx_grammar_sections_rule_id ON grammar_sections(rule_id);
 

@@ -2,8 +2,8 @@
   "modules": [
     {
       "internal_id": "MOD-PRON-A1",
-      "title": "Prononciation",
-      "description": "Comprendre les différences essentielles entre le français écrit et oral.",
+      "title": "Prononciation A1",
+      "description": "Les premières règles essentielles du français oral.",
       "order_index": 1,
       "rules": [
         {
@@ -11,78 +11,740 @@
           "level": "A1",
           "title": "Les consonnes finales souvent muettes",
           "category": "Prononciation",
-          "learning_objective": "Appliquer la règle DePoSiTo pour reconnaître des consonnes finales généralement muettes et identifier quelques cas fréquents avec x.",
-          "short_description": "Les consonnes finales d, p, s et t sont généralement muettes. La lettre x est également souvent muette.",
+          "learning_objective": "Appliquer la règle DePoSiTo pour reconnaître les consonnes finales généralement muettes.",
+          "short_description": "Les consonnes D, P, S, T sont généralement muettes en fin de mot.",
           "order_index": 1,
           "sections": [
             {
-              "type": "lesson",
-              "title": "Règle à retenir",
+              "type": "analogy",
+              "title": "La règle DePoSiTo",
               "order_index": 1,
+              "metaphor": "Imagine les lettres D, P, S, T comme des invités timides à une fête : ils sont là, écrits sur le carton d'invitation, mais ils ne se lèvent jamais pour parler ! Le mot magique pour s'en souvenir : DePoSiTo.",
+              "left": { "icon": "✍️", "label": "À l'écrit", "description": "grand, beaucoup, temps, petit" },
+              "right": { "icon": "🗣️", "label": "À l'oral", "description": "gran, bocou, tan, peti" }
+            },
+            {
+              "type": "lesson",
+              "title": "La règle",
+              "order_index": 2,
               "content": [
-                "En français, les consonnes finales d, p, s et t ne se prononcent généralement pas à la fin d’un mot.",
-                "Pour les mémoriser, retiens le mot DePoSiTo : D, P, S, T.",
-                "La lettre x est également souvent muette à la fin d’un mot, par exemple dans « deux », « prix » et « choix »."
+                "En français, les consonnes D, P, S, T à la fin d'un mot ne se prononcent PAS.",
+                "Mémo : DePoSiTo = D · P · S · T — quatre consonnes finales muettes.",
+                "Le x final est aussi souvent muet : deux → deu, prix → pri, choix → choi."
+              ]
+            },
+            {
+              "type": "story",
+              "title": "Scène au marché",
+              "order_index": 3,
+              "scenario": "Marie fait ses courses au marché. Elle doit prononcer correctement pour se faire comprendre.",
+              "characters": [
+                { "name": "Marie", "says": "Bonjour, je voudrais deux kilos de pain de campagne, s'il vous plaît.", "label": "deux = deu (x muet) · pain = pan (in nasal) · campagne = kanpaïgn" },
+                { "name": "Le boulanger", "says": "Voilà ! C'est un grand choix !", "label": "grand = gran (d muet) · choix = choi (x muet)" },
+                { "name": "Marie (souriant)", "says": "Merci beaucoup !", "label": "beaucoup = bocou (p muet)" }
               ]
             },
             {
               "type": "examples_table",
               "title": "Exemples essentiels",
-              "order_index": 2,
-              "columns": ["Français écrit", "Prononciation approximative", "Remarque"],
+              "order_index": 4,
+              "columns": ["Écrit", "Oral", "Consonne muette"],
               "rows": [
-                ["grand", "gran", "Le d final ne se prononce généralement pas."],
-                ["beaucoup", "bocou", "Le p final ne se prononce généralement pas."],
-                ["temps", "tan", "Le p et le s finaux ne se prononcent généralement pas."],
-                ["petit", "peti", "Le t final ne se prononce généralement pas."],
-                ["froid", "froi", "Le d final ne se prononce généralement pas."],
-                ["deux", "deu", "Le x final ne se prononce généralement pas."],
-                ["prix", "pri", "Le x final ne se prononce généralement pas."],
-                ["choix", "choi", "Le x final ne se prononce généralement pas."]
+                ["grand", "gran", "D"],
+                ["beaucoup", "bocou", "P"],
+                ["temps", "tan", "P + S"],
+                ["petit", "peti", "T"],
+                ["deux", "deu", "X"],
+                ["prix", "pri", "X"]
               ]
             },
             {
               "type": "warning",
-              "title": "Attention à la liaison",
-              "order_index": 3,
-              "content": [
-                "Devant une voyelle, une consonne finale peut parfois devenir audible : « un petit appartement ».",
-                "Cette notion s’appelle la liaison et sera étudiée dans une prochaine leçon."
-              ]
-            },
-            {
-              "type": "comparison_table",
-              "title": "Masculin et féminin",
-              "order_index": 4,
-              "introduction": "Dans certains adjectifs, la consonne finale muette au masculin devient audible au féminin.",
-              "columns": ["Masculin écrit", "Prononciation", "Féminin écrit", "Prononciation"],
-              "rows": [
-                ["petit", "peti", "petite", "petit"],
-                ["grand", "gran", "grande", "grand"],
-                ["froid", "froi", "froide", "froid"]
-              ]
-            },
-            {
-              "type": "common_mistakes",
-              "title": "Erreurs fréquentes selon la langue maternelle",
+              "title": "Attention : ça change au féminin !",
               "order_index": 5,
-              "items": [
-                {"audience": "Tous les apprenants", "written_form": "Il est petit.", "correct_pronunciation": "il é peti", "common_mistake": "Prononcer le t final de « petit »."},
-                {"audience": "Italophones", "written_form": "Il fait froid.", "correct_pronunciation": "il fè froi", "common_mistake": "Prononcer le d final de « froid », car l’italien se prononce généralement plus près de l’écriture."},
-                {"audience": "Anglophones", "written_form": "J’en veux deux.", "correct_pronunciation": "jan veu deu", "common_mistake": "Prononcer le x final de « deux » par analogie avec certaines consonnes finales audibles en anglais."}
+              "content": [
+                "Quand on ajoute un -e pour le féminin, la consonne « muette » se réveille !",
+                "petit (peti) → petite (petit) : le T se prononce maintenant.",
+                "grand (gran) → grande (grand) : le D se prononce maintenant.",
+                "C'est logique : la lettre n'était pas muette, elle attendait juste une voyelle à côté d'elle !"
               ]
             }
           ],
           "exercises": [
             {
               "internal_id": "E-A1-PRON-001",
-              "title": "Lis sans prononcer les consonnes finales muettes",
+              "title": "Lis à voix haute — sans les muettes !",
               "type": "READ_ALOUD",
-              "instructions": "Lis les phrases à voix haute. Ne prononce pas les consonnes finales muettes.",
+              "instructions": "Lis chaque phrase. Barre mentalement les consonnes finales muettes avant de parler.",
               "order_index": 1,
               "questions": [
-                "Il est petit.", "Il est grand.", "Il fait froid.", "J’en veux deux.",
-                "Le prix est bas.", "J’ai beaucoup de temps.", "Quel est ton choix ?", "Elle a deux livres."
+                "Il est petit. (peti)",
+                "Il est grand. (gran)",
+                "Il fait froid. (froi)",
+                "J'en veux deux. (deu)",
+                "Le prix est bas. (pri)",
+                "J'ai beaucoup de temps. (bocou · tan)",
+                "Quel est ton choix ? (choi)",
+                "Elle a deux livres. (deu)"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "internal_id": "MOD-GRAM-B1",
+      "title": "Grammaire B1",
+      "description": "Les structures grammaticales intermédiaires pour s'exprimer avec précision et nuance.",
+      "order_index": 2,
+      "rules": [
+        {
+          "internal_id": "R-B1-GRAM-001",
+          "level": "B1",
+          "title": "L'imparfait",
+          "category": "Verbes",
+          "learning_objective": "Former et utiliser l'imparfait pour les descriptions, les habitudes et les actions en cours dans le passé.",
+          "short_description": "Le temps du passé pour ce qui durait, se répétait ou formait le décor.",
+          "order_index": 1,
+          "sections": [
+            {
+              "type": "analogy",
+              "title": "La peinture et la photo",
+              "order_index": 1,
+              "metaphor": "Imaginez deux artistes qui décrivent le même moment passé. Le premier PEINT l'ambiance générale — c'est l'imparfait. Le second PREND UNE PHOTO d'un événement précis — c'est le passé composé. La peinture montre ce qui durait ; la photo capture ce qui est arrivé.",
+              "left": { "icon": "🎨", "label": "L'imparfait = la peinture", "description": "Il faisait beau. Les enfants jouaient. La musique jouait doucement..." },
+              "right": { "icon": "📸", "label": "Le passé composé = la photo", "description": "Soudain, un chien est arrivé. Il a renversé le pique-nique !" }
+            },
+            {
+              "type": "lesson",
+              "title": "Formation — c'est facile !",
+              "order_index": 2,
+              "content": [
+                "Prends le verbe au présent à 'nous' : nous parlons → radical : parl-",
+                "Ajoute les terminaisons : -ais, -ais, -ait, -ions, -iez, -aient.",
+                "Seul 'être' est irrégulier : j'étais, tu étais, il était, nous étions, vous étiez, ils étaient.",
+                "Astuce : toutes les terminaisons commencent par -ai- ! Impossible à oublier."
+              ]
+            },
+            {
+              "type": "story",
+              "title": "Grand-mère raconte sa jeunesse",
+              "order_index": 3,
+              "scenario": "Grand-mère sort son vieil album photo. Elle montre des photos en noir et blanc et raconte sa jeunesse à sa petite-fille Sofia.",
+              "characters": [
+                { "name": "Grand-mère (en regardant une photo)", "says": "Quand j'étais petite, j'habitais dans un petit village. Tous les matins, je me levais à 6h et j'aidais ma mère à la boulangerie.", "label": "✅ Imparfait = habitudes répétées dans le passé" },
+                { "name": "Grand-mère (montrant une autre photo)", "says": "Un jour, un homme mystérieux est entré dans la boulangerie. Il a regardé ma mère et a dit : 'Mademoiselle, je voudrais acheter toute votre boulangerie !'", "label": "✅ Passé composé = événements ponctuels qui font avancer l'histoire" },
+                { "name": "Sofia", "says": "Et c'était qui ? (les yeux écarquillés)", "label": "Imparfait = état, description" },
+                { "name": "Grand-mère (souriant)", "says": "C'était ton grand-père !", "label": "✅ Imparfait = description d'identité" }
+              ]
+            },
+            {
+              "type": "examples_table",
+              "title": "Conjugaison à l'imparfait",
+              "order_index": 4,
+              "columns": ["Pronom", "parler", "finir", "être", "avoir"],
+              "rows": [
+                ["je", "parlais", "finissais", "étais", "avais"],
+                ["tu", "parlais", "finissais", "étais", "avais"],
+                ["il / elle", "parlait", "finissait", "était", "avait"],
+                ["nous", "parlions", "finissions", "étions", "avions"],
+                ["vous", "parliez", "finissiez", "étiez", "aviez"],
+                ["ils / elles", "parlaient", "finissaient", "étaient", "avaient"]
+              ]
+            },
+            {
+              "type": "comparison_table",
+              "title": "Imparfait vs Passé composé — le tableau décisif",
+              "order_index": 5,
+              "introduction": "Une seule question à poser : est-ce que c'est le décor (imparfait) ou l'événement (passé composé) ?",
+              "columns": ["🎨 Imparfait (décor, durée, habitude)", "📸 Passé composé (événement, résultat)"],
+              "rows": [
+                ["Il faisait beau.", "Soudain, il a plu."],
+                ["Chaque matin, je buvais du café.", "Ce matin, j'ai bu du thé."],
+                ["Elle lisait quand...", "...le téléphone a sonné."],
+                ["Quand j'étais enfant, j'aimais...", "L'été dernier, j'ai adoré..."],
+                ["Marqueurs : toujours, souvent, d'habitude, autrefois", "Marqueurs : soudain, un jour, hier, à 14h"]
+              ]
+            },
+            {
+              "type": "common_mistakes",
+              "title": "Les pièges les plus courants",
+              "order_index": 6,
+              "items": [
+                {
+                  "audience": "Anglophones",
+                  "written_form": "Je jouais au foot tous les jours.",
+                  "correct_pronunciation": "zhuh zhwè o fu tu-lé-zhur",
+                  "common_mistake": "Utiliser le passé composé pour les habitudes : 'J'ai joué au foot tous les jours' → FAUX pour une habitude. Habitude passée = toujours imparfait."
+                },
+                {
+                  "audience": "Italophones",
+                  "written_form": "Il pleuvait quand je suis sorti.",
+                  "correct_pronunciation": "il plœvè kan zhuh swi sor-ti",
+                  "common_mistake": "Tout mettre au passé composé comme en italien familier. En français : le contexte (décor) = imparfait, l'action = passé composé."
+                }
+              ]
+            }
+          ],
+          "exercises": [
+            {
+              "internal_id": "E-B1-GRAM-001",
+              "title": "Peinture ou photo ? Choisis le bon temps.",
+              "type": "FILL_IN",
+              "instructions": "Conjugue à l'imparfait (décor/habitude) ou au passé composé (événement) selon le sens.",
+              "order_index": 1,
+              "questions": [
+                "Quand j'___ enfant, j'___ dans un village. (être / habiter — habitude)",
+                "Elle ___ souvent au cinéma le week-end. (aller — habitude)",
+                "Hier soir, il ___ très fort. (pleuvoir — événement précis)",
+                "Nous ___ le même restaurant chaque vendredi. (choisir — habitude)",
+                "Soudain, la porte ___. (s'ouvrir — événement soudain)",
+                "Il ___ quand on ___ arriver. (pleuvoir / commencer — décor puis événement)",
+                "Autrefois, les gens ___ moins vite. (vivre — habitude générale)",
+                "À 18h précises, elle ___ son livre et ___. (fermer / partir — actions précises)"
+              ]
+            }
+          ]
+        },
+        {
+          "internal_id": "R-B1-GRAM-002",
+          "level": "B1",
+          "title": "Le futur simple",
+          "category": "Verbes",
+          "learning_objective": "Former et utiliser le futur simple pour des prédictions, des promesses et des actions futures certaines.",
+          "short_description": "Le temps des promesses et des prédictions — ce qui SERA, FERA, IRA...",
+          "order_index": 2,
+          "sections": [
+            {
+              "type": "analogy",
+              "title": "La boule de cristal",
+              "order_index": 1,
+              "metaphor": "Imaginez une voyante avec sa boule de cristal. Elle voit l'avenir et décrit tout ce qu'elle voit. Elle ne dit pas 'peut-être', elle dit 'CE SERA, TU PARTIRAS, NOUS VIVRONS...' — c'est le futur simple : des affirmations sur l'avenir, certaines ou promises.",
+              "left": { "icon": "🔮", "label": "La boule de cristal", "description": "Visions certaines de l'avenir — prédictions, promesses, certitudes" },
+              "right": { "icon": "⏰", "label": "Le futur simple", "description": "Infinitif + terminaisons : -ai, -as, -a, -ons, -ez, -ont" }
+            },
+            {
+              "type": "lesson",
+              "title": "Formation — le verbe met son costume futur",
+              "order_index": 2,
+              "content": [
+                "Pour les verbes réguliers : infinitif + terminaisons (-ai, -as, -a, -ons, -ez, -ont).",
+                "parler → parler + ai = je parlerai · finir → finir + ai = je finirai.",
+                "Pour les verbes en -re, on enlève le -e final : prendre → prendr + ai = je prendrai.",
+                "Attention aux irréguliers fréquents — ils changent de radical mais gardent les mêmes terminaisons : être → ser- · avoir → aur- · aller → ir- · faire → fer- · voir → verr- · venir → viendr-."
+              ]
+            },
+            {
+              "type": "story",
+              "title": "Marie la voyante prédit l'avenir de Jean",
+              "order_index": 3,
+              "scenario": "Jean est anxieux pour son avenir. Il consulte Marie, une voyante réputée du quartier. Elle regarde dans sa boule de cristal...",
+              "characters": [
+                { "name": "Marie la voyante (yeux fermés)", "says": "Je vois... tu PARTIRAS en voyage dans six mois. Tu RENCONTRERAS quelqu'un d'important. Vous SEREZ très heureux ensemble.", "label": "✅ Futur simple = prédictions certaines (partir, rencontrer, être)" },
+                { "name": "Jean (inquiet)", "says": "Et mon travail actuel ? Je ne l'aime pas...", "label": "Présent = situation actuelle" },
+                { "name": "Marie (avec assurance)", "says": "Tu TROUVERAS un nouveau travail avant Noël. Tu GAGNERAS plus d'argent. Mais tu DEVRAS travailler dur les premiers mois.", "label": "✅ Radicaux irréguliers : trouver→trouvera, gagner→gagnera, devoir→devra" },
+                { "name": "Jean (soulagé)", "says": "Merci ! Je reviendrai vous voir !", "label": "✅ Futur simple = promesse (revenir → reviendrai)" }
+              ]
+            },
+            {
+              "type": "examples_table",
+              "title": "Conjugaison au futur simple",
+              "order_index": 4,
+              "columns": ["Pronom", "parler", "finir", "être", "avoir", "aller"],
+              "rows": [
+                ["je", "parlerai", "finirai", "serai", "aurai", "irai"],
+                ["tu", "parleras", "finiras", "seras", "auras", "iras"],
+                ["il / elle", "parlera", "finira", "sera", "aura", "ira"],
+                ["nous", "parlerons", "finirons", "serons", "aurons", "irons"],
+                ["vous", "parlerez", "finirez", "serez", "aurez", "irez"],
+                ["ils / elles", "parleront", "finiront", "seront", "auront", "iront"]
+              ]
+            },
+            {
+              "type": "warning",
+              "title": "Après 'quand', il faut aussi le futur !",
+              "order_index": 5,
+              "content": [
+                "En français, quand deux actions sont dans le futur, LES DEUX verbes vont au futur simple.",
+                "✅ Correct : 'Quand tu ARRIVERAS, appelle-moi.' (les deux sont dans le futur)",
+                "❌ Erreur fréquente : 'Quand tu arrives, appelle-moi.' (présent au lieu du futur)",
+                "C'est différent de l'anglais ('When you arrive') ou de l'italien ('Quando arrivi') — en français, le futur après 'quand' est obligatoire."
+              ]
+            }
+          ],
+          "exercises": [
+            {
+              "internal_id": "E-B1-GRAM-002",
+              "title": "La boule de cristal — conjugue au futur",
+              "type": "FILL_IN",
+              "instructions": "Tu es la voyante ! Conjugue chaque verbe au futur simple pour prédire l'avenir.",
+              "order_index": 1,
+              "questions": [
+                "Demain, il ___ beau toute la journée. (faire)",
+                "Tu ___ la vérité bientôt. (savoir)",
+                "Nous ___ en vacances l'été prochain. (partir)",
+                "Quand tu ___ là, appelle-moi. (être)",
+                "Elle ___ un café avant de commencer. (prendre)",
+                "Ils ___ leur projet à temps. (finir)",
+                "Je te ___ dès que j'___. (répondre / pouvoir)",
+                "Vous ___ que j'avais raison. (voir)"
+              ]
+            }
+          ]
+        },
+        {
+          "internal_id": "R-B1-GRAM-003",
+          "level": "B1",
+          "title": "Le conditionnel présent",
+          "category": "Verbes",
+          "learning_objective": "Utiliser le conditionnel pour exprimer la politesse, les souhaits et les hypothèses.",
+          "short_description": "Le mode de la politesse, des rêves et du monde imaginaire.",
+          "order_index": 3,
+          "sections": [
+            {
+              "type": "analogy",
+              "title": "La baguette magique",
+              "order_index": 1,
+              "metaphor": "Fermez les yeux. Imaginez une baguette magique. Si vous l'agitez, le monde change. 'Si j'avais une baguette magique, je volerais, je rendrais tout le monde heureux, je voyagerais partout...' Ce monde imaginaire où tout est possible — c'est LE MONDE DU CONDITIONNEL. C'est aussi le mode de la politesse : au lieu de VOULOIR (trop direct), vous VOUDRIEZ (doux, poli, élégant).",
+              "left": { "icon": "🌍", "label": "La réalité (indicatif)", "description": "Je suis fatigué. Je veux du café. Il fait froid." },
+              "right": { "icon": "🪄", "label": "Le monde conditionnel", "description": "Si j'avais le temps... je voudrais... ce serait bien..." }
+            },
+            {
+              "type": "lesson",
+              "title": "Formation — futur + terminaisons de l'imparfait",
+              "order_index": 2,
+              "content": [
+                "Le conditionnel = même radical que le futur + terminaisons de l'imparfait.",
+                "Futur : je parler-AI · Conditionnel : je parler-AIS.",
+                "La seule différence à l'écrit : futur → -ai, -as, -a · conditionnel → -ais, -ais, -ait.",
+                "À l'oral, 'je parlerai' et 'je parlerais' se prononcent presque pareil — seul le contexte permet de distinguer !"
+              ]
+            },
+            {
+              "type": "story",
+              "title": "Leçon de politesse au café",
+              "order_index": 3,
+              "scenario": "Sofia (8 ans) entre dans un café avec sa maman. C'est la première fois qu'elle commande seule. Sa maman lui apprend à être polie.",
+              "characters": [
+                { "name": "Sofia (à voix haute)", "says": "Je veux un chocolat chaud et des gâteaux !", "label": "❌ Présent = trop direct, peut sembler impoli" },
+                { "name": "Maman (chuchotant à l'oreille de Sofia)", "says": "Sofia, au café on dit 'je voudrais' — c'est beaucoup plus poli. Le conditionnel, c'est comme mettre 'please' dans la grammaire !", "label": "💡 Conditionnel = politesse grammaticale" },
+                { "name": "Sofia (corrigeant, souriante)", "says": "Pardon ! Je voudrais un chocolat chaud et je prendrais bien un croissant, s'il vous plaît.", "label": "✅ Conditionnel = poli et naturel" },
+                { "name": "Le serveur (avec un grand sourire)", "says": "Mais bien sûr, mademoiselle ! Quelle politesse !", "label": "✅ Le conditionnel fait bonne impression !" }
+              ]
+            },
+            {
+              "type": "examples_table",
+              "title": "Conjugaison au conditionnel présent",
+              "order_index": 4,
+              "columns": ["Pronom", "parler", "être", "avoir", "aller", "vouloir"],
+              "rows": [
+                ["je", "parlerais", "serais", "aurais", "irais", "voudrais"],
+                ["tu", "parlerais", "serais", "aurais", "irais", "voudrais"],
+                ["il / elle", "parlerait", "serait", "aurait", "irait", "voudrait"],
+                ["nous", "parlerions", "serions", "aurions", "irions", "voudrions"],
+                ["vous", "parleriez", "seriez", "auriez", "iriez", "voudriez"],
+                ["ils / elles", "parleraient", "seraient", "auraient", "iraient", "voudraient"]
+              ]
+            },
+            {
+              "type": "warning",
+              "title": "La règle d'or : jamais de conditionnel après SI !",
+              "order_index": 5,
+              "content": [
+                "Pour les hypothèses : SI + imparfait → conditionnel. Jamais 'si + conditionnel' !",
+                "✅ Correct : 'Si j'AVAIS le temps, je VIENDRAIS.'",
+                "❌ Erreur mortelle : 'Si j'AURAIS le temps...' — cette phrase n'existe pas en français.",
+                "Mémo : après 'si', bannissez le conditionnel. Écrivez 'si j'avais / si tu étais / si nous pouvions...'"
+              ]
+            },
+            {
+              "type": "common_mistakes",
+              "title": "Les erreurs les plus courantes",
+              "order_index": 6,
+              "items": [
+                {
+                  "audience": "Anglophones",
+                  "written_form": "Je voudrais un café.",
+                  "correct_pronunciation": "zhuh voo-drè un ka-fé",
+                  "common_mistake": "Dire 'Je veux un café' dans un contexte formel ou dans un restaurant — cela sonne brusque. Le conditionnel 'voudrais' est la norme polie en français."
+                },
+                {
+                  "audience": "Tous les apprenants",
+                  "written_form": "Si j'avais le temps, je viendrais.",
+                  "correct_pronunciation": "si zhavè luh tan zhuh vyan-drè",
+                  "common_mistake": "Dire 'Si j'aurais le temps' — le conditionnel après 'si' conditionnel est une faute grave et très fréquente. La règle est absolue : SI → imparfait."
+                }
+              ]
+            }
+          ],
+          "exercises": [
+            {
+              "internal_id": "E-B1-GRAM-003",
+              "title": "Agite la baguette magique !",
+              "type": "FILL_IN",
+              "instructions": "Conjugue au conditionnel présent. Attention à la règle d'or avec 'si' !",
+              "order_index": 1,
+              "questions": [
+                "Je ___ un verre d'eau, s'il vous plaît. (vouloir)",
+                "Si tu travaillais plus, tu ___ de meilleurs résultats. (obtenir)",
+                "Vous ___ m'aider, s'il vous plaît ? (pouvoir)",
+                "Il ___ partir plus tôt pour éviter les embouteillages. (devoir)",
+                "Nous ___ ravis de vous accueillir. (être)",
+                "Si elle avait le temps, elle ___ plus souvent. (lire)",
+                "J'___ visiter Tokyo un jour. (aimer)",
+                "Ils ___ intéressés par ce projet. (être)"
+              ]
+            }
+          ]
+        },
+        {
+          "internal_id": "R-B1-GRAM-004",
+          "level": "B1",
+          "title": "Le subjonctif présent",
+          "category": "Verbes",
+          "learning_objective": "Former et utiliser le subjonctif après les déclencheurs de volonté, d'émotion, de doute et de nécessité.",
+          "short_description": "Le mode des émotions, des souhaits et des nécessités — déclenché par certains verbes.",
+          "order_index": 4,
+          "sections": [
+            {
+              "type": "analogy",
+              "title": "Le monde des émotions",
+              "order_index": 1,
+              "metaphor": "Imaginez deux planètes. La planète des FAITS (indicatif) : 'Il VIENT. Elle EST là. Le soleil BRILLE.' Tout est certain. Et la planète des ÉMOTIONS (subjonctif) : dès que vous exprimez un DÉSIR, une PEUR, une NÉCESSITÉ ou un DOUTE pour quelqu'un d'autre, vous partez sur cette planète. 'Je veux qu'il VIENNE.' 'J'ai peur qu'il SOIT en danger.' 'Il faut que tu SOIS là.'",
+              "left": { "icon": "📰", "label": "Planète des faits (indicatif)", "description": "Il vient. Elle est là. C'est certain." },
+              "right": { "icon": "💭", "label": "Planète des émotions (subjonctif)", "description": "Je veux qu'il VIENNE. Il faut qu'elle SOIT là." }
+            },
+            {
+              "type": "lesson",
+              "title": "Formation — 3e personne du pluriel + terminaisons",
+              "order_index": 2,
+              "content": [
+                "Prends la 3e personne du pluriel au présent : ils parlent → radical : parl-.",
+                "Ajoute les terminaisons : -e, -es, -e, -ions, -iez, -ent (identiques aux terminaisons des verbes en -er au présent !).",
+                "Irréguliers à mémoriser absolument : être → sois/soit · avoir → aie/ait · aller → aille · faire → fasse · pouvoir → puisse · vouloir → veuille · savoir → sache.",
+                "Rappel crucial : 2 sujets différents = subjonctif. Même sujet = infinitif. 'Je veux venir' (moi=moi). 'Je veux qu'il vienne' (moi ≠ lui)."
+              ]
+            },
+            {
+              "type": "story",
+              "title": "La maman inquiète",
+              "order_index": 3,
+              "scenario": "Il est 23h. Thomas, 20 ans, n'est pas encore rentré. Sa mère, très inquiète, lui envoie des messages et appelle ses amis. Toutes ses phrases sont pleines d'émotions — toutes au subjonctif !",
+              "characters": [
+                { "name": "Maman (message vocal)", "says": "Thomas, je VEUX que tu RENTRES maintenant ! Il faut que tu SOIS à la maison dans 20 minutes !", "label": "vouloir que + il faut que → subjonctif : rentres, sois" },
+                { "name": "Maman (à l'ami Pierre)", "says": "Pierre, j'ai PEUR qu'il lui SOIT arrivé quelque chose ! C'est important que tu me DISES où il est !", "label": "avoir peur que + être important que → subjonctif : soit, dises" },
+                { "name": "Pierre (rassurant)", "says": "Ne vous inquiétez pas, je SAIS qu'il EST dans le jardin, il regarde les étoiles !", "label": "savoir que + indicatif = certitude (pas de subjonctif !)" },
+                { "name": "Thomas (depuis le jardin)", "says": "Maman, je suis là ! Bien que tu SOIS inquiète, je vais très bien, je te promets !", "label": "bien que → subjonctif obligatoire : sois" }
+              ]
+            },
+            {
+              "type": "examples_table",
+              "title": "Les déclencheurs du subjonctif",
+              "order_index": 4,
+              "columns": ["Catégorie", "Déclencheurs principaux", "Exemple"],
+              "rows": [
+                ["Volonté", "vouloir que, souhaiter que, préférer que", "Je veux qu'il vienne."],
+                ["Nécessité", "il faut que, il est nécessaire que", "Il faut que tu sois là."],
+                ["Émotion", "être content que, avoir peur que, regretter que", "Je suis content qu'il fasse beau."],
+                ["Doute", "douter que, ne pas croire que", "Je doute qu'il sache la réponse."],
+                ["But", "pour que, afin que", "Je parle lentement pour que tu comprennes."],
+                ["Concession", "bien que, quoique", "Bien qu'il soit fatigué, il travaille."],
+                ["Condition temporelle", "avant que, à moins que", "Pars avant qu'il arrive."]
+              ]
+            },
+            {
+              "type": "warning",
+              "title": "Le piège du même sujet",
+              "order_index": 5,
+              "content": [
+                "Le subjonctif n'apparaît que quand les deux sujets sont DIFFÉRENTS.",
+                "✅ Deux sujets différents → subjonctif : 'Je veux que TU viennes.' (je ≠ tu)",
+                "✅ Même sujet → infinitif : 'Je veux VENIR.' (je = je, pas de subjonctif !)",
+                "❌ Erreur : 'Je veux que je vienne' → FAUX. Correct : 'Je veux venir.'",
+                "Exception : 'bien que' prend toujours le subjonctif, même sujet identique."
+              ]
+            }
+          ],
+          "exercises": [
+            {
+              "internal_id": "E-B1-GRAM-004",
+              "title": "Voyage sur la planète des émotions",
+              "type": "FILL_IN",
+              "instructions": "Mets le verbe au subjonctif présent ou à l'infinitif selon le nombre de sujets.",
+              "order_index": 1,
+              "questions": [
+                "Il faut que tu ___ à l'heure. (être)",
+                "Je veux ___. (partir — même sujet !)",
+                "Elle est contente que vous ___ là. (être)",
+                "Bien qu'il ___ occupé, il nous aide. (être)",
+                "Pour que tu ___, écoute attentivement. (comprendre)",
+                "Je doute qu'il ___ la solution. (savoir)",
+                "Avant que vous ___, signez ce document. (partir)",
+                "Nous souhaitons ___. (réussir — même sujet !)"
+              ]
+            }
+          ]
+        },
+        {
+          "internal_id": "R-B1-GRAM-005",
+          "level": "B1",
+          "title": "Les connecteurs logiques",
+          "category": "Structure grammaticale",
+          "learning_objective": "Utiliser les connecteurs de cause, conséquence, opposition et concession pour structurer ses idées.",
+          "short_description": "Les ponts et panneaux de signalisation qui guident ton interlocuteur dans tes idées.",
+          "order_index": 5,
+          "sections": [
+            {
+              "type": "analogy",
+              "title": "Les panneaux de signalisation des idées",
+              "order_index": 1,
+              "metaphor": "Quand tu conduis, les panneaux te disent : 'tournez à gauche', 'attention, danger', 'tout droit'. Les connecteurs logiques font pareil pour tes idées ! Ils disent à ton interlocuteur : 'voici LA RAISON' (car, parce que), 'voici LE RÉSULTAT' (donc, alors), 'voici LA SURPRISE' (mais, cependant). Sans connecteurs, c'est comme conduire sans panneaux — on se perd !",
+              "left": { "icon": "🧱🧱", "label": "Sans connecteur", "description": "Il pleut. Je reste à la maison. Ces deux faits sont séparés." },
+              "right": { "icon": "🌉", "label": "Avec connecteur", "description": "Il pleut, DONC je reste à la maison. Lien logique clair !" }
+            },
+            {
+              "type": "story",
+              "title": "Sofia raconte sa journée compliquée",
+              "order_index": 2,
+              "scenario": "Sofia rentre à la maison après une longue journée. Elle raconte tout à ses parents. Écoutez bien les connecteurs qu'elle utilise — ils montrent comment ses idées sont liées.",
+              "characters": [
+                { "name": "Sofia", "says": "Je n'ai pas pu aller au cours PARCE QUE j'avais un rendez-vous médical inattendu.", "label": "parce que = cause (réponse directe à 'pourquoi ?')" },
+                { "name": "Papa", "says": "DONC tu as manqué la leçon d'aujourd'hui ?", "label": "donc = conséquence logique de ce qui précède" },
+                { "name": "Sofia", "says": "Oui, MAIS j'ai immédiatement demandé les notes à Marie.", "label": "mais = opposition, surprise positive" },
+                { "name": "Maman", "says": "BIEN QUE tu aies été absente, tu t'es bien organisée — j'en suis fière !", "label": "bien que + subjonctif = concession (admis même si...)" },
+                { "name": "Sofia (souriante)", "says": "En plus, le médecin a dit que j'allais très bien. DONC c'était une bonne journée finalement !", "label": "en plus = addition · donc = nouvelle conséquence" }
+              ]
+            },
+            {
+              "type": "examples_table",
+              "title": "Les connecteurs essentiels",
+              "order_index": 3,
+              "columns": ["Relation", "Connecteurs", "Exemple"],
+              "rows": [
+                ["Cause", "car, parce que, puisque, comme", "Il est absent car il est malade."],
+                ["Conséquence", "donc, alors, c'est pourquoi, ainsi", "Il pleut, donc je reste."],
+                ["Opposition", "mais, cependant, en revanche, pourtant", "Il travaille beaucoup, mais sans résultat."],
+                ["Concession", "bien que + subj., quoique + subj., même si + ind.", "Bien qu'il soit fatigué, il continue."],
+                ["But", "pour que + subj., afin que + subj.", "Je parle lentement pour que tu comprennes."],
+                ["Addition", "de plus, en outre, également", "Il est intelligent. De plus, il est gentil."],
+                ["Alternative", "soit... soit, ou bien... ou bien", "Soit tu viens, soit tu restes."]
+              ]
+            },
+            {
+              "type": "comparison_table",
+              "title": "Car vs Parce que vs Puisque",
+              "order_index": 4,
+              "introduction": "Trois façons d'exprimer la cause — mais attention, elles ne s'utilisent pas dans les mêmes situations !",
+              "columns": ["Connecteur", "Situation d'emploi", "Exemple"],
+              "rows": [
+                ["parce que", "Réponse directe à 'pourquoi ?' — cause pas encore connue", "Pourquoi tu pars ? — Parce que je suis fatigué."],
+                ["car", "Explication ajoutée, registre écrit/formel — jamais en début de phrase", "Je pars, car je suis fatigué."],
+                ["puisque", "Cause évidente, connue des deux personnes", "Puisque tu es là, aide-moi !"]
+              ]
+            },
+            {
+              "type": "warning",
+              "title": "Par contre vs En revanche",
+              "order_index": 5,
+              "content": [
+                "'Par contre' est courant à l'oral mais critiqué à l'écrit formel — à éviter dans une lettre ou un email professionnel.",
+                "À l'écrit, préfère 'en revanche' ou 'cependant'.",
+                "'Mais' reste le connecteur d'opposition universel, toujours correct à l'oral comme à l'écrit."
+              ]
+            }
+          ],
+          "exercises": [
+            {
+              "internal_id": "E-B1-GRAM-005",
+              "title": "Pose les bons panneaux !",
+              "type": "FILL_IN",
+              "instructions": "Complète avec le connecteur le plus approprié : car, donc, mais, bien que, pour que, puisque, cependant.",
+              "order_index": 1,
+              "questions": [
+                "Il est parti tôt ___ il avait un rendez-vous important.",
+                "___ tu connais la réponse, réponds !",
+                "Je t'écris ___ tu sois informé à temps.",
+                "___ il pleuve, nous allons sortir.",
+                "Elle est très intelligente ; ___, elle fait parfois des erreurs.",
+                "Je n'ai pas pu venir ___ j'étais malade.",
+                "Il fait froid dehors, ___ mets ton manteau.",
+                "Le film était long, ___ très intéressant."
+              ]
+            }
+          ]
+        },
+        {
+          "internal_id": "R-B1-GRAM-006",
+          "level": "B1",
+          "title": "Les pronoms relatifs simples",
+          "category": "Pronoms",
+          "learning_objective": "Utiliser qui, que, dont et où pour relier deux phrases élégamment.",
+          "short_description": "La colle grammaticale pour assembler deux phrases et éviter les répétitions maladroites.",
+          "order_index": 6,
+          "sections": [
+            {
+              "type": "analogy",
+              "title": "La colle grammaticale",
+              "order_index": 1,
+              "metaphor": "Imaginez deux briques Lego séparées. 'J'ai une amie. Cette amie parle six langues.' C'est lourd, répétitif. Maintenant prenez la colle QUI : 'J'ai une amie QUI parle six langues.' Une seule belle phrase ! QUI, QUE, DONT et OÙ sont quatre types de colle — chacune sert à une situation différente.",
+              "left": { "icon": "🧱🧱", "label": "Deux phrases séparées", "description": "J'ai une amie. Cette amie parle six langues. (lourd, répétitif)" },
+              "right": { "icon": "🔗", "label": "Une seule phrase élégante", "description": "J'ai une amie QUI parle six langues. (fluide, naturel)" }
+            },
+            {
+              "type": "lesson",
+              "title": "Quelle colle choisir ?",
+              "order_index": 2,
+              "content": [
+                "QUI = la colle pour le SUJET. L'amie parle → l'amie QUI parle. (qui fait l'action ?)",
+                "QUE = la colle pour l'OBJET. Je lis ce livre → le livre QUE je lis. (qui reçoit l'action ?)",
+                "DONT = la colle pour tout complément avec DE. Je parle DE ce film → le film DONT je parle.",
+                "OÙ = la colle pour le LIEU ou le MOMENT. J'habite dans cette ville → la ville OÙ j'habite."
+              ]
+            },
+            {
+              "type": "story",
+              "title": "Le détective Dumont décrit les suspects",
+              "order_index": 3,
+              "scenario": "Le détective Dumont enquête sur le vol du diamant rouge. Il décrit les suspects à son équipe. Il utilise les pronoms relatifs pour être précis et élégant.",
+              "characters": [
+                { "name": "Détective Dumont", "says": "La personne QUI a pris le diamant s'appelle Pierre. (Pierre a pris le diamant = sujet de 'prendre')", "label": "QUI = sujet — Pierre fait l'action" },
+                { "name": "Détective Dumont", "says": "Le diamant QUE nous cherchons était dans ce coffre. (nous cherchons le diamant = objet de 'chercher')", "label": "QUE = objet — le diamant reçoit l'action" },
+                { "name": "Détective Dumont", "says": "L'endroit OÙ il était caché est maintenant fermé à clé.", "label": "OÙ = lieu" },
+                { "name": "Détective Dumont", "says": "Le complice DONT je vous ai parlé hier a quitté le pays ce matin. (j'ai parlé DE ce complice)", "label": "DONT = complément de 'parler de'" }
+              ]
+            },
+            {
+              "type": "comparison_table",
+              "title": "QUI vs QUE — le test infaillible",
+              "order_index": 4,
+              "introduction": "Question magique : dans la phrase relative, qui fait l'action ? → QUI. Qui reçoit l'action ? → QUE.",
+              "columns": ["QUI (sujet — fait l'action)", "QUE/QU' (objet — reçoit l'action)"],
+              "rows": [
+                ["L'homme QUI parle... (il parle)", "L'homme QUE je vois... (je vois l'homme)"],
+                ["Le chat QUI dort... (le chat dort)", "Le chat QUE tu cherches... (tu cherches le chat)"],
+                ["La femme QUI chante... (elle chante)", "La femme QUE j'admire... (je l'admire)"],
+                ["Le train QUI arrive... (le train arrive)", "Le train QUE nous prenons... (nous le prenons)"]
+              ]
+            },
+            {
+              "type": "warning",
+              "title": "DONT — le test de la préposition DE",
+              "order_index": 5,
+              "content": [
+                "DONT remplace toujours un complément qui contient 'DE'. Test rapide : reformule la phrase relative seule. Y a-t-il 'de' ? → Utilise DONT.",
+                "Verbes courants avec 'de' : parler DE, avoir besoin DE, se souvenir DE, être fier DE, rêver DE, avoir peur DE.",
+                "✅ Je parle de ce livre → Le livre DONT je parle.",
+                "✅ J'ai besoin de cette clé → La clé DONT j'ai besoin.",
+                "❌ Erreur fréquente : 'La clé que j'ai besoin' → FAUX ! 'Avoir besoin de' → DONT."
+              ]
+            }
+          ],
+          "exercises": [
+            {
+              "internal_id": "E-B1-GRAM-006",
+              "title": "Choisis la bonne colle !",
+              "type": "FILL_IN",
+              "instructions": "Complète avec qui, que/qu', dont ou où.",
+              "order_index": 1,
+              "questions": [
+                "C'est l'ami ___ m'a aidé hier soir. (qui / que ?)",
+                "Le film ___ nous avons vu était magnifique. (qui / que ?)",
+                "C'est une situation ___ j'ai peur. (que / dont ?)",
+                "La ville ___ j'habite est très calme. (dont / où ?)",
+                "Le professeur ___ tu m'as parlé est excellent. (qui / dont ?)",
+                "Voilà la maison ___ je rêve depuis toujours. (que / dont ?)",
+                "L'été ___ nous nous sommes rencontrés était magnifique. (dont / où ?)",
+                "C'est un sujet ___ intéresse tout le monde. (qui / que ?)"
+              ]
+            }
+          ]
+        },
+        {
+          "internal_id": "R-B1-GRAM-007",
+          "level": "B1",
+          "title": "Le discours indirect au présent",
+          "category": "Structure grammaticale",
+          "learning_objective": "Rapporter les paroles de quelqu'un au présent avec les bonnes transformations.",
+          "short_description": "Comment répéter ce que quelqu'un a dit, sans guillemets, en adaptant les mots.",
+          "order_index": 7,
+          "sections": [
+            {
+              "type": "analogy",
+              "title": "Le jeu du téléphone",
+              "order_index": 1,
+              "metaphor": "Tu connais le jeu du téléphone ? Un message passe de personne en personne. À chaque passage, les mots s'adaptent mais le sens reste. C'est exactement ça, le discours indirect ! Marie dit : 'JE suis heureuse.' Tu répètes à Pierre : Marie dit QU'ELLE est heureuse. Le 'JE' devient 'ELLE', les guillemets disparaissent, mais le message arrive intact.",
+              "left": { "icon": "🗣️", "label": "Discours DIRECT", "description": "Marie dit : « Je suis heureuse. » (guillemets, mots exacts)" },
+              "right": { "icon": "📞", "label": "Discours INDIRECT", "description": "Marie dit qu'elle est heureuse. (pas de guillemets, mots adaptés)" }
+            },
+            {
+              "type": "story",
+              "title": "La secrétaire efficace",
+              "order_index": 2,
+              "scenario": "Le directeur Moreau donne des instructions à sa secrétaire Clara. Elle doit ensuite les transmettre à l'équipe. Regardez comment le message se transforme du discours direct au discours indirect.",
+              "characters": [
+                { "name": "M. Moreau (direct)", "says": "Dites à l'équipe : 'La réunion commence à 14h. Apportez vos rapports. Est-ce que tout le monde sera présent ?'", "label": "Discours direct — guillemets, mots exacts" },
+                { "name": "Clara à l'équipe (indirect)", "says": "M. Moreau dit que la réunion commence à 14h. Il dit d'apporter vos rapports. Il demande si tout le monde sera présent.", "label": "Indirect : que + affirmation · de + infinitif pour l'ordre · si pour la question oui/non" },
+                { "name": "Un collègue", "says": "Où est-ce qu'on se retrouve exactement ?", "label": "Question directe avec 'où'" },
+                { "name": "Clara (indirect)", "says": "Il demande où on se retrouve exactement.", "label": "Indirect : demander + où (pas d'inversion sujet-verbe !)" }
+              ]
+            },
+            {
+              "type": "examples_table",
+              "title": "Les transformations principales",
+              "order_index": 3,
+              "columns": ["Type de phrase directe", "Transformation", "Exemple indirect"],
+              "rows": [
+                ["Affirmation", "dire QUE + phrase", "Il dit qu'il est content."],
+                ["Question oui/non", "demander SI + phrase", "Elle demande si tu viens."],
+                ["Question avec mot interrog.", "demander + MOT + phrase (sans inversion)", "Il demande où tu habites."],
+                ["Ordre / demande", "dire DE + infinitif", "Elle dit de venir à 14h."],
+                ["Qu'est-ce que...?", "demander CE QUE", "Il demande ce que tu fais."],
+                ["Qui est...?", "demander QUI + verbe", "Elle demande qui est là."]
+              ]
+            },
+            {
+              "type": "warning",
+              "title": "Pas d'inversion au discours indirect !",
+              "order_index": 4,
+              "content": [
+                "Au discours direct, les questions utilisent l'inversion : 'Où HABITES-TU ?' Au discours indirect, cette inversion disparaît.",
+                "✅ Correct : Il demande où TU HABITES. (ordre normal sujet-verbe)",
+                "❌ Erreur : Il demande où habites-tu. (inversion conservée = faux !)",
+                "Même règle pour 'Qu'est-ce que' → 'ce que' : 'Qu'est-ce que TU FAIS ?' → Il demande CE QUE TU FAIS."
+              ]
+            },
+            {
+              "type": "comparison_table",
+              "title": "Verbes introducteurs selon le contexte",
+              "order_index": 5,
+              "introduction": "Le bon verbe introducteur dépend du type de message que l'on relaie.",
+              "columns": ["Verbe introducteur", "Pour quoi ?", "Exemple"],
+              "rows": [
+                ["dire que", "Une affirmation", "Il dit qu'il part demain."],
+                ["demander si", "Une question fermée (oui/non)", "Elle demande si tu as faim."],
+                ["demander + mot interr.", "Une question ouverte", "Il demande quand tu arrives."],
+                ["demander de + inf.", "Un ordre ou une demande", "Elle demande de se taire."],
+                ["expliquer que", "Une explication", "Il explique qu'il est en retard."],
+                ["répondre que", "Une réponse", "Elle répond qu'elle ne sait pas."]
+              ]
+            }
+          ],
+          "exercises": [
+            {
+              "internal_id": "E-B1-GRAM-007",
+              "title": "Joue au téléphone — transforme en indirect !",
+              "type": "TRANSFORM",
+              "instructions": "Transforme ces phrases du discours direct au discours indirect. Le verbe introducteur est au présent.",
+              "order_index": 1,
+              "questions": [
+                "Il dit : « Je suis fatigué. » → Il dit que ...",
+                "Elle demande : « Tu viens ce soir ? » → Elle demande si ...",
+                "Le prof dit : « Ouvrez vos livres ! » → Le prof dit de ...",
+                "Il demande : « Où est la gare ? » → Il demande où ...",
+                "Elle explique : « Je ne comprends pas. » → Elle explique qu' ...",
+                "Il demande : « Qu'est-ce que tu veux ? » → Il demande ce que ...",
+                "Elle dit : « Nous partons demain. » → Elle dit qu' ...",
+                "Il demande : « Pourquoi es-tu en retard ? » → Il demande pourquoi ..."
               ]
             }
           ]

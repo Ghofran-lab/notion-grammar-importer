@@ -1,78 +1,245 @@
 const levelSelect = document.getElementById('levelSelect');
 const modulesList = document.getElementById('modulesList');
-const content = document.getElementById('content');
+const content     = document.getElementById('content');
 let activeRuleId;
 
-const escapeHtml = (value = '') => String(value).replace(/[&<>'"]/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' })[character]);
+const esc = (v = '') => String(v).replace(/[&<>'"]/g, c =>
+  ({ '&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;' })[c]);
 
 async function fetchJSON(url) {
-  const response = await fetch(url);
-  if (!response.ok) throw new Error((await response.json()).error || 'Requête impossible');
-  return response.json();
+  const r = await fetch(url);
+  if (!r.ok) throw new Error((await r.json()).error || 'Requête impossible');
+  return r.json();
 }
 
-function showError(target, error) {
-  target.innerHTML = `<p class="error">Erreur : ${escapeHtml(error.message)}</p>`;
-}
+/* ── Sidebar ──────────────────────────────────────────────── */
 
 async function loadLevels() {
   try {
     const levels = await fetchJSON('/api/levels');
-    levelSelect.innerHTML = '<option value="">Tous les niveaux</option>' + levels.map(level => `<option value="${escapeHtml(level)}">${escapeHtml(level)}</option>`).join('');
+    levelSelect.innerHTML = '<option value="">Tous les niveaux</option>' +
+      levels.map(l => `<option value="${esc(l)}">${esc(l)}</option>`).join('');
     levelSelect.addEventListener('change', loadModules);
     await loadModules();
-  } catch (error) { showError(content, error); }
+  } catch (e) { showError(content, e); }
 }
 
 async function loadModules() {
-  modulesList.innerHTML = '<p class="empty">Chargement…</p>';
+  modulesList.innerHTML = '<div class="loading-state">Chargement…</div>';
   try {
-    const suffix = levelSelect.value ? `?level=${encodeURIComponent(levelSelect.value)}` : '';
-    const modules = await fetchJSON(`/api/modules${suffix}`);
-    if (!modules.length) return modulesList.innerHTML = '<p class="empty">Aucun cours disponible.</p>';
-    modulesList.innerHTML = modules.map(module => `
-      <section class="module">
-        <strong class="module-title">${escapeHtml(module.title)}</strong>
-        <p class="module-description">${escapeHtml(module.description)}</p>
-        ${module.rules.map(rule => `<button class="rule-button${String(rule.id) === String(activeRuleId) ? ' active' : ''}" data-rule-id="${rule.id}">${escapeHtml(rule.title)}<span class="rule-level">${escapeHtml(rule.level)} · ${escapeHtml(rule.category)}</span></button>`).join('')}
-      </section>`).join('');
-    document.querySelectorAll('.rule-button').forEach(button => button.addEventListener('click', () => showRule(button.dataset.ruleId)));
-  } catch (error) { showError(modulesList, error); }
+    const qs = levelSelect.value ? `?level=${encodeURIComponent(levelSelect.value)}` : '';
+    const modules = await fetchJSON(`/api/modules${qs}`);
+    if (!modules.length) {
+      modulesList.innerHTML = '<div class="empty-state">Aucun cours disponible.</div>';
+      return;
+    }
+    modulesList.innerHTML = modules.map(m => `
+      <div class="module-group">
+        <div class="module-header">
+          <div class="module-dot"></div>
+          <span class="module-title">${esc(m.title)}</span>
+        </div>
+        ${m.description ? `<p class="module-description">${esc(m.description)}</p>` : ''}
+        ${m.rules.map(r => {
+          const isPron = r.category === 'Prononciation';
+          const isActive = String(r.id) === String(activeRuleId);
+          return `<button class="rule-btn${isActive ? ' active' : ''}" data-rule-id="${r.id}">
+            ${esc(r.title)}
+            <span class="rule-btn-meta">
+              <span class="badge ${isPron ? 'badge-pron' : 'badge-gram'}">${isPron ? 'PRON' : 'GRAM'}</span>${esc(r.level)} · ${esc(r.category)}
+            </span>
+          </button>`;
+        }).join('')}
+      </div>`).join('');
+    document.querySelectorAll('.rule-btn').forEach(btn =>
+      btn.addEventListener('click', () => showRule(btn.dataset.ruleId)));
+  } catch (e) { showError(modulesList, e); }
 }
 
-function renderTable(section) {
-  return `${section.introduction ? `<p>${escapeHtml(section.introduction)}</p>` : ''}<table><thead><tr>${section.columns.map(column => `<th>${escapeHtml(column)}</th>`).join('')}</tr></thead><tbody>${section.rows.map(row => `<tr>${row.map(cell => `<td>${escapeHtml(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+/* ── Section renderers ────────────────────────────────────── */
+
+const SECTION_META = {
+  analogy:          { icon: '💡', label: 'En image',          color: 'analogy' },
+  story:            { icon: '🎭', label: 'Scène',             color: 'story'   },
+  lesson:           { icon: '📖', label: 'Leçon',             color: 'navy'    },
+  examples_table:   { icon: '📋', label: 'Exemples',          color: 'blue'    },
+  comparison_table: { icon: '⚖️',  label: 'Comparaison',      color: 'blue'    },
+  warning:          { icon: '⚠️',  label: 'Attention',        color: 'gold'    },
+  common_mistakes:  { icon: '🔍', label: 'Erreurs fréquentes', color: 'red'    },
+};
+
+function renderTable(data) {
+  const intro = data.introduction
+    ? `<p class="table-intro">${esc(data.introduction)}</p>` : '';
+  const head = data.columns.map(c => `<th>${esc(c)}</th>`).join('');
+  const body = data.rows.map(row =>
+    `<tr>${row.map(cell => `<td>${esc(cell)}</td>`).join('')}</tr>`
+  ).join('');
+  return `${intro}<div class="table-wrap"><table><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table></div>`;
+}
+
+function renderSectionBody(section) {
+  const d = section.content;
+  switch (section.type) {
+    case 'analogy': {
+      const split = d.left && d.right ? `
+        <div class="analogy-split">
+          <div class="analogy-side">
+            <div class="analogy-icon">${esc(d.left.icon)}</div>
+            <div class="analogy-side-label">${esc(d.left.label)}</div>
+            <div class="analogy-side-desc">${esc(d.left.description)}</div>
+          </div>
+          <div class="analogy-vs">↔</div>
+          <div class="analogy-side">
+            <div class="analogy-icon">${esc(d.right.icon)}</div>
+            <div class="analogy-side-label">${esc(d.right.label)}</div>
+            <div class="analogy-side-desc">${esc(d.right.description)}</div>
+          </div>
+        </div>` : '';
+      return `<p class="analogy-metaphor">${esc(d.metaphor)}</p>${split}`;
+    }
+
+    case 'story': {
+      const COLORS = ['#132440','#1e5c8a','#7a3b20','#1a5c32','#5c1a6e'];
+      return `
+        <p class="story-scenario">${esc(d.scenario)}</p>
+        <div class="story-scene">
+          ${d.characters.map((c, i) => {
+            const color = COLORS[i % COLORS.length];
+            const initial = c.name.charAt(0).toUpperCase();
+            return `
+            <div class="story-row">
+              <div class="story-avatar" style="background:${color}">${initial}</div>
+              <div class="story-bubble">
+                <div class="story-name">${esc(c.name)}</div>
+                <div class="story-says">${esc(c.says)}</div>
+                <div class="story-label">${esc(c.label)}</div>
+              </div>
+            </div>`;
+          }).join('')}
+        </div>`;
+    }
+
+    case 'lesson':
+      return d.content.map((p, i) =>
+        i === 0
+          ? `<p class="lesson-lead">${esc(p)}</p>`
+          : `<p>${esc(p)}</p>`
+      ).join('');
+
+    case 'warning':
+      return `<div class="warning-body">${d.content.map(p => `<p>${esc(p)}</p>`).join('')}</div>`;
+
+    case 'examples_table':
+    case 'comparison_table':
+      return renderTable(d);
+
+    case 'common_mistakes':
+      return d.items.map(item => `
+        <div class="mistake-card">
+          <div class="mistake-audience">${esc(item.audience)}</div>
+          <div class="mistake-row">
+            <div class="mistake-field mistake-field--written">
+              <div class="mistake-field-label">✍️ Français écrit</div>
+              <div class="mistake-field-value">${esc(item.written_form)}</div>
+            </div>
+            <div class="mistake-field mistake-field--ok">
+              <div class="mistake-field-label">✅ Prononciation correcte</div>
+              <div class="mistake-field-value">${esc(item.correct_pronunciation)}</div>
+            </div>
+          </div>
+          <div class="mistake-error">
+            <span class="mistake-error-label">❌ Erreur fréquente</span>
+            ${esc(item.common_mistake)}
+          </div>
+        </div>`).join('');
+
+    default:
+      return '<p class="empty-state">Section non prise en charge.</p>';
+  }
 }
 
 function renderSection(section) {
-  const data = section.content;
-  if (section.type === 'lesson') return data.content.map(paragraph => `<p>${escapeHtml(paragraph)}</p>`).join('');
-  if (section.type === 'warning') return `<div class="warning">${data.content.map(paragraph => `<p>${escapeHtml(paragraph)}</p>`).join('')}</div>`;
-  if (section.type === 'examples_table' || section.type === 'comparison_table') return renderTable(data);
-  if (section.type === 'common_mistakes') return data.items.map((item, index) => `<article class="mistake"><strong>Exemple ${index + 1} · ${escapeHtml(item.audience)}</strong><p><b>Français écrit :</b> ${escapeHtml(item.written_form)}</p><p><b>Prononciation correcte :</b> ${escapeHtml(item.correct_pronunciation)}</p><p><b>Erreur fréquente :</b> ${escapeHtml(item.common_mistake)}</p></article>`).join('');
-  return '<p class="empty">Section non prise en charge.</p>';
+  const meta = SECTION_META[section.type] || { icon: '📄', label: section.title, color: 'navy' };
+  return `
+    <div class="section-block section-block--${meta.color}">
+      <div class="section-block-header">
+        <span class="section-icon">${meta.icon}</span>
+        <span class="section-label">${esc(meta.label)}</span>
+        <span class="section-title-text">${esc(section.title)}</span>
+      </div>
+      <div class="section-block-body">
+        ${renderSectionBody(section)}
+      </div>
+    </div>`;
 }
 
 function renderExercises(exercises) {
-  if (!exercises.length) return '<p class="empty">Aucun exercice disponible.</p>';
-  return exercises.map(exercise => `<article class="exercise"><h2>${escapeHtml(exercise.title)}</h2><p>${escapeHtml(exercise.instructions)}</p>${exercise.questions.map(question => `<div class="question">${question.question_order}. ${escapeHtml(question.question_text)}</div>`).join('')}</article>`).join('');
+  if (!exercises.length)
+    return '<div class="empty-state">Aucun exercice disponible.</div>';
+
+  return `<div class="section-block section-block--exercise">
+    <div class="section-block-header">
+      <span class="section-icon">✏️</span>
+      <span class="section-label">Exercices</span>
+      <span class="section-title-text">Mise en pratique</span>
+    </div>
+    <div class="section-block-body">
+      ${exercises.map((ex, i) => `
+        <div class="exercise-card">
+          <div class="exercise-header">
+            <div class="exercise-num">${i + 1}</div>
+            <div>
+              <div class="exercise-title">${esc(ex.title)}</div>
+              <div class="exercise-instructions">${esc(ex.instructions)}</div>
+            </div>
+          </div>
+          <div class="exercise-questions">
+            ${ex.questions.map((q, qi) => `
+              <div class="question-item">
+                <span class="question-num">${qi + 1}</span>
+                <span>${esc(q.question_text)}</span>
+              </div>`).join('')}
+          </div>
+        </div>`).join('')}
+    </div>
+  </div>`;
 }
+
+/* ── Show a rule ──────────────────────────────────────────── */
 
 async function showRule(ruleId) {
   activeRuleId = ruleId;
-  content.className = 'course';
-  content.innerHTML = '<p class="empty">Chargement…</p>';
+  content.innerHTML = '<div class="loading-state" style="padding:60px;text-align:center;">Chargement…</div>';
   await loadModules();
   try {
     const { rule, sections, exercises } = await fetchJSON(`/api/rules/${ruleId}`);
-    const tabs = sections.map((section, index) => ({ id: `section-${index}`, label: section.title, html: renderSection(section) }));
-    tabs.push({ id: 'exercises', label: 'Exercices', html: renderExercises(exercises) });
-    content.innerHTML = `<span class="eyebrow">${escapeHtml(rule.module_title)} · ${escapeHtml(rule.level)}</span><h1>${escapeHtml(rule.title)}</h1><p class="objective">${escapeHtml(rule.learning_objective)}</p><div class="tabs" role="tablist">${tabs.map((tab, index) => `<button class="tab${index === 0 ? ' active' : ''}" data-tab="${tab.id}" role="tab">${escapeHtml(tab.label)}</button>`).join('')}</div>${tabs.map((tab, index) => `<section class="panel" data-panel="${tab.id}"${index ? ' hidden' : ''}>${tab.html}</section>`).join('')}`;
-    document.querySelectorAll('.tab').forEach(button => button.addEventListener('click', () => {
-      document.querySelectorAll('.tab').forEach(tab => tab.classList.toggle('active', tab === button));
-      document.querySelectorAll('.panel').forEach(panel => { panel.hidden = panel.dataset.panel !== button.dataset.tab; });
-    }));
-  } catch (error) { showError(content, error); }
+
+    const sectionsHtml = sections.map(renderSection).join('');
+    const exercisesHtml = renderExercises(exercises);
+
+    content.innerHTML = `
+      <div class="course-header">
+        <div class="course-eyebrow">
+          <span class="level-badge">${esc(rule.level)}</span>
+          <span class="cat-badge">${esc(rule.category)}</span>
+          ${rule.module_title ? `<span class="module-path">${esc(rule.module_title)}</span>` : ''}
+        </div>
+        <h1 class="course-title">${esc(rule.title)}</h1>
+        <p class="course-objective">${esc(rule.learning_objective)}</p>
+      </div>
+      <div class="course-body">
+        ${sectionsHtml}
+        ${exercisesHtml}
+      </div>`;
+
+    // Scroll to top
+    content.parentElement.scrollTop = 0;
+  } catch (e) { showError(content, e); }
+}
+
+function showError(target, err) {
+  target.innerHTML = `<div class="error-state">Erreur : ${esc(err.message)}</div>`;
 }
 
 loadLevels();
