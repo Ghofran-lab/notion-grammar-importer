@@ -9,8 +9,8 @@ Cette architecture transforme le dépôt en base de connaissances complète pour
 1. **Une idée = un emplacement naturel** : chaque fichier doit appartenir au pilier qui décrit son usage principal.
 2. **Le code et les données sont séparés** : la plateforme vit dans `03-pedagogie/plateforme/`, tandis que les sources versionnées vivent dans `05-donnees/`.
 3. **Les commandes restent centralisées** : `package.json` reste à la racine pour continuer à lancer `npm run ...` sans se déplacer.
-4. **Les URLs publiques restent stables** : les pages GitHub Pages historiques restent accessibles à leurs emplacements racine (`/`, `/sales/`, `/pages/`).
-5. **Les sites commerciaux sont organisés par source** : les pages publiques, pages de vente et futures landing pages sont classées dans `02-marketing-et-vente/sites/`, avec des miroirs publics quand une URL GitHub Pages existe déjà.
+4. **Un fichier ne doit pas exister en double sans raison** : la source unique des sites commerciaux est `02-marketing-et-vente/sites/`.
+5. **La racine reste légère** : elle garde seulement les fichiers transversaux utiles à tout le dépôt (`README.md`, `ARCHITECTURE.md`, `package.json`, `docker-compose.yml`, `index.html`).
 6. **Les documents obsolètes ne disparaissent pas** : ils sont déplacés dans `99-archives/` quand ils ne sont plus actifs.
 
 ## 2. Arborescence cible
@@ -38,12 +38,9 @@ Cette architecture transforme le dépôt en base de connaissances complète pour
 │   ├── schemas/
 │   └── seeds/
 ├── 99-archives/
-├── academy-os.html
 ├── docker-compose.yml
-├── index.html          # URL GitHub Pages historique
-├── pages/              # URL GitHub Pages historique
+├── index.html          # portail Academy OS
 ├── package.json
-├── sales/              # URL GitHub Pages historique
 └── README.md
 ```
 
@@ -52,7 +49,7 @@ Cette architecture transforme le dépôt en base de connaissances complète pour
 | Si tu ajoutes... | Range-le dans... |
 | --- | --- |
 | une vision, un objectif, une décision | `01-strategie/` |
-| une page de vente, un email, un script d'appel | `02-marketing-et-vente/` pour la source, puis miroir racine si l'URL GitHub Pages existe déjà |
+| une page de vente, un email, un script d'appel | `02-marketing-et-vente/` |
 | un cours, une méthode, un exercice ou du code pédagogique | `03-pedagogie/` |
 | une procédure, un guide de setup, une checklist | `04-operations/` |
 | un schéma, un seed, une demande IA, un export | `05-donnees/` |
@@ -89,7 +86,7 @@ npm run courses:import
 ```text
 02-marketing-et-vente/sites
         ↓
-miroirs GitHub Pages stables : /, /sales/, /pages/
+accueil, pages de vente, pages statiques et futurs tunnels
 ```
 
 ## 5. Prochaines extensions recommandées

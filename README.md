@@ -53,12 +53,11 @@ Adminer reste accessible sur <http://localhost:8080>. L'application pédagogique
 
 Les pages publiques et commerciales sont regroupées dans [`02-marketing-et-vente/sites/`](./02-marketing-et-vente/sites/) :
 
-- page d'accueil source : [`02-marketing-et-vente/sites/accueil.html`](./02-marketing-et-vente/sites/accueil.html)
-- page de vente source : [`02-marketing-et-vente/sites/sales/`](./02-marketing-et-vente/sites/sales/)
-- pages statiques additionnelles sources : [`02-marketing-et-vente/sites/pages/`](./02-marketing-et-vente/sites/pages/)
-- miroirs publics GitHub Pages : [`index.html`](./index.html), [`sales/`](./sales/) et [`pages/`](./pages/)
+- page d'accueil : [`02-marketing-et-vente/sites/accueil.html`](./02-marketing-et-vente/sites/accueil.html)
+- page de vente : [`02-marketing-et-vente/sites/sales/`](./02-marketing-et-vente/sites/sales/)
+- pages statiques additionnelles : [`02-marketing-et-vente/sites/pages/`](./02-marketing-et-vente/sites/pages/)
 
-Le portail Academy OS est disponible dans [`academy-os.html`](./academy-os.html). Les URLs GitHub Pages historiques restent conservées à la racine : [`index.html`](./index.html), [`sales/`](./sales/) et [`pages/`](./pages/).
+Le fichier racine [`index.html`](./index.html) sert de portail Academy OS pour naviguer dans les grands dossiers. Les pages commerciales vivent uniquement dans `02-marketing-et-vente/sites/` afin d’éviter les doublons.
 
 ## Génération de cours avec IA
 
