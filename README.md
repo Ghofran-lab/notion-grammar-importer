@@ -1,15 +1,40 @@
-# Notion Grammar Importer
+# Academy OS — Base de connaissances de l'académie
 
-## Focus actuel
+Ce dépôt est organisé comme un **système d'exploitation d'entreprise** : il centralise la stratégie, la pédagogie, les sites de commercialisation, les opérations et les données.
 
-Ce projet génère une base PostgreSQL et importe les données de grammaire. PostgreSQL reste la source de vérité. Une interface web **Adminer** est incluse dans Docker Compose pour consulter facilement les tables depuis un navigateur, y compris sur tablette.
+## Architecture principale
 
-> Les parties Notion sont conservées dans le schéma pour compatibilité future, mais la synchronisation Notion est reportée à une prochaine étape.
+| Pilier | Rôle | Contenu clé |
+| --- | --- | --- |
+| [`01-strategie/`](./01-strategie/) | Vision, décisions et direction de l'entreprise | vision, objectifs, roadmap, journal entrepreneur |
+| [`02-marketing-et-vente/`](./02-marketing-et-vente/) | Acquisition, pages de vente et contenus commerciaux | sites, offres, scripts d'appel, contenus, emails |
+| [`03-pedagogie/`](./03-pedagogie/) | Plateforme pédagogique et contenus d'apprentissage | application Node.js, cours, grammaire, prompts pédagogiques |
+| [`04-operations/`](./04-operations/) | Processus, setup technique et documentation d'exploitation | guides d'installation, procédures, checklists |
+| [`05-donnees/`](./05-donnees/) | Sources structurées, schémas et exports | schémas SQL, seeds JSON, demandes de génération IA |
+| [`99-archives/`](./99-archives/) | Historique et éléments obsolètes | anciens contenus, projets fermés, documents à conserver |
 
-## Prérequis
+## Où se trouve l'application pédagogique ?
 
-- Node.js 18+
-- Docker avec Docker Compose
+La plateforme est maintenant rangée dans [`03-pedagogie/plateforme/`](./03-pedagogie/plateforme/) :
+
+- code serveur et interface : [`03-pedagogie/plateforme/src/`](./03-pedagogie/plateforme/src/)
+- scripts d'import et de validation : [`03-pedagogie/plateforme/scripts/`](./03-pedagogie/plateforme/scripts/)
+- exemples techniques : [`03-pedagogie/plateforme/examples/`](./03-pedagogie/plateforme/examples/)
+- données utilisées par la plateforme : [`05-donnees/seeds/`](./05-donnees/seeds/)
+- schémas SQL : [`05-donnees/schemas/`](./05-donnees/schemas/)
+
+## Commandes utiles
+
+Les commandes `npm` restent lancées depuis la racine du dépôt.
+
+```bash
+npm install
+npm run check:syntax
+npm run seed:validate
+npm run courses:validate
+npm run courses:test-generation
+npm run serve
+```
 
 ## Démarrage rapide avec Docker
 
@@ -22,87 +47,30 @@ npm run seed:grammar
 npm run db:check:grammar
 ```
 
-## Visualiser les données avec Adminer
+Adminer reste accessible sur <http://localhost:8080>. L'application pédagogique est servie sur <http://localhost:3000> avec `npm run serve`.
 
-La commande `npm run db:start` démarre PostgreSQL et Adminer. Ouvrir <http://localhost:8080>, puis utiliser :
+## Sites de commercialisation
 
-| Champ | Valeur |
-| --- | --- |
-| Système | `PostgreSQL` |
-| Serveur | `postgres` |
-| Utilisateur | `postgres` |
-| Mot de passe | `postgres` |
-| Base de données | `grammar_app` |
+Les pages publiques et commerciales sont regroupées dans [`02-marketing-et-vente/sites/`](./02-marketing-et-vente/sites/) :
 
-Dans Adminer, ouvrir la table `grammar_rules`, puis choisir **Sélectionner les données** pour parcourir les règles.
+- page d'accueil historique : [`02-marketing-et-vente/sites/accueil.html`](./02-marketing-et-vente/sites/accueil.html)
+- page de vente : [`02-marketing-et-vente/sites/sales/`](./02-marketing-et-vente/sites/sales/)
+- pages statiques additionnelles : [`02-marketing-et-vente/sites/pages/`](./02-marketing-et-vente/sites/pages/)
 
-### Depuis Google Cloud Shell
+Un portail minimal [`index.html`](./index.html) reste à la racine pour faciliter la navigation dans le dépôt depuis GitHub Pages.
 
-Après `npm run db:start`, utiliser **Aperçu Web** (*Web Preview*) dans la barre Cloud Shell, sélectionner **Changer de port**, puis saisir `8080`.
+## Génération de cours avec IA
 
-## Commandes utiles
-
-| Commande | Description |
-| --- | --- |
-| `npm run db:start` | Démarre PostgreSQL et Adminer |
-| `npm run db:stop` | Arrête les conteneurs sans supprimer les données |
-| `npm run db:logs` | Affiche les logs PostgreSQL |
-| `npm run db:adminer` | Démarre Adminer si nécessaire |
-| `npm run db:init:grammar` | Crée les tables du module grammaire |
-| `npm run seed:grammar` | Importe les règles de grammaire |
-| `npm run db:check:grammar` | Vérifie les données importées |
-| `npm run db:init` | Crée les tables, vues et index génériques |
-| `npm run seed:validate` | Valide le format de `seed-data.json` |
-| `npm run seed:import` | Importe le JSON générique en base |
-| `npm run db:check` | Vérifie les comptes et orphelins |
-| `npm run info` | Affiche des statistiques rapides |
-
-Consulter [POSTGRES_SETUP.md](./POSTGRES_SETUP.md) pour les instructions détaillées et le dépannage.
-
-## Prototype de cours générés par IA
-
-Le fichier `seed-courses.json` est la source relisible et versionnée des cours enrichis avant leur import dans PostgreSQL. Le prototype contient le module **Prononciation** et le cours **Les lettres finales muettes** avec ses sections, tableaux, erreurs fréquentes et exercice.
-
-Après le démarrage de PostgreSQL, initialiser le schéma, valider le JSON puis importer le cours :
-
-```bash
-npm run db:start
-npm run db:init:grammar
-npm run courses:validate
-npm run courses:import
-npm run serve
-```
-
-Dans Google Cloud Shell, ouvrir **Aperçu Web**, choisir **Changer de port**, puis saisir `3000` pour afficher l'application pédagogique. Le port `8080` reste réservé à Adminer.
-
-Le flux de travail recommandé pour les futurs contenus générés est :
+Le flux de travail devient :
 
 ```text
-Génération IA → seed-courses.json → courses:validate → relecture pédagogique → courses:import → application web
+05-donnees/generation/requests → prompt → 05-donnees/generation/generated → relecture → 05-donnees/seeds/seed-courses.json → import
 ```
 
-### Si le port 3000 est déjà occupé
-
-Après une mise à jour du dépôt, une ancienne instance Node.js peut encore servir l'ancienne interface. Redémarrer l'application avec :
+Exemple :
 
 ```bash
-npm run serve:stop
-npm run serve
+npm run courses:generate -- --request 05-donnees/generation/requests/R-A1-PRON-001.json
 ```
 
-La nouvelle interface est servie depuis `src/public`. Si l'aperçu Web mentionne par erreur `public/index.html` ou affiche `EADDRINUSE`, arrêter l'ancien processus avec `npm run serve:stop` avant de relancer le serveur.
-
-### Générer un brouillon avec OpenAI
-
-Le prompt de génération est versionné dans `prompts/course-generation-prompt.md`. Chaque fiche située dans `course-requests/` décrit un cours à produire. Après avoir ajouté `OPENAI_API_KEY` dans `.env.local`, générer un brouillon avec :
-
-```bash
-npm run courses:generate -- --request course-requests/R-A1-PRON-001.json
-```
-
-Le brouillon est enregistré dans `generated/` et n'est jamais importé automatiquement. Relire le contenu, copier explicitement la version approuvée dans `seed-courses.json`, puis exécuter `npm run courses:validate` et `npm run courses:import`.
-
-
-### Publics linguistiques pris en charge
-
-Les cours générés s'adressent aux apprenants italophones et anglophones. Les erreurs fréquentes peuvent être communes à tous les apprenants ou ciblées par langue maternelle grâce au champ `audience`.
+Le brouillon généré n'est jamais importé automatiquement : il doit être relu, validé, puis copié explicitement dans `05-donnees/seeds/seed-courses.json`.

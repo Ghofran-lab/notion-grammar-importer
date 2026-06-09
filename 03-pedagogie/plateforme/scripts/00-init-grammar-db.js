@@ -35,7 +35,7 @@ async function initializeDatabase() {
     console.log('🚀 Initialisation de la base de données...\n');
 
     // Lire le fichier schema-grammar.sql
-    const schemaPath = path.join(__dirname, '../database/schema-grammar.sql');
+    const schemaPath = path.join(__dirname, '../../../05-donnees/schemas/schema-grammar.sql');
     
     if (!fs.existsSync(schemaPath)) {
       throw new Error(`Fichier schema-grammar.sql non trouvé: ${schemaPath}`);

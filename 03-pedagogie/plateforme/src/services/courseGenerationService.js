@@ -8,8 +8,8 @@ dotenv.config({ path: process.env.DOTENV_CONFIG_PATH || '.env.local' });
 dotenv.config();
 
 const DEFAULT_MODEL = 'gpt-5.5';
-const DEFAULT_PROMPT_PATH = 'prompts/course-generation-prompt.md';
-const DEFAULT_OUTPUT_DIRECTORY = 'generated';
+const DEFAULT_PROMPT_PATH = '05-donnees/generation/prompts/course-generation-prompt.md';
+const DEFAULT_OUTPUT_DIRECTORY = '05-donnees/generation/generated';
 
 export async function loadCourseRequest(requestPath) {
   return JSON.parse(await fs.readFile(requestPath, 'utf-8'));

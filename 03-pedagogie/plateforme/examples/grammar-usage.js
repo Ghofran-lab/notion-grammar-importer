@@ -20,7 +20,7 @@ import {
   createLesson,
   createExercise,
   createQuestion
-} from './src/db/queries/grammar.js';
+} from '../src/db/queries/grammar.js';
 
 const pool = new Pool({
   user: process.env.DB_USER || 'postgres',

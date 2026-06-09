@@ -3,7 +3,7 @@ import { transaction } from "../db/connection.js";
 import { createRule, getRuleByInternalId, addRuleExample, addRuleMistake } from "../db/queries/rules.js";
 import { createExercise } from "../db/queries/exercises.js";
 
-export async function loadSeedFile(path = "seed-data.json") {
+export async function loadSeedFile(path = "05-donnees/seeds/seed-data.json") {
   const raw = await fs.readFile(path, "utf-8");
   return JSON.parse(raw);
 }
