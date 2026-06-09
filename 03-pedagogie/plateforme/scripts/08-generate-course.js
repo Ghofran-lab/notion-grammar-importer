@@ -6,7 +6,7 @@ const requestPath = requestIndex >= 0 ? args[requestIndex + 1] : undefined;
 const dryRun = args.includes('--dry-run');
 
 if (!requestPath) {
-  console.error('Usage : npm run courses:generate -- --request course-requests/R-A1-PRON-001.json [--dry-run]');
+  console.error('Usage : npm run courses:generate -- --request 05-donnees/generation/requests/R-A1-PRON-001.json [--dry-run]');
   process.exit(1);
 }
 
@@ -17,5 +17,5 @@ if (dryRun) {
 } else {
   const result = await generateCourseDraft({ requestPath });
   console.log(`✅ Brouillon généré avec ${result.model} : ${result.outputPath}`);
-  console.log('🔎 Relisez ce brouillon avant de copier son contenu dans seed-courses.json et de lancer courses:import.');
+  console.log('🔎 Relisez ce brouillon avant de copier son contenu dans 05-donnees/seeds/seed-courses.json et de lancer courses:import.');
 }

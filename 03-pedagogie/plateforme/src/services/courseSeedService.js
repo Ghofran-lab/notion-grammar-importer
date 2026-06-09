@@ -60,7 +60,7 @@ function validateSection(section, path) {
   }
 }
 
-export async function loadCourseSeedFile(path = 'seed-courses.json') {
+export async function loadCourseSeedFile(path = '05-donnees/seeds/seed-courses.json') {
   return JSON.parse(await fs.readFile(path, 'utf-8'));
 }
 
