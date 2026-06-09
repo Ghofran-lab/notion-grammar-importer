@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Académie de Français — Votre Voix, Votre Confiance</title>
+    <title>Académie de Français — Plateforme Pédagogique</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
@@ -42,6 +42,115 @@
 
       /* ── App layout ────────────────────────────────────── */
       .app { display: grid; grid-template-columns: 290px 1fr; height: 100vh; overflow: hidden; }
+
+      /* ── Login Modal ────────────────────────────────────── */
+      .login-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        backdrop-filter: blur(4px);
+      }
+
+      .login-overlay.hidden {
+        display: none;
+      }
+
+      .login-modal {
+        background: var(--white);
+        border-radius: var(--radius);
+        padding: 3rem 2rem;
+        max-width: 400px;
+        width: 90%;
+        box-shadow: var(--shadow-lg);
+        text-align: center;
+        animation: slideUp 0.3s ease;
+      }
+
+      @keyframes slideUp {
+        from { transform: translateY(30px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+
+      .login-modal h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 28px;
+        color: var(--navy);
+        margin-bottom: 0.5rem;
+      }
+
+      .login-modal p {
+        font-size: 14px;
+        color: var(--text-light);
+        margin-bottom: 2rem;
+      }
+
+      .login-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .login-form input {
+        padding: 12px 16px;
+        border: 1px solid var(--cream-dark);
+        border-radius: 8px;
+        font-size: 14px;
+        font-family: inherit;
+        transition: all 0.2s ease;
+      }
+
+      .login-form input:focus {
+        outline: none;
+        border-color: var(--gold);
+        box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
+      }
+
+      .login-form button {
+        padding: 12px 16px;
+        background: linear-gradient(135deg, var(--gold), var(--gold-light));
+        color: var(--navy);
+        border: none;
+        border-radius: 8px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 14px;
+      }
+
+      .login-form button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(201, 168, 76, 0.3);
+      }
+
+      .login-error {
+        color: var(--red-text);
+        font-size: 13px;
+        padding: 10px 12px;
+        background: var(--red-pale);
+        border-radius: 6px;
+        display: none;
+        margin-bottom: 1rem;
+      }
+
+      .login-error.show {
+        display: block;
+        animation: shake 0.3s ease;
+      }
+
+      @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-5px); }
+        75% { transform: translateX(5px); }
+      }
 
       /* ── Sidebar ───────────────────────────────────────── */
       .sidebar {
@@ -87,10 +196,6 @@
       .rule-btn.active { background: rgba(201,168,76,.14); color: #fff; border-left-color: var(--gold); }
       .rule-btn-meta { display: block; font-size: 10.5px; color: var(--text-light); margin-top: 3px; }
       .rule-btn.active .rule-btn-meta { color: var(--gold-light); }
-
-      .badge { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: .05em; padding: 2px 5px; border-radius: 3px; margin-right: 4px; vertical-align: middle; }
-      .badge-pron { background: rgba(201,168,76,.18); color: var(--gold); border: 1px solid rgba(201,168,76,.3); }
-      .badge-gram { background: rgba(30,53,96,.5); color: #8db8e8; border: 1px solid rgba(141,184,232,.2); }
 
       .sidebar-footer { padding: 12px 18px; border-top: 1px solid rgba(255,255,255,.07); flex-shrink: 0; text-align: center; }
       .sidebar-footer p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 11px; color: rgba(201,168,76,.5); }
@@ -138,99 +243,10 @@
       .section-block--blue .section-block-header { background: var(--blue-pale); border-bottom: 1px solid var(--blue-mid); }
       .section-block--blue .section-label { background: var(--blue-mid); color: var(--navy-mid); }
 
-      /* Gold (warning) */
-      .section-block--gold .section-block-header { background: #fff8e6; border-bottom: 1px solid #f0d98a; }
-      .section-block--gold .section-label { background: #f0d98a; color: #7a5c00; }
-      .section-block--gold .section-title-text { color: #7a5c00; }
-
-      /* Red (mistakes) */
-      .section-block--red .section-block-header { background: var(--red-pale); border-bottom: 1px solid var(--red-mid); }
-      .section-block--red .section-label { background: var(--red-mid); color: var(--red-text); }
-      .section-block--red .section-title-text { color: var(--red-text); }
-
-      /* Analogy */
-      .section-block--analogy .section-block-header { background: linear-gradient(135deg, #fffbe6 0%, #fff8d6 100%); border-bottom: 2px solid var(--gold); }
-      .section-block--analogy .section-label { background: var(--gold); color: var(--navy); font-weight: 700; }
-      .section-block--analogy .section-title-text { color: #7a5c00; font-size: 16px; }
-
-      .analogy-metaphor { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-style: italic; color: var(--text-dark); line-height: 1.7; margin-bottom: 20px; padding: 14px 16px; background: #fffbf0; border-radius: 8px; border-left: 3px solid var(--gold); }
-      .analogy-split { display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: center; margin-top: 8px; }
-      .analogy-side { background: var(--white); border: 2px solid var(--cream-dark); border-radius: 12px; padding: 20px 16px; text-align: center; }
-      .analogy-icon { font-size: 36px; margin-bottom: 8px; line-height: 1; }
-      .analogy-side-label { font-family: 'Playfair Display', serif; font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
-      .analogy-side-desc { font-size: 13px; color: var(--text-mid); line-height: 1.5; font-style: italic; }
-      .analogy-vs { font-size: 20px; color: var(--gold); font-weight: 700; text-align: center; }
-
-      /* Story */
-      .section-block--story .section-block-header { background: linear-gradient(135deg, #f0f4ff 0%, #e8eeff 100%); border-bottom: 2px solid #99aaee; }
-      .section-block--story .section-label { background: #7788dd; color: #fff; }
-      .section-block--story .section-title-text { color: #2a3a7a; font-size: 16px; }
-
-      .story-scenario { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-style: italic; color: var(--text-mid); margin-bottom: 18px; padding: 12px 16px; background: #f0f4ff; border-radius: 6px; border-left: 3px solid #99aaee; }
-      .story-scene { display: flex; flex-direction: column; gap: 14px; }
-      .story-row { display: flex; align-items: flex-start; gap: 12px; }
-      .story-avatar { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; flex-shrink: 0; }
-      .story-bubble { background: var(--white); border: 1px solid #d0d8f0; border-radius: 0 12px 12px 12px; padding: 12px 16px; flex: 1; box-shadow: 0 2px 8px rgba(30,53,96,.07); }
-      .story-name { font-size: 10.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #5566aa; margin-bottom: 4px; }
-      .story-says { font-size: 14.5px; color: var(--text-dark); line-height: 1.55; margin-bottom: 6px; }
-      .story-label { font-size: 11.5px; color: #5566aa; background: #f0f4ff; border-radius: 4px; padding: 4px 8px; display: inline-block; font-style: italic; }
-
-      /* Exercise */
-      .section-block--exercise .section-block-header { background: var(--navy-mid); }
-      .section-block--exercise .section-label { background: rgba(201,168,76,.25); color: var(--gold); }
-      .section-block--exercise .section-title-text { color: #fff; }
-
       /* Section body */
       .section-block-body { padding: 22px; }
-
-      /* Lesson text */
-      .lesson-lead { font-family: 'Cormorant Garamond', serif; font-size: 17px; line-height: 1.7; color: var(--text-dark); margin-bottom: 12px; font-weight: 600; }
       .section-block-body p { font-size: 14.5px; color: var(--text-mid); line-height: 1.7; margin-bottom: 10px; }
       .section-block-body p:last-child { margin-bottom: 0; }
-
-      /* Warning body */
-      .warning-body { display: flex; flex-direction: column; gap: 8px; }
-      .warning-body p { background: #fffbf0; border-radius: 6px; padding: 10px 14px; font-size: 14px; color: #6b4e00; line-height: 1.6; margin: 0; }
-
-      /* Tables */
-      .table-intro { font-style: italic; font-size: 14px; color: var(--text-mid); margin-bottom: 12px; }
-      .table-wrap { overflow-x: auto; border-radius: 8px; border: 1px solid var(--blue-mid); }
-      .section-block-body table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 400px; }
-      .section-block-body thead th { background: var(--navy); color: var(--gold); font-family: 'Playfair Display', serif; font-size: 12px; letter-spacing: .07em; text-transform: uppercase; padding: 11px 14px; }
-      .section-block-body tbody tr:nth-child(even) { background: var(--blue-pale); }
-      .section-block-body tbody tr:hover { background: var(--gold-pale); }
-      .section-block-body td { padding: 10px 14px; border-bottom: 1px solid #dde8f2; color: var(--text-mid); vertical-align: top; }
-      .section-block-body td:first-child { color: var(--navy); font-weight: 700; }
-
-      /* Mistakes */
-      .mistake-card { border: 1px solid var(--red-mid); border-radius: 10px; overflow: hidden; margin-bottom: 14px; }
-      .mistake-card:last-child { margin-bottom: 0; }
-      .mistake-audience { background: var(--red-pale); padding: 9px 14px; font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--red-text); border-bottom: 1px solid var(--red-mid); }
-      .mistake-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--red-mid); }
-      .mistake-field { padding: 12px 14px; }
-      .mistake-field--written { border-right: 1px solid var(--red-mid); background: #fff; }
-      .mistake-field--ok { background: var(--green-pale); }
-      .mistake-field-label { font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text-light); margin-bottom: 5px; }
-      .mistake-field--ok .mistake-field-label { color: var(--green-text); }
-      .mistake-field-value { font-family: 'Cormorant Garamond', serif; font-size: 16px; color: var(--navy); line-height: 1.4; }
-      .mistake-error { background: #fff5f5; padding: 11px 14px; font-size: 13.5px; color: var(--red-text); line-height: 1.5; }
-      .mistake-error-label { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: #c0392b; margin-right: 6px; }
-
-      /* Exercises */
-      .exercise-card { border: 1px solid var(--cream-dark); border-radius: 10px; overflow: hidden; margin-bottom: 18px; }
-      .exercise-card:last-child { margin-bottom: 0; }
-      .exercise-header { display: flex; align-items: flex-start; gap: 12px; padding: 14px 18px; background: var(--cream); border-bottom: 1px solid var(--cream-dark); }
-      .exercise-num { background: var(--gold); color: var(--navy); font-size: 11px; font-weight: 700; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-      .exercise-title { font-family: 'Playfair Display', serif; font-size: 14.5px; color: var(--navy); line-height: 1.3; margin-bottom: 4px; }
-      .exercise-instructions { font-style: italic; font-size: 13px; color: var(--text-mid); line-height: 1.5; }
-      .exercise-questions { padding: 14px 18px; display: flex; flex-direction: column; gap: 8px; }
-      .question-item { display: flex; align-items: flex-start; gap: 11px; padding: 10px 14px; background: var(--white); border: 1px solid var(--cream-dark); border-radius: 8px; font-size: 14px; color: var(--text-mid); line-height: 1.5; cursor: pointer; transition: all 0.2s ease; }
-      .question-item:hover { border-color: var(--gold); }
-      .question-num { font-size: 11px; font-weight: 700; color: var(--gold); background: var(--gold-pale); min-width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-
-      /* States */
-      .loading-state, .empty-state { padding: 30px; text-align: center; color: var(--text-light); font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 16px; }
-      .error-state { padding: 16px; background: var(--red-pale); border-left: 4px solid #e05c5c; border-radius: 0 8px 8px 0; color: var(--red-text); font-size: 14px; }
 
       /* ── Responsive ────────────────────────────────────── */
       @media (max-width: 768px) {
@@ -238,12 +254,28 @@
         .sidebar { height: auto; }
         .main-scroll { height: auto; overflow-y: visible; }
         main { padding: 18px 14px 40px; max-width: 100%; }
-        .mistake-row { grid-template-columns: 1fr; }
-        .mistake-field--written { border-right: none; border-bottom: 1px solid var(--red-mid); }
       }
     </style>
   </head>
   <body>
+    <!-- Login Modal -->
+    <div class="login-overlay" id="loginOverlay">
+      <div class="login-modal">
+        <h2>🔐 Accès Plateforme</h2>
+        <p>Entrez le mot de passe fourni par l'Académie</p>
+        <div class="login-error" id="loginError"></div>
+        <form class="login-form" id="loginForm">
+          <input 
+            type="password" 
+            id="passwordInput" 
+            placeholder="Mot de passe" 
+            autocomplete="off"
+          >
+          <button type="submit">Se connecter</button>
+        </form>
+      </div>
+    </div>
+
     <div class="app">
 
       <!-- Sidebar -->
