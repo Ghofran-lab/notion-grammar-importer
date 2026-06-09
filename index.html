@@ -20,9 +20,7 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
-
   body {
     font-family: 'Libre Baskerville', Georgia, serif;
     background: var(--cream);
@@ -30,32 +28,6 @@
     overflow-x: hidden;
   }
 
-  /* ── ORNEMENTS ── */
-  .ornament {
-    display: block;
-    text-align: center;
-    color: var(--gold);
-    font-size: 1.4rem;
-    letter-spacing: 0.3em;
-    margin: 1rem 0;
-    opacity: 0.7;
-  }
-  .divider {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin: 2rem auto;
-    max-width: 300px;
-  }
-  .divider::before, .divider::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  }
-  .divider-icon { color: var(--gold); font-size: 1.2rem; }
-
-  /* ── HERO ── */
   .hero {
     background: var(--navy);
     min-height: 100vh;
@@ -117,14 +89,6 @@
     font-style: italic;
   }
 
-  .hero-sub {
-    font-family: 'Great Vibes', cursive;
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-    color: var(--gold-light);
-    margin-bottom: 2rem;
-    animation: fadeDown 1.1s ease both;
-  }
-
   .hero-desc {
     font-size: 1rem;
     color: rgba(255,255,255,0.75);
@@ -142,9 +106,7 @@
     animation: fadeDown 1.3s ease both;
   }
 
-  .btn-primary {
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--navy);
+  .btn-primary, .btn-secondary {
     padding: 1rem 2.5rem;
     font-family: 'Cormorant Garamond', serif;
     font-size: 1rem;
@@ -157,6 +119,12 @@
     transition: all 0.3s ease;
     display: inline-block;
   }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--navy);
+  }
+
   .btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 30px rgba(201,168,76,0.4);
@@ -165,44 +133,15 @@
   .btn-secondary {
     border: 1px solid rgba(201,168,76,0.6);
     color: var(--gold-light);
-    padding: 1rem 2.5rem;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: inline-block;
     background: transparent;
-    cursor: pointer;
   }
+
   .btn-secondary:hover {
     background: rgba(201,168,76,0.1);
     transform: translateY(-2px);
   }
 
-  .hero-trust {
-    margin-top: 3rem;
-    display: flex;
-    gap: 2.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    animation: fadeDown 1.4s ease both;
-  }
-  .trust-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: rgba(255,255,255,0.6);
-    font-size: 0.8rem;
-    letter-spacing: 0.05em;
-  }
-  .trust-item span.icon { color: var(--gold); font-size: 1rem; }
-
-  /* ── SECTIONS COMMUNES ── */
   section { padding: 5rem 2rem; }
-
   .container { max-width: 1080px; margin: 0 auto; }
 
   .section-label {
@@ -223,6 +162,7 @@
     line-height: 1.15;
     margin-bottom: 1rem;
   }
+
   .section-title em { color: var(--gold); font-style: italic; }
 
   .section-intro {
@@ -234,322 +174,50 @@
     margin: 0 auto 3rem;
   }
 
-  /* ── PROBLÈME ── */
-  .problem { background: var(--cream-dark); }
-
-  .problem-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.5rem;
-    margin-top: 3rem;
-  }
-
-  .problem-card {
-    background: var(--white);
-    border-left: 3px solid var(--gold);
-    padding: 1.8rem;
-    transition: transform 0.3s ease;
-  }
-  .problem-card:hover { transform: translateY(-4px); }
-  .problem-card .icon { font-size: 1.8rem; margin-bottom: 1rem; }
-  .problem-card h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 0.5rem;
-  }
-  .problem-card p { font-size: 0.9rem; color: var(--text-light); line-height: 1.7; }
-
-  /* ── SOLUTION / POUR QUI ── */
-  .pour-qui { background: var(--cream); }
-
   .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
   }
 
   .feature {
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 2rem;
     border: 1px solid rgba(201,168,76,0.2);
     background: var(--white);
     transition: all 0.3s ease;
+    border-radius: 8px;
   }
+
   .feature:hover {
     border-color: var(--gold);
     box-shadow: 0 4px 20px rgba(201,168,76,0.15);
   }
+
   .feature .icon {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
     display: block;
   }
+
   .feature h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: var(--navy);
     margin-bottom: 0.5rem;
   }
-  .feature p { font-size: 0.85rem; color: var(--text-light); line-height: 1.7; }
 
-  /* ── FORMULES ── */
-  .formules { background: var(--navy); }
-  .formules .section-title { color: var(--white); }
-  .formules .section-intro { color: rgba(255,255,255,0.65); }
-  .formules .section-label { color: var(--gold-light); }
+  .feature p { font-size: 0.95rem; color: var(--text-light); line-height: 1.7; }
 
-  .pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
+  .about { background: var(--cream-dark); }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
-  .pricing-card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(201,168,76,0.2);
-    padding: 2.5rem 2rem;
-    position: relative;
-    transition: all 0.3s ease;
-  }
-  .pricing-card:hover {
-    border-color: var(--gold);
-    background: rgba(201,168,76,0.05);
-    transform: translateY(-4px);
-  }
-  .pricing-card.featured {
-    border-color: var(--gold);
-    background: rgba(201,168,76,0.08);
-  }
-  .badge-featured {
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--navy);
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    padding: 0.3rem 1rem;
-    white-space: nowrap;
-  }
-
-  .pricing-card .card-label {
-    font-size: 0.65rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 0.5rem;
-  }
-  .pricing-card h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 1.5rem;
-  }
-
-  .price-block { margin-bottom: 1.5rem; }
-  .price-launch {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: var(--gold);
-    line-height: 1;
-  }
-  .price-launch sup { font-size: 1.2rem; vertical-align: top; margin-top: 0.5rem; display: inline-block; }
-  .price-launch sub { font-size: 1rem; color: var(--gold-light); }
-  .price-normal {
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.45);
-    margin-top: 0.3rem;
-  }
-  .price-normal s { text-decoration: line-through; }
-
-  .price-tag-launch {
-    display: inline-block;
-    background: rgba(201,168,76,0.2);
-    border: 1px solid rgba(201,168,76,0.4);
-    color: var(--gold-light);
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    padding: 0.2rem 0.7rem;
-    margin-top: 0.5rem;
-  }
-
-  .pricing-features {
-    list-style: none;
-    margin: 1.5rem 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-  .pricing-features li {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.7rem;
-    font-size: 0.88rem;
-    color: rgba(255,255,255,0.8);
-    line-height: 1.5;
-  }
-  .pricing-features li::before {
-    content: '✦';
-    color: var(--gold);
-    flex-shrink: 0;
-    margin-top: 0.1rem;
-    font-size: 0.7rem;
-  }
-  .soon { color: rgba(255,255,255,0.4) !important; font-style: italic; }
-
-  .card-cta {
-    margin-top: 2rem;
-    width: 100%;
-    display: block;
-    text-align: center;
-    padding: 0.9rem;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.95rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  .card-cta-primary {
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--navy);
-    border: none;
-  }
-  .card-cta-primary:hover { box-shadow: 0 6px 25px rgba(201,168,76,0.4); transform: translateY(-2px); }
-  .card-cta-secondary {
-    border: 1px solid rgba(201,168,76,0.5);
-    color: var(--gold-light);
-    background: transparent;
-  }
-  .card-cta-secondary:hover { background: rgba(201,168,76,0.1); }
-
-  /* ── TÉMOIGNAGE ── */
-  .temoignage { background: var(--cream-dark); text-align: center; }
-
-  .quote-block {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 3rem 2rem;
-    border: 1px solid rgba(201,168,76,0.3);
-    background: var(--white);
-    position: relative;
-  }
-  .quote-mark {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 6rem;
-    color: var(--gold);
-    opacity: 0.3;
-    position: absolute;
-    top: -1rem;
-    left: 2rem;
-    line-height: 1;
-  }
-  .quote-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.4rem;
-    font-style: italic;
-    color: var(--navy);
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-  }
-  .quote-author {
-    font-size: 0.8rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gold);
-  }
-
-  /* ── FAQ ── */
-  .faq { background: var(--cream); }
-
-  .faq-list {
-    max-width: 720px;
-    margin: 3rem auto 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .faq-item {
-    border-bottom: 1px solid rgba(201,168,76,0.2);
-    overflow: hidden;
-  }
-  .faq-question {
-    width: 100%;
-    background: none;
-    border: none;
-    text-align: left;
-    padding: 1.4rem 0;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--navy);
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-  }
-  .faq-question:hover { color: var(--gold); }
-  .faq-icon { color: var(--gold); font-size: 1.2rem; transition: transform 0.3s ease; flex-shrink: 0; }
-  .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-    font-size: 0.9rem;
-    color: var(--text-light);
-    line-height: 1.8;
-  }
-  .faq-answer-inner { padding: 0 0 1.4rem; }
-  .faq-item.open .faq-icon { transform: rotate(45deg); }
-  .faq-item.open .faq-answer { max-height: 200px; }
-
-  /* ── CONTACT / LIENS ── */
-  .contact { background: var(--navy); text-align: center; }
-  .contact .section-title { color: var(--white); }
-
-  .contact-links {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 2.5rem;
-  }
-
-  .contact-link {
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    padding: 0.9rem 1.8rem;
-    border: 1px solid rgba(201,168,76,0.4);
-    color: var(--gold-light);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    transition: all 0.3s ease;
-  }
-  .contact-link:hover {
-    background: rgba(201,168,76,0.1);
-    border-color: var(--gold);
-    transform: translateY(-2px);
-  }
-  .contact-link .icon { font-size: 1.1rem; }
-
-  /* ── FOOTER ── */
   footer {
     background: #070f18;
     text-align: center;
@@ -558,59 +226,16 @@
     font-size: 0.75rem;
     letter-spacing: 0.1em;
   }
+
   footer span { color: var(--gold); opacity: 0.6; }
 
-  /* ── ANIMATIONS ── */
-  @keyframes fadeDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ── STICKY CTA ── */
-  .sticky-cta {
-    position: fixed;
-    bottom: 1.5rem;
-    right: 1.5rem;
-    z-index: 100;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--navy);
-    padding: 0.9rem 1.6rem;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    text-decoration: none;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    transition: all 0.3s ease;
-    display: none;
-  }
-  .sticky-cta.visible { display: block; }
-  .sticky-cta:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(201,168,76,0.5); }
-
-  /* ── RESPONSIVE ── */
   @media (max-width: 600px) {
     .hero { padding: 3rem 1.5rem; }
-    .pricing-grid { grid-template-columns: 1fr; }
-    .hero-trust { gap: 1.5rem; }
-    .contact-links { flex-direction: column; align-items: center; }
+    .hero-ctas { flex-direction: column; align-items: center; }
   }
 </style>
 </head>
 <body>
-
-<!-- STICKY CTA -->
-<a href="#formules" class="sticky-cta" id="stickyCta">Réserver ma place →</a>
 
 <!-- ══════════ HERO ══════════ -->
 <section class="hero">
@@ -618,292 +243,42 @@
     <span class="hero-badge">✦ Cours en ligne · Petits groupes · Grands progrès ✦</span>
     <p class="hero-logo-text">Académie de Français</p>
     <h1>Parlez français<br><span>avec confiance.</span></h1>
-    <p class="hero-sub">Comprenez, exprimez-vous, vivez le français.</p>
     <p class="hero-desc">
-      Vous êtes expatrié(e) en France et vous avez déjà des bases en français ?<br>
-      Il est temps de passer à l'étape suivante — et de parler <em>vraiment</em>.
+      Découvrez notre plateforme pédagogique et nos formules de cours en ligne
     </p>
     <div class="hero-ctas">
-      <a href="#formules" class="btn-primary">Découvrir les formules</a>
-      <a href="#contact" class="btn-secondary">Me contacter</a>
-    </div>
-    <div class="hero-trust">
-      <div class="trust-item"><span class="icon">✦</span> Cours 100% en ligne</div>
-      <div class="trust-item"><span class="icon">✦</span> Groupes bienveillants</div>
-      <div class="trust-item"><span class="icon">✦</span> Progression garantie</div>
+      <a href="./app/" class="btn-primary">🎓 Accéder à la plateforme</a>
+      <a href="./sales/" class="btn-secondary">📄 Voir les formules</a>
     </div>
   </div>
 </section>
 
-<!-- ══════════ PROBLÈME ══════════ -->
-<section class="problem">
+<!-- ══════════ À PROPOS ══════════ -->
+<section class="about">
   <div class="container">
-    <p class="section-label reveal">Vous vous reconnaissez ?</p>
-    <h2 class="section-title reveal">Ce qui vous freine<br><em>au quotidien</em></h2>
-    <div class="problem-grid">
-      <div class="problem-card reveal">
-        <div class="icon">😶</div>
-        <h3>La peur du jugement</h3>
-        <p>Vous comprenez mais vous n'osez pas parler, de peur de faire des erreurs devant les autres.</p>
-      </div>
-      <div class="problem-card reveal">
-        <div class="icon">🔄</div>
-        <h3>Les mêmes erreurs</h3>
-        <p>Vous répétez les mêmes fautes de grammaire ou de prononciation malgré vos efforts.</p>
-      </div>
-      <div class="problem-card reveal">
-        <div class="icon">🗣️</div>
-        <h3>Manque d'aisance</h3>
-        <p>Vous cherchez vos mots, vos phrases manquent de fluidité, la conversation devient stressante.</p>
-      </div>
-      <div class="problem-card reveal">
-        <div class="icon">🏝️</div>
-        <h3>Isolement linguistique</h3>
-        <p>Sans pratique régulière avec d'autres apprenants, vous stagnez et perdez confiance.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ POUR QUI ══════════ -->
-<section class="pour-qui">
-  <div class="container">
-    <p class="section-label reveal">La solution</p>
-    <h2 class="section-title reveal">Ce que vous vivrez<br><em>à l'Académie</em></h2>
-    <p class="section-intro reveal">
-      Une méthode structurée, humaine et progressive — conçue pour les expatriés qui veulent vraiment progresser, dans un cadre bienveillant et stimulant.
+    <p class="section-label">Ce que vous trouverez</p>
+    <h2 class="section-title">Une plateforme <em>complète</em></h2>
+    <p class="section-intro">
+      Explorez nos deux espaces : la plateforme pédagogique interactive et les informations sur nos formules de cours.
     </p>
     <div class="features-grid">
-      <div class="feature reveal">
-        <span class="icon">🎯</span>
-        <h3>Grammaire ciblée</h3>
-        <p>Chaque règle expliquée, pratiquée jusqu'à l'automatisme.</p>
+      <div class="feature">
+        <span class="icon">🎓</span>
+        <h3>Plateforme pédagogique</h3>
+        <p>Accédez à nos modules de grammaire, prononciation et exercices interactifs. Apprendre à votre rythme.</p>
+        <p style="margin-top: 1rem;"><a href="./app/" style="color: var(--gold); text-decoration: none; font-weight: bold;">Accéder →</a></p>
       </div>
-      <div class="feature reveal">
-        <span class="icon">🎙️</span>
-        <h3>Prononciation</h3>
-        <p>Travail spécifique sur les sons du français pour être compris naturellement.</p>
+      <div class="feature">
+        <span class="icon">💰</span>
+        <h3>Nos formules</h3>
+        <p>Découvrez nos différentes offres d'apprentissage : Essentiel, Intensif, VIP et formations spécialisées.</p>
+        <p style="margin-top: 1rem;"><a href="./sales/" style="color: var(--gold); text-decoration: none; font-weight: bold;">Voir les tarifs →</a></p>
       </div>
-      <div class="feature reveal">
-        <span class="icon">💬</span>
-        <h3>Conversation vivante</h3>
-        <p>Des thèmes percutants qui donnent envie de s'exprimer et d'argumenter.</p>
-      </div>
-      <div class="feature reveal">
-        <span class="icon">👥</span>
-        <h3>Petits groupes</h3>
-        <p>10 à 30 personnes max, sous-groupes pour la conversation — vous parlez vraiment.</p>
-      </div>
-      <div class="feature reveal">
-        <span class="icon">🤖</span>
-        <h3>Salle IA <em style="font-size:0.7rem;color:var(--gold)">(à venir)</em></h3>
-        <p>Des sessions guidées par l'IA avec compte rendu personnalisé de vos erreurs.</p>
-      </div>
-      <div class="feature reveal">
+      <div class="feature">
         <span class="icon">📱</span>
-        <h3>Application <em style="font-size:0.7rem;color:var(--gold)">(à venir)</em></h3>
-        <p>Exercices, règles, lectures — tout votre matériel pédagogique en un seul endroit.</p>
+        <h3>Accessible partout</h3>
+        <p>Accédez à votre apprentissage depuis n'importe quel appareil. Responsive et fluide sur tous les écrans.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ FORMULES ══════════ -->
-<section class="formules" id="formules">
-  <div class="container">
-    <p class="section-label reveal">Choisissez votre rythme</p>
-    <h2 class="section-title reveal">Les formules<br><em>de l'Académie</em></h2>
-    <p class="section-intro reveal" style="color:rgba(255,255,255,0.6)">
-      🎁 Tarifs de lancement réservés aux <strong style="color:var(--gold)">10 premiers inscrits</strong> — engagement 3 mois.
-    </p>
-    <!-- GRILLE PRINCIPALE : 3 formules -->
-    <div class="pricing-grid">
-
-      <!-- ESSENTIEL -->
-      <div class="pricing-card reveal">
-        <p class="card-label">Formule Essentielle</p>
-        <h3>À votre rythme</h3>
-        <div class="price-block">
-          <div class="price-launch"><sup>€</sup>27<sub>/mois</sub></div>
-          <div class="price-normal">au lieu de <s>49€/mois</s></div>
-          <span class="price-tag-launch">✦ Prix fondateur — 10 places</span>
-        </div>
-        <ul class="pricing-features">
-          <li>1 cours par semaine (4/mois)</li>
-          <li>Conversation ou Grammaire (au choix)</li>
-          <li>Sous-groupes de conversation</li>
-          <li class="soon">Accès application (à venir)</li>
-        </ul>
-        <a href="LIEN_STRIPE_ESSENTIEL" class="card-cta card-cta-secondary">Je commence →</a>
-      </div>
-
-      <!-- INTENSIF -->
-      <div class="pricing-card featured reveal">
-        <div class="badge-featured">⭐ Le plus populaire</div>
-        <p class="card-label">Formule Intensif</p>
-        <h3>Cap sur la fluidité</h3>
-        <div class="price-block">
-          <div class="price-launch"><sup>€</sup>47<sub>/mois</sub></div>
-          <div class="price-normal">au lieu de <s>89€/mois</s></div>
-          <span class="price-tag-launch">✦ Prix fondateur — 10 places</span>
-        </div>
-        <ul class="pricing-features">
-          <li>2 cours par semaine (8/mois)</li>
-          <li>1 cours Grammaire & Prononciation</li>
-          <li>1 cours Conversation thématique</li>
-          <li>Sous-groupes de conversation</li>
-          <li class="soon">Accès application (à venir)</li>
-          <li class="soon">Salle IA conversation (à venir)</li>
-          <li>Engagement 3 mois</li>
-        </ul>
-        <a href="LIEN_STRIPE_INTENSIF" class="card-cta card-cta-primary">Réserver ma place →</a>
-      </div>
-
-      <!-- VIP -->
-      <div class="pricing-card reveal" style="border-color:rgba(201,168,76,0.5);background:rgba(201,168,76,0.06);">
-        <div class="badge-featured" style="background:linear-gradient(135deg,#8b6914,#c9a84c);color:#fff;">✦ Expérience VIP</div>
-        <p class="card-label">Formule VIP</p>
-        <h3>Accompagnement total</h3>
-        <div class="price-block">
-          <div class="price-launch"><sup>€</sup>97<sub>/mois</sub></div>
-          <div class="price-normal">au lieu de <s>180€/mois</s></div>
-          <span class="price-tag-launch">✦ Prix fondateur — 5 places seulement</span>
-        </div>
-        <ul class="pricing-features">
-          <li>Tout ce qu'inclut la formule Intensif</li>
-          <li>1 session coaching 1:1 par semaine (20 min)</li>
-          <li>Planification & suivi personnalisé chaque semaine</li>
-          <li>Challenge hebdo — 1 action concrète à mettre en place</li>
-          <li class="soon">Accès application (à venir)</li>
-          <li class="soon">Salle IA conversation (à venir)</li>
-          <li>Engagement 3 mois · 5 places max</li>
-        </ul>
-        <a href="LIEN_STRIPE_VIP" class="card-cta card-cta-primary" style="background:linear-gradient(135deg,#8b6914,#c9a84c);color:#fff;">Je veux une place VIP →</a>
-      </div>
-
-    </div>
-
-    <!-- FORMATION SOLO — discrète, en dessous -->
-    <div style="margin-top:3rem;max-width:480px;margin-left:auto;margin-right:auto;">
-      <div class="pricing-card reveal" style="border-color:rgba(255,255,255,0.1);opacity:0.75;">
-        <p class="card-label">Formation Solo</p>
-        <h3 style="font-size:1.2rem;">Pack thématique autonome</h3>
-        <div class="price-block">
-          <div class="price-launch" style="font-size:2rem;"><sup>€</sup>47<sub> one-shot</sub></div>
-        </div>
-        <ul class="pricing-features">
-          <li>Ex : 21 jours pour maîtriser sa prononciation</li>
-          <li>Programme 100% autonome</li>
-          <li>Accès à vie au contenu</li>
-          <li>Sans engagement</li>
-        </ul>
-        <a href="LIEN_STRIPE_FORMATION" class="card-cta card-cta-secondary">Découvrir →</a>
-      </div>
-    </div>
-
-    <!-- DELF — très discret, tout en bas -->
-    <div style="margin-top:2rem;max-width:480px;margin-left:auto;margin-right:auto;">
-      <div class="pricing-card reveal" style="border-color:rgba(255,255,255,0.08);opacity:0.5;">
-        <p class="card-label" style="opacity:0.6;">Sur demande</p>
-        <h3 style="font-size:1.1rem;color:rgba(255,255,255,0.6);">Préparation DELF B1/B2</h3>
-        <div class="price-block">
-          <div class="price-launch" style="font-size:1.6rem;color:rgba(201,168,76,0.5);"><sup>€</sup>397<sub style="font-size:0.8rem;"> — 3 mois</sub></div>
-        </div>
-        <ul class="pricing-features" style="opacity:0.5;">
-          <li>Programme sur 3 mois</li>
-          <li>Examens blancs inclus</li>
-          <li>Coaching 1:1 ciblé DELF</li>
-        </ul>
-        <a href="#contact" class="card-cta card-cta-secondary" style="opacity:0.6;font-size:0.8rem;">Me contacter pour en savoir plus</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ TÉMOIGNAGE ══════════ -->
-<section class="temoignage">
-  <div class="container">
-    <p class="section-label reveal">Elles l'ont vécu</p>
-    <h2 class="section-title reveal">Ce qu'elles <em>disent</em></h2>
-    <div class="quote-block reveal">
-      <div class="quote-mark">"</div>
-      <p class="quote-text">
-        Avant, je comprenais tout mais je n'osais pas parler. Après seulement quelques semaines, j'ai commencé à converser naturellement avec mes collègues. L'ambiance du groupe m'a vraiment [...]
-      </p>
-      <p class="quote-author">— [Prénom], expatriée italienne à Paris</p>
-    </div>
-    <p style="text-align:center;margin-top:1.5rem;color:var(--text-light);font-size:0.85rem;font-style:italic;">
-      ✦ Placeholder — remplacez par votre vrai témoignage client ✦
-    </p>
-  </div>
-</section>
-
-<!-- ══════════ FAQ ══════════ -->
-<section class="faq">
-  <div class="container">
-    <p class="section-label reveal">Vos questions</p>
-    <h2 class="section-title reveal">Tout ce que vous <em>voulez savoir</em></h2>
-    <div class="faq-list">
-      <div class="faq-item reveal">
-        <button class="faq-question">
-          Les cours ont-ils lieu en présentiel ou en ligne ?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">Les cours sont 100% en ligne, ce qui vous permet de rejoindre depuis n'importe où en France ou dans le monde, depuis chez vous.</div></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-question">
-          Quel niveau faut-il avoir pour rejoindre l'Académie ?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">Les cours sont conçus pour les niveaux intermédiaires (A2–B1) : vous comprenez le français mais vous souhaitez gagner en aisance et en fluidité.</div></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-question">
-          Comment se déroule l'engagement de 3 mois ?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">Le paiement est mensuel, pour une durée minimale de 3 mois. Après cette période, vous continuez mois par mois selon votre souhait, ou vous pouvez arrêter.</div></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-question">
-          Combien y a-t-il d'élèves par cours ?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">Les sessions regroupent jusqu'à 30 personnes. Lors des exercices de conversation, vous êtes réparti(e) en petits sous-groupes pour vraiment pratiquer.</div></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-question">
-          Que se passe-t-il si je rate un cours ?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">Les cours sont enregistrés. En cas d'absence, vous recevez le lien du replay pour ne rien manquer de la session.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ CONTACT ══════════ -->
-<section class="contact" id="contact">
-  <div class="container">
-    <p class="section-label reveal" style="color:var(--gold-light)">Une question ? Prête à commencer ?</p>
-    <h2 class="section-title reveal">Rejoignez<br><em>l'Académie</em></h2>
-    <p class="section-intro reveal" style="color:rgba(255,255,255,0.6)">
-      Écrivez-moi, prenez un rendez-vous ou inscrivez-vous directement.
-    </p>
-    <div class="contact-links reveal">
-      <a href="https://wa.me/VOTRE_NUMERO" class="contact-link" target="_blank">
-        <span class="icon">📱</span> WhatsApp
-      </a>
-      <a href="LIEN_CALENDLY" class="contact-link" target="_blank">
-        <span class="icon">📅</span> Prendre RDV
-      </a>
-      <a href="https://instagram.com/VOTRE_COMPTE" class="contact-link" target="_blank">
-        <span class="icon">📸</span> Instagram
-      </a>
-      <a href="mailto:VOTRE_EMAIL" class="contact-link">
-        <span class="icon">✉️</span> Email
-      </a>
     </div>
   </div>
 </section>
@@ -913,34 +288,5 @@
   <p>© 2025 <span>Académie de Français</span> · Votre voix, votre confiance · Tous droits réservés</p>
 </footer>
 
-<script>
-  // Reveal on scroll
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 80);
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  reveals.forEach(r => observer.observe(r));
-
-  // FAQ accordion
-  document.querySelectorAll('.faq-question').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.parentElement;
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
-    });
-  });
-
-  // Sticky CTA
-  const stickyCta = document.getElementById('stickyCta');
-  window.addEventListener('scroll', () => {
-    stickyCta.classList.toggle('visible', window.scrollY > 600);
-  });
-</script>
 </body>
 </html>
