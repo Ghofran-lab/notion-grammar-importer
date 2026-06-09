@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academy OS — Portail</title>
+  <style>
+    :root { color-scheme: light; --blue:#0f3472; --gold:#d89b24; --bg:#f7f9fc; --card:#fff; --text:#16213e; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background:var(--bg); color:var(--text); }
+    main { max-width: 1040px; margin: 0 auto; padding: 64px 20px; }
+    .hero { text-align:center; margin-bottom: 36px; }
+    .eyebrow { color:var(--gold); font-weight:800; letter-spacing:.16em; text-transform:uppercase; font-size:.78rem; }
+    h1 { color:var(--blue); font-size:clamp(2.4rem, 6vw, 4.8rem); line-height:1; margin:12px 0; }
+    p { line-height:1.7; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:18px; }
+    a.card { display:block; background:var(--card); border:1px solid rgba(15,52,114,.15); border-radius:18px; padding:22px; text-decoration:none; color:inherit; box-shadow:0 14px 35px rgba(15,52,114,.08); transition:.2s ease; }
+    a.card:hover { transform: translateY(-3px); border-color:var(--gold); }
+    .number { font-weight:900; color:var(--gold); }
+    h2 { margin:.35rem 0; color:var(--blue); font-size:1.1rem; }
+    .links { margin-top:30px; display:flex; flex-wrap:wrap; gap:12px; justify-content:center; }
+    .links a { color:var(--blue); font-weight:700; }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="eyebrow">Academy OS</div>
+      <h1>Portail de la base de connaissances</h1>
+      <p>Le dépôt est structuré en piliers pour piloter l'académie : stratégie, marketing & vente, pédagogie, opérations et données.</p>
+    </section>
+    <section class="grid" aria-label="Piliers du dépôt">
+      <a class="card" href="./01-strategie/"><span class="number">01</span><h2>Stratégie</h2><p>Vision, objectifs, décisions et roadmap.</p></a>
+      <a class="card" href="./02-marketing-et-vente/"><span class="number">02</span><h2>Marketing & vente</h2><p>Sites commerciaux, pages de vente et contenus d'acquisition.</p></a>
+      <a class="card" href="./03-pedagogie/"><span class="number">03</span><h2>Pédagogie</h2><p>Plateforme, cours, grammaire et méthodologie.</p></a>
+      <a class="card" href="./04-operations/"><span class="number">04</span><h2>Opérations</h2><p>Guides, procédures et documentation d'exploitation.</p></a>
+      <a class="card" href="./05-donnees/"><span class="number">05</span><h2>Données</h2><p>Seeds, schémas SQL, demandes et brouillons IA.</p></a>
+    </section>
+    <nav class="links" aria-label="Liens rapides">
+      <a href="./02-marketing-et-vente/sites/accueil.html">Accueil commercial</a>
+      <a href="./02-marketing-et-vente/sites/sales/">Page de vente</a>
+      <a href="./03-pedagogie/plateforme/src/public/">Interface pédagogique</a>
+      <a href="./README.md">README</a>
+    </nav>
+  </main>
+</body>
+</html>

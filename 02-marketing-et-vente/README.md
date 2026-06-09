@@ -4,9 +4,13 @@ Ce dossier regroupe tout ce qui attire, convainc et convertit : offres, pages de
 
 ## Structure actuelle
 
-- `sites/accueil.html` : ancienne page d'accueil commerciale.
-- `sites/sales/` : page de vente.
-- `sites/pages/` : pages statiques additionnelles.
+- `sites/accueil.html` : source organisée de la page d'accueil commerciale.
+- `sites/sales/` : source organisée de la page de vente.
+- `sites/pages/` : sources organisées des pages statiques additionnelles.
+
+## Compatibilité GitHub Pages
+
+Les pages déjà publiées ne changent pas d'URL : des miroirs restent disponibles à la racine du dépôt pour `/`, `/sales/` et `/pages/`.
 
 ## Sous-dossiers recommandés
 
