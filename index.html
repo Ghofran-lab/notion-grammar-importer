@@ -1,292 +1,47 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Académie de Français — Votre Voix, Votre Confiance</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --navy: #0d1b2a;
-    --navy-mid: #162336;
-    --gold: #c9a84c;
-    --gold-light: #e8c97a;
-    --gold-pale: #f5e6c0;
-    --cream: #faf6ee;
-    --cream-dark: #f0e8d5;
-    --white: #ffffff;
-    --text: #1a1a2e;
-    --text-light: #4a4a6a;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: 'Libre Baskerville', Georgia, serif;
-    background: var(--cream);
-    color: var(--text);
-    overflow-x: hidden;
-  }
-
-  .hero {
-    background: var(--navy);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 4rem 2rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 60% 50% at 20% 50%, rgba(201,168,76,0.08) 0%, transparent 60%),
-      radial-gradient(ellipse 50% 60% at 80% 30%, rgba(201,168,76,0.06) 0%, transparent 60%);
-  }
-
-  .hero-badge {
-    display: inline-block;
-    border: 1px solid rgba(201,168,76,0.5);
-    color: var(--gold-light);
-    font-family: 'Libre Baskerville', serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    padding: 0.5rem 1.5rem;
-    margin-bottom: 2rem;
-    animation: fadeDown 0.8s ease both;
-  }
-
-  .hero-logo-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.2rem, 3vw, 1.6rem);
-    font-weight: 400;
-    color: var(--gold);
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-    animation: fadeDown 0.9s ease both;
-  }
-
-  .hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3rem, 8vw, 6.5rem);
-    font-weight: 700;
-    color: var(--white);
-    line-height: 1.05;
-    margin-bottom: 1rem;
-    animation: fadeDown 1s ease both;
-  }
-
-  .hero h1 span {
-    color: var(--gold);
-    font-style: italic;
-  }
-
-  .hero-desc {
-    font-size: 1rem;
-    color: rgba(255,255,255,0.75);
-    max-width: 560px;
-    line-height: 1.9;
-    margin-bottom: 3rem;
-    animation: fadeDown 1.2s ease both;
-  }
-
-  .hero-ctas {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    animation: fadeDown 1.3s ease both;
-  }
-
-  .btn-primary, .btn-secondary {
-    padding: 1rem 2.5rem;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-block;
-  }
-
-  .btn-primary {
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--navy);
-  }
-
-  .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(201,168,76,0.4);
-  }
-
-  .btn-secondary {
-    border: 1px solid rgba(201,168,76,0.6);
-    color: var(--gold-light);
-    background: transparent;
-  }
-
-  .btn-secondary:hover {
-    background: rgba(201,168,76,0.1);
-    transform: translateY(-2px);
-  }
-
-  section { padding: 5rem 2rem; }
-  .container { max-width: 1080px; margin: 0 auto; }
-
-  .section-label {
-    font-size: 0.7rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    text-align: center;
-    margin-bottom: 0.8rem;
-  }
-
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 700;
-    text-align: center;
-    color: var(--navy);
-    line-height: 1.15;
-    margin-bottom: 1rem;
-  }
-
-  .section-title em { color: var(--gold); font-style: italic; }
-
-  .section-intro {
-    text-align: center;
-    color: var(--text-light);
-    font-size: 1rem;
-    line-height: 1.9;
-    max-width: 600px;
-    margin: 0 auto 3rem;
-  }
-
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-  }
-
-  .feature {
-    text-align: center;
-    padding: 2rem;
-    border: 1px solid rgba(201,168,76,0.2);
-    background: var(--white);
-    transition: all 0.3s ease;
-    border-radius: 8px;
-  }
-
-  .feature:hover {
-    border-color: var(--gold);
-    box-shadow: 0 4px 20px rgba(201,168,76,0.15);
-  }
-
-  .feature .icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    display: block;
-  }
-
-  .feature h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 0.5rem;
-  }
-
-  .feature p { font-size: 0.95rem; color: var(--text-light); line-height: 1.7; }
-
-  .about { background: var(--cream-dark); }
-
-  @keyframes fadeDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  footer {
-    background: #070f18;
-    text-align: center;
-    padding: 2rem;
-    color: rgba(255,255,255,0.3);
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-  }
-
-  footer span { color: var(--gold); opacity: 0.6; }
-
-  @media (max-width: 600px) {
-    .hero { padding: 3rem 1.5rem; }
-    .hero-ctas { flex-direction: column; align-items: center; }
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academy OS — Portail</title>
+  <style>
+    :root { color-scheme: light; --blue:#0f3472; --gold:#d89b24; --bg:#f7f9fc; --card:#fff; --text:#16213e; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background:var(--bg); color:var(--text); }
+    main { max-width: 1040px; margin: 0 auto; padding: 64px 20px; }
+    .hero { text-align:center; margin-bottom: 36px; }
+    .eyebrow { color:var(--gold); font-weight:800; letter-spacing:.16em; text-transform:uppercase; font-size:.78rem; }
+    h1 { color:var(--blue); font-size:clamp(2.4rem, 6vw, 4.8rem); line-height:1; margin:12px 0; }
+    p { line-height:1.7; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:18px; }
+    a.card { display:block; background:var(--card); border:1px solid rgba(15,52,114,.15); border-radius:18px; padding:22px; text-decoration:none; color:inherit; box-shadow:0 14px 35px rgba(15,52,114,.08); transition:.2s ease; }
+    a.card:hover { transform: translateY(-3px); border-color:var(--gold); }
+    .number { font-weight:900; color:var(--gold); }
+    h2 { margin:.35rem 0; color:var(--blue); font-size:1.1rem; }
+    .links { margin-top:30px; display:flex; flex-wrap:wrap; gap:12px; justify-content:center; }
+    .links a { color:var(--blue); font-weight:700; }
+  </style>
 </head>
 <body>
-
-<!-- ══════════ HERO ══════════ -->
-<section class="hero">
-  <div style="position:relative;z-index:1;">
-    <span class="hero-badge">✦ Cours en ligne · Petits groupes · Grands progrès ✦</span>
-    <p class="hero-logo-text">Académie de Français</p>
-    <h1>Parlez français<br><span>avec confiance.</span></h1>
-    <p class="hero-desc">
-      Découvrez notre plateforme pédagogique et nos formules de cours en ligne
-    </p>
-    <div class="hero-ctas">
-      <a href="./app/" class="btn-primary">🎓 Accéder à la plateforme</a>
-      <a href="./sales/" class="btn-secondary">📄 Voir les formules</a>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ À PROPOS ══════════ -->
-<section class="about">
-  <div class="container">
-    <p class="section-label">Ce que vous trouverez</p>
-    <h2 class="section-title">Une plateforme <em>complète</em></h2>
-    <p class="section-intro">
-      Explorez nos deux espaces : la plateforme pédagogique interactive et les informations sur nos formules de cours.
-    </p>
-    <div class="features-grid">
-      <div class="feature">
-        <span class="icon">🎓</span>
-        <h3>Plateforme pédagogique</h3>
-        <p>Accédez à nos modules de grammaire, prononciation et exercices interactifs. Apprendre à votre rythme.</p>
-        <p style="margin-top: 1rem;"><a href="./app/" style="color: var(--gold); text-decoration: none; font-weight: bold;">Accéder →</a></p>
-      </div>
-      <div class="feature">
-        <span class="icon">💰</span>
-        <h3>Nos formules</h3>
-        <p>Découvrez nos différentes offres d'apprentissage : Essentiel, Intensif, VIP et formations spécialisées.</p>
-        <p style="margin-top: 1rem;"><a href="./sales/" style="color: var(--gold); text-decoration: none; font-weight: bold;">Voir les tarifs →</a></p>
-      </div>
-      <div class="feature">
-        <span class="icon">📱</span>
-        <h3>Accessible partout</h3>
-        <p>Accédez à votre apprentissage depuis n'importe quel appareil. Responsive et fluide sur tous les écrans.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ FOOTER ══════════ -->
-<footer>
-  <p>© 2025 <span>Académie de Français</span> · Votre voix, votre confiance · Tous droits réservés</p>
-</footer>
-
+  <main>
+    <section class="hero">
+      <div class="eyebrow">Academy OS</div>
+      <h1>Portail de la base de connaissances</h1>
+      <p>Le dépôt est structuré en piliers pour piloter l'académie : stratégie, marketing & vente, pédagogie, opérations et données.</p>
+    </section>
+    <section class="grid" aria-label="Piliers du dépôt">
+      <a class="card" href="./01-strategie/"><span class="number">01</span><h2>Stratégie</h2><p>Vision, objectifs, décisions et roadmap.</p></a>
+      <a class="card" href="./02-marketing-et-vente/"><span class="number">02</span><h2>Marketing & vente</h2><p>Sites commerciaux, pages de vente et contenus d'acquisition.</p></a>
+      <a class="card" href="./03-pedagogie/"><span class="number">03</span><h2>Pédagogie</h2><p>Plateforme, cours, grammaire et méthodologie.</p></a>
+      <a class="card" href="./04-operations/"><span class="number">04</span><h2>Opérations</h2><p>Guides, procédures et documentation d'exploitation.</p></a>
+      <a class="card" href="./05-donnees/"><span class="number">05</span><h2>Données</h2><p>Seeds, schémas SQL, demandes et brouillons IA.</p></a>
+    </section>
+    <nav class="links" aria-label="Liens rapides">
+      <a href="./02-marketing-et-vente/sites/accueil.html">Accueil commercial</a>
+      <a href="./02-marketing-et-vente/sites/sales/">Page de vente</a>
+      <a href="./03-pedagogie/plateforme/src/public/">Interface pédagogique</a>
+      <a href="./README.md">README</a>
+    </nav>
+  </main>
 </body>
 </html>

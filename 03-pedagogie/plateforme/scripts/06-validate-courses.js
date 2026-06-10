@@ -2,4 +2,4 @@ import { loadCourseSeedFile, validateCourseSeedData } from '../src/services/cour
 
 const data = await loadCourseSeedFile();
 validateCourseSeedData(data);
-console.log('✅ seed-courses.json est valide.');
+console.log('✅ 05-donnees/seeds/seed-courses.json est valide.');

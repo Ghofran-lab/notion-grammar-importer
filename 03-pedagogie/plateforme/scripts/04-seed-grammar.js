@@ -26,12 +26,12 @@ const pool = new Pool({
 });
 
 /**
- * Charge le fichier seed-grammar.json
+ * Charge le fichier 05-donnees/seeds/seed-grammar.json
  */
 function loadGrammarData() {
-  const seedPath = path.join(__dirname, '../seed-grammar.json');
+  const seedPath = path.join(__dirname, '../../../05-donnees/seeds/seed-grammar.json');
   if (!fs.existsSync(seedPath)) {
-    throw new Error(`Fichier seed-grammar.json non trouvé: ${seedPath}`);
+    throw new Error(`Fichier 05-donnees/seeds/seed-grammar.json non trouvé: ${seedPath}`);
   }
   return JSON.parse(fs.readFileSync(seedPath, 'utf-8'));
 }
