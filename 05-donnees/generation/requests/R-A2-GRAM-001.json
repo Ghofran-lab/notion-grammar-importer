@@ -1,0 +1,71 @@
+{
+  "module": {
+    "internal_id": "MOD-GRAM-A2",
+    "title": "Grammaire A2",
+    "description": "Les structures grammaticales pour des tâches simples : comparer, contraster et préciser à qui appartiennent les choses.",
+    "order_index": 3
+  },
+  "rule": {
+    "internal_id": "R-A2-GRAM-001",
+    "level": "A2",
+    "title": "Les pronoms possessifs",
+    "category": "Pronoms",
+    "order_index": 1
+  },
+  "exercise_internal_id": "E-A2-GRAM-001",
+  "pedagogical_brief": {
+    "communicative_need": "À l'A2, l'apprenant doit pouvoir éviter de répéter le nom d'un objet déjà mentionné quand il compare ce qui est à lui avec ce qui est à quelqu'un d'autre : 'Ce n'est pas mon sac, c'est le tien', 'Ma voiture est rouge, la sienne est bleue'. Le besoin de communication est le CONTRASTE de possession dans des échanges quotidiens avec un petit enjeu (retrouver ses affaires, comparer, distinguer). Sans le pronom possessif, l'apprenant doit répéter le nom ('ce n'est pas mon sac, c'est ton sac'), ce qui est lourd et peu naturel.",
+    "cecrl_calibration": {
+      "level_confirmed": "A2",
+      "justification": "Confirme l'hypothèse A2. Le pronom possessif est une notion qui RÉUTILISE et MET EN CONTRASTE une notion déjà connue (l'adjectif possessif A1) sans introduire de système entièrement neuf : c'est exactement la densité A2 ('une notion nouvelle, éventuellement mise en contraste avec une notion déjà connue'). L'objectif 'comparer deux objets, deux situations' est listé en A2 dans niveaux_cecrl.md. Tolérance encore haute, mais on commence à signaler (sans sanctionner) les confusions qui gênent la compréhension.",
+      "scope_in": "le mien/la mienne/les miens/les miennes, le tien/la tienne/..., le sien/la sienne/... (singulier des possesseurs : à moi, à toi, à lui/elle). L'article défini fusionné est central (le/la/les font partie du pronom).",
+      "scope_out": "le nôtre/le vôtre/le leur (formes des possesseurs pluriels) à reporter à une leçon ultérieure ou à un warning court ; les contractions au/du + possessif (au mien, du tien) relèvent d'un usage plus avancé et ne doivent pas être le coeur de la leçon."
+    },
+    "prerequisites": [
+      "R-A1-GRAM-001 'Les adjectifs possessifs' (mon/ma/mes...). Cette leçon en est la suite directe : l'adjectif accompagne un nom, le pronom le remplace.",
+      "Notion de genre/nombre du nom (réactivée, car le pronom s'accorde avec le nom remplacé).",
+      "Capacité A2 à comparer deux éléments dans une phrase simple."
+    ],
+    "fil_conducteur_propose": {
+      "image": "Le remplaçant / la doublure",
+      "description": "L'adjectif possessif (mon sac) travaille TOUJOURS à côté du nom. Le pronom possessif (le mien) est son remplaçant : il entre en scène quand le nom n'a plus besoin d'être répété parce qu'on sait déjà de quel objet on parle. Le remplaçant garde la même 'identité' que le nom qu'il remplace : même genre, même nombre — d'où le mien / la mienne / les miens. À filer : 'qui remplace qui ?' dans l'observation, les exemples et l'exercice. À valider par professeur-explicateur.",
+      "alternative": "Image du contraste 'le tien et le mien' : deux sacs identiques posés sur une table, on doit dire lequel est à qui sans répéter 'sac'. Très visuel, colle au besoin de communication."
+    },
+    "progression_sections": [
+      "1. Mise en situation : courte scène de contraste quotidien (deux personnes avec des objets semblables : 'Ce manteau, c'est le tien ou le mien ?'). Rappel passerelle : on a déjà vu 'mon/ton/son' (A1), ici on va plus loin.",
+      "2. Compréhension : 2-3 questions simples sur la scène (à qui est l'objet ? qui se trompe ?).",
+      "3. Vocabulaire utile : objets du quotidien comparables (sac, manteau, téléphone, clés, place) avec leur genre.",
+      "4. Observation guidée : faire remarquer que 'mon sac' devient 'le mien', 'ma place' devient 'la mienne' — question ouverte 'Qu'est-ce qui change quand on enlève le nom ?'.",
+      "5. Explication : révéler la règle via le fil conducteur du remplaçant : le pronom remplace le nom, accord en genre/nombre avec le nom remplacé, l'article le/la/les fait partie du pronom. Mettre en CONTRASTE avec l'adjectif (passerelle A1), c'est le coeur A2.",
+      "6. Exemples + tableau comparatif (comparison_table pertinent ici, niveau A2) : colonne adjectif possessif / colonne pronom possessif (mon sac -> le mien ; ma clé -> la mienne ; mes amis -> les miens).",
+      "7. Pratique guidée : FILL_IN — remplacer le groupe 'adjectif + nom' par le pronom correspondant.",
+      "8. Pratique semi-autonome : transformation / mini-dialogue de contraste ('Ce n'est pas ___, c'est ___').",
+      "9. Réutilisation communicative (obligatoire) : jeu de rôle 'objets mélangés' — deux apprenants comparent leurs affaires et disent à qui appartient quoi sans répéter le nom (le mien / le tien / le sien).",
+      "10. Synthèse : règle mémorisable ('le pronom possessif = article + possessif, accordé avec le nom remplacé') + mini-tableau récap."
+    ],
+    "difficultes_anticipees_par_audience": [
+      {
+        "audience": "Anglophones",
+        "difficulte": "Double transfert. (1) Comme en A1, 'his/hers' s'accorde avec le possesseur en anglais : l'anglophone dira 'la sienne' pour une femme et 'le sien' pour un homme, alors qu'en français l'accord se fait avec l'OBJET ('la voiture' -> 'la sienne' que le propriétaire soit homme ou femme). (2) L'anglais n'a pas d'article dans le pronom possessif ('it's mine', pas 'it's the mine') : tentation d'omettre le/la/les et de dire 'c'est mien' au lieu de 'c'est le mien'. Décrire seulement ces deux différences."
+      },
+      {
+        "audience": "Italophones",
+        "difficulte": "Transfert majoritairement positif : l'italien construit le pronom possessif avec l'article + accord avec l'objet (il mio / la mia / i miei), structure quasi identique au français. Risque résiduel : interférence lexicale/orthographique (mio vs mien) et l'accent fermé/ouvert ; et, comme en A1, la tentation de remettre l'article devant l'adjectif possessif au passage. Erreur peu probable sur la logique d'accord — ne pas sur-traiter cette audience."
+      },
+      {
+        "audience": "Tous les apprenants",
+        "difficulte": "Confusion adjectif/pronom : utiliser 'le mien' devant un nom ('le mien sac' au lieu de 'mon sac' ou 'le mien'). Bien marquer le contraste : l'adjectif accompagne le nom, le pronom le remplace — on ne peut pas avoir les deux. Risque aussi d'oubli de l'accord (le mien pour une clé au lieu de la mienne)."
+      }
+    ],
+    "points_de_vigilance_agents": {
+      "professeur-explicateur": "Ouvrir sur la scène de contraste, pas sur une définition. Activer explicitement la passerelle A1 (rappel bref de mon/ma/mes sans le réenseigner, cf. niveaux_cecrl.md 'Passerelles'). Filer l'image du remplaçant. Tutoiement. 'Pourquoi' à rendre visible : pourquoi le français fusionne l'article dans le pronom (le mien = 'le [sac] à moi', l'article rappelle l'objet absent). Ton bienveillant, l'erreur d'accord est normale.",
+      "grammaire": "Règle formulée avec prudence. Centrer sur le contraste adjectif (devant le nom) vs pronom (remplace le nom) : c'est la valeur ajoutée A2. Le comparison_table est ici approprié et recommandé (le niveau A2/B1 est celui où la comparaison de formes proches devient pertinente). NE PAS introduire le nôtre/le vôtre/le leur dans le coeur (warning + renvoi). common_mistakes : une entrée Anglophones (accord avec possesseur + omission de l'article), une entrée Italophones courte (interférence lexicale), sans dupliquer la règle (cf. règle 8 du prompt de génération).",
+      "exercices": "Au moins un FILL_IN/transformation (pratique guidée) où l'apprenant remplace 'adjectif + nom' par le pronom, avec items mélangeant possesseur homme/femme pour neutraliser le réflexe anglophone (ex. 'Le sac de Marie est là. -> C'est ___' attendu 'le sien' car sac masculin). Inclure des items de contraste ('Ce n'est pas ___, c'est ___'). Ajouter la réutilisation communicative (jeu des objets mélangés). Signaler — sans sanctionner — les confusions qui gênent la compréhension (tolérance A2)."
+    },
+    "auto_evaluation": {
+      "critere_2_structure": "Conforme : progression complète mise en situation -> ... -> réutilisation -> synthèse, avec un comparison_table justifié au niveau A2. Métadonnées présentes. Exercice relié à l'objectif (remplacer/contraster).",
+      "critere_4_calibration_cecrl": "Conforme A2 : une notion nouvelle (le pronom) mise en CONTRASTE avec une notion connue (l'adjectif A1), sans introduire un troisième système. Vocabulaire concret de fréquence moyenne-haute. Notions voisines (le nôtre/le vôtre/le leur, contractions au mien/du tien) reportées par warning. Mise en situation à petit enjeu (retrouver/distinguer ses affaires), typiquement A2 et non abstraite.",
+      "piste_amelioration": "Risque que la leçon redevienne une simple répétition de l'A1 si le contraste adjectif/pronom n'est pas mis au centre. Vigilance : la valeur A2 réside dans la MISE EN CONTRASTE, pas dans la liste des formes. Piste : construire l'exercice de réutilisation autour d'objets réellement ambigus (deux sacs identiques) pour que le pronom soit indispensable, pas décoratif — sinon l'apprenant retombe sur l'adjectif A1."
+    }
+  }
+}

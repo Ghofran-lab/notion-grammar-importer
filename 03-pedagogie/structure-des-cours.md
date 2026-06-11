@@ -245,33 +245,7 @@ Ne pas produire :
 
 # Style pédagogique
 
-Les explications doivent guider la réflexion de l'apprenant.
-
-Avant de donner une règle, favoriser l'observation et la découverte.
-
-Les explications doivent répondre au "pourquoi" et pas uniquement au "comment".
-
-Les erreurs fréquentes doivent être anticipées et expliquées.
-
-Les notions complexes doivent être décomposées progressivement.
-
-Lorsque cela est pertinent, expliquer ce qui se passe concrètement :
-
-- dans la bouche ;
-- dans l'oreille ;
-- dans le cerveau de l'apprenant.
-
-L'apprenant doit avoir le sentiment d'être accompagné par un professeur et non de lire un manuel scolaire.
-
-Les analogies, comparaisons et images mentales sont encouragées lorsqu'elles facilitent la compréhension.
-
-# Ce que nous évitons
-
-Nous évitons :
-
-- les définitions abstraites sans contexte ;
-- les longues listes de règles ;
-- les tableaux utilisés comme unique support d'explication ;
-- les contenus ressemblant à une encyclopédie ;
-- les exercices mécaniques sans objectif communicatif ;
-- les cours qui donnent une réponse sans guider la réflexion.
+Le ton, la voix, la manière de formuler les explications, les analogies et les erreurs
+fréquentes sont définis dans `03-pedagogie/style_pedagogique.md`. Ce document
+s'applique à toutes les sections décrites ci-dessus et doit être consulté avant toute
+rédaction.

@@ -6,9 +6,10 @@ Ce dépôt est organisé comme un **système d'exploitation d'entreprise** : il 
 
 | Pilier | Rôle | Contenu clé |
 | --- | --- | --- |
-| [`01-strategie/`](./01-strategie/) | Vision, décisions et direction de l'entreprise | vision, objectifs, roadmap, journal entrepreneur |
+| [`00-systeme/`](./00-systeme/) | Gouvernance du système agentique | agents, carte des connaissances, workflow agentique |
+| [`01-strategie/`](./01-strategie/) | Vision, décisions et direction de l'entreprise | vision, mission, stratégie multilingue, objectifs, roadmap, journal entrepreneur |
 | [`02-marketing-et-vente/`](./02-marketing-et-vente/) | Acquisition, pages de vente et contenus commerciaux | sites, offres, scripts d'appel, contenus, emails |
-| [`03-pedagogie/`](./03-pedagogie/) | Plateforme pédagogique et contenus d'apprentissage | application Node.js, cours, grammaire, prompts pédagogiques |
+| [`03-pedagogie/`](./03-pedagogie/) | Plateforme pédagogique et contenus d'apprentissage | charte et style pédagogiques, philosophies grammaire/prononciation, types d'exercices, niveaux CECRL, golden examples, application Node.js |
 | [`04-operations/`](./04-operations/) | Processus, setup technique et documentation d'exploitation | guides d'installation, procédures, checklists |
 | [`05-donnees/`](./05-donnees/) | Sources structurées, schémas et exports | schémas SQL, seeds JSON, demandes de génération IA |
 | [`99-archives/`](./99-archives/) | Historique et éléments obsolètes | anciens contenus, projets fermés, documents à conserver |

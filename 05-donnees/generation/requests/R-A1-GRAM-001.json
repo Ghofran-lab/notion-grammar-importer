@@ -1,0 +1,70 @@
+{
+  "module": {
+    "internal_id": "MOD-GRAM-A1",
+    "title": "Grammaire A1",
+    "description": "Les premières structures grammaticales pour se présenter et décrire son environnement immédiat.",
+    "order_index": 2
+  },
+  "rule": {
+    "internal_id": "R-A1-GRAM-001",
+    "level": "A1",
+    "title": "Les adjectifs possessifs",
+    "category": "Déterminants",
+    "order_index": 1
+  },
+  "exercise_internal_id": "E-A1-GRAM-001",
+  "pedagogical_brief": {
+    "communicative_need": "À l'A1, l'apprenant doit pouvoir dire à qui appartiennent les personnes et les objets de son environnement immédiat : présenter sa famille (ma mère, mon frère, mes parents), parler de ses affaires (mon sac, ma clé, mes livres), parler de la famille ou des affaires de son interlocuteur (ta sœur, ton adresse, tes amis). Sans les possessifs, l'apprenant ne peut pas accomplir une tâche A1 typique : décrire sa famille ou montrer ses objets du quotidien. C'est le besoin de communication qui justifie la leçon (philosophie_grammaire.md, 'Toujours partir d'un besoin de communication').",
+    "cecrl_calibration": {
+      "level_confirmed": "A1",
+      "justification": "Confirme l'hypothèse A1. 'Décrire son environnement immédiat (famille, logement, objets du quotidien)' est un objectif communicatif explicitement listé en A1 dans niveaux_cecrl.md. La leçon introduit UNE seule notion nouvelle (l'accord du possessif avec l'objet possédé), conformément à la densité A1 ('une seule notion nouvelle par leçon'). Vocabulaire concret et très fréquent (famille, objets). Tolérance haute sur la précision : l'erreur de genre ne doit jamais bloquer la production.",
+      "scope_in": "mon/ma/mes, ton/ta/tes, son/sa/ses (les trois personnes du singulier — les plus utiles pour se présenter et parler à quelqu'un).",
+      "scope_out": "notre/votre/leur(s) à reporter à une leçon ultérieure A1/A2 (signaler par un warning, ne pas développer) ; le pronom possessif 'le mien/le tien' est traité séparément en A2 (R-A2-GRAM-001) ; l'usage de mon/ton/son devant un nom féminin commençant par une voyelle (mon amie, ton école) à mentionner dans un warning court SANS en faire le coeur de la leçon."
+    },
+    "prerequisites": [
+      "Vocabulaire A1 de base de la famille (mère, père, frère, soeur, parents) et des objets du quotidien (sac, clé, livre, maison, voiture).",
+      "Notion de genre (masculin / féminin) et de nombre (singulier / pluriel) du nom — au moins en reconnaissance ; la leçon la réactive sans la (ré)enseigner en détail."
+    ],
+    "fil_conducteur_propose": {
+      "image": "L'étiquette / le badge 'à qui ?'",
+      "description": "Un possessif est comme une petite étiquette qu'on colle sur une personne ou un objet pour dire 'à qui c'est'. Le point clé, contre-intuitif pour l'apprenant, c'est que la couleur de l'étiquette (mon / ma / mes) ne dépend PAS de qui possède, mais de l'objet sur lequel on la colle : un objet masculin reçoit l'étiquette 'mon', un objet féminin l'étiquette 'ma', plusieurs objets l'étiquette 'mes'. L'étiquette s'accorde avec l'objet, pas avec le propriétaire. À filer jusqu'au bout (titres de sections, exemples, exercice). À valider par professeur-explicateur : ne pas imposer si une image plus simple émerge.",
+      "alternative": "Si l'image de l'étiquette est trop abstraite, partir d'une scène concrète : une personne qui range ses affaires et celles d'un ami et qui doit dire 'mon / ma / mes' à voix haute."
+    },
+    "progression_sections": [
+      "1. Mise en situation : courte scène du quotidien (ex. quelqu'un présente sa famille sur une photo, ou cherche ses affaires le matin : 'mon téléphone, ma clé, mes papiers'). L'apprenant ressent le besoin de dire 'à qui c'est'.",
+      "2. Compréhension : 2-3 questions très simples sur la scène (qui parle ? de quoi parle-t-on ?) — vrai/faux ou identification.",
+      "3. Vocabulaire utile : famille proche + 4-5 objets du quotidien, en marquant le genre (un sac / une clé) car c'est ce qui déterminera le choix du possessif.",
+      "4. Observation guidée : faire remarquer que la même idée ('à moi') s'écrit mon, ma OU mes selon le mot qui suit — question ouverte 'Pourquoi mon frère mais ma soeur ?'.",
+      "5. Explication : révéler la règle via le fil conducteur (l'étiquette s'accorde avec l'objet possédé, pas avec le possesseur). Formuler avec prudence ('en général').",
+      "6. Exemples guidés : tableau d'exemples mon/ma/mes, ton/ta/tes, son/sa/ses, ancrés dans la vie réelle (ma mère, ton adresse, ses amis).",
+      "7. Pratique guidée : FILL_IN — choisir mon/ma/mes (puis ton/ta/tes, son/sa/ses) selon le nom donné.",
+      "8. Pratique semi-autonome : transformation courte (on donne 'le sac de Paul' -> 'son sac') ou phrases à compléter avec moins d'aide.",
+      "9. Réutilisation communicative (obligatoire) : l'apprenant présente sa propre famille ou montre 3-4 de ses objets en utilisant les possessifs (ROLE_PLAY / production guidée courte).",
+      "10. Synthèse : règle mémorisable en une phrase ('le possessif s'accorde avec l'objet, pas avec le propriétaire') + rappel mon/ma/mes."
+    ],
+    "difficultes_anticipees_par_audience": [
+      {
+        "audience": "Anglophones",
+        "difficulte": "Transfert depuis 'his/her' : en anglais le possessif s'accorde avec le SEXE du possesseur (his car / her car). L'apprenant anglophone produira donc 'sa' pour une femme et 'son' pour un homme, quel que soit l'objet. Erreur typique : 'Marie et son voiture' (parce que Marie est une femme -> tentation de raisonner sur le possesseur). En français, 'la voiture' est féminin donc 'SA voiture', que le propriétaire soit Marie ou Paul. C'est LE point dur de la leçon : ne décrire que cette différence dans common_mistakes, sans répéter toute la règle."
+      },
+      {
+        "audience": "Italophones",
+        "difficulte": "Transfert plus léger : l'italien accorde aussi avec l'objet (il mio / la mia / i miei), ce qui aide. Deux pièges spécifiques : (1) l'italien met souvent l'article devant le possessif (il mio libro) -> tentation de dire 'le mon livre' ; en français on ne met pas d'article avec le possessif. (2) Pour la famille proche au singulier, l'italien omet l'article (mio padre) mais c'est sans incidence en français ; ne pas alourdir."
+      },
+      {
+        "audience": "Tous les apprenants",
+        "difficulte": "Sur-généralisation du masculin : tendance à mettre 'mon' partout par défaut. Et cas du nom féminin à initiale vocalique (mon amie, mon école) qui contredit apparemment la règle ma+féminin : à signaler en warning court, présenté comme une astuce de prononciation (on évite 'ma amie' difficile à dire), PAS comme une exception qui casse la règle."
+      }
+    ],
+    "points_de_vigilance_agents": {
+      "professeur-explicateur": "Ancrer en ouverture sur une scène concrète, jamais sur une définition. Filer l'image de l'étiquette jusque dans les titres de sections. Tutoiement. Le 'pourquoi' à rendre visible : pourquoi le français choisit d'accorder avec l'objet (économie : on regarde le mot qu'on a sous les yeux). Valoriser l'essai même imparfait (tolérance A1).",
+      "grammaire": "Règle centrale formulée avec prudence ('en général, le possessif s'accorde avec le nom qui suit'). NE PAS introduire notre/votre/leur dans le coeur de la leçon (warning + renvoi à une prochaine leçon, cf. niveaux_cecrl.md 'Passerelles'). Le cas mon amie/mon école relève d'un warning court ; signaler son impact oral (élision) mais laisser le détail articulatoire à prononciation. common_mistakes : une entrée Anglophones (accord avec le possesseur), une entrée Italophones (article + possessif), sans dupliquer la règle.",
+      "exercices": "Au moins un FILL_IN (pratique guidée) ciblant le choix mon/ma/mes selon le genre/nombre du nom, avec items où le possesseur est tantôt un homme tantôt une femme pour neutraliser le réflexe anglophone (ex. 'Paul cherche ___ clé', 'Marie cherche ___ sac'). Ajouter une activité de réutilisation communicative (présenter sa famille / ses objets). Tolérance de correction A1 : l'objectif est d'être compris."
+    },
+    "auto_evaluation": {
+      "critere_2_structure": "Conforme : progression mise en situation -> compréhension -> vocabulaire -> observation -> explication -> exemples -> pratique guidée -> semi-autonome -> réutilisation -> synthèse. Métadonnées (id, niveau, objectif, prérequis) présentes. Au moins un exercice relié à l'objectif.",
+      "critere_4_calibration_cecrl": "Conforme A1 : une seule notion nouvelle, vocabulaire concret très fréquent, tolérance haute. Les notions voisines (notre/votre/leur, pronom possessif, mon+féminin vocalique) sont explicitement reportées ou cantonnées à un warning, conformément à 'Passerelles entre niveaux'.",
+      "piste_amelioration": "Le risque principal est de surcharger la leçon en voulant 'tout dire' sur les possessifs (piège de calibration A1 explicitement cité dans niveaux_cecrl.md). Vigilance : tenir le périmètre singulier (mon/ton/son) et résister à la tentation d'ajouter notre/votre/leur, qui mériteraient une mini-leçon A1 distincte (à proposer à l'Orchestrateur comme R-A1-GRAM-002 si le besoin se confirme)."
+    }
+  }
+}

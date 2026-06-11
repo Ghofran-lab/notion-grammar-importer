@@ -161,6 +161,26 @@ Version exploitable par la plateforme.
 
 ---
 
+Étape 8 : Expérience et gamification
+
+Responsable
+
+Agent UX-UI et Agent Pédagogie Ludique (E-learning & Gamification)
+
+Actions
+
+- déterminer comment présenter le contenu validé (mise en page, retours visuels) ;
+- identifier les mécaniques de motivation pertinentes pour ce contenu
+  (`03-pedagogie/types_exercices.md`, "Lien avec la gamification") ;
+- signaler tout besoin non couvert par l'interface ou les mécaniques existantes.
+
+Sortie
+
+Spécification d'expérience (présentation et, le cas échéant, mécaniques de
+gamification associées).
+
+---
+
 Workflow : Amélioration continue
 
 Déclencheur
@@ -207,6 +227,37 @@ Proposition :
 
 ---
 
+Workflow : Évolution technique de la plateforme
+
+Déclencheur
+
+- signalement d'un écart technique par un agent de production ou de contrôle (type de
+  section, type d'exercice ou champ de données non supporté par
+  `courseGenerationSchema.js` ou par l'application) ;
+- proposition d'un nouveau type d'exercice ou d'une nouvelle ressource (ex. audio)
+  dans `03-pedagogie/types_exercices.md` ou dans un Golden Example
+  (`03-pedagogie/examples/`).
+
+Responsable
+
+Agent Développeur Senior
+
+Actions
+
+- évaluer la faisabilité technique et l'impact sur le schéma et l'application
+  existante ;
+- soit implémenter le changement, soit proposer une alternative argumentée à l'agent
+  demandeur ;
+- mettre à jour, en lien avec l'Agent Gestionnaire de Connaissances, la documentation
+  technique concernée (`03-pedagogie/types_exercices.md`,
+  `03-pedagogie/standards_qualite.md`).
+
+Résultat
+
+Évolution technique livrée, ou alternative argumentée transmise à l'agent demandeur.
+
+---
+
 Workflow : Intégration d'un Golden Example
 
 Déclencheur
@@ -222,7 +273,7 @@ Actions
 - analyser le contenu ;
 - identifier les forces ;
 - documenter les bonnes pratiques ;
-- intégrer dans examples/.
+- intégrer dans `03-pedagogie/examples/`.
 
 Résultat
 
@@ -239,7 +290,9 @@ Les décisions suivantes nécessitent une validation humaine :
 - modification du style pédagogique ;
 - création ou suppression d'agents ;
 - intégration d'un Golden Example ;
-- modification des standards qualité.
+- modification des standards qualité ;
+- modification du schéma de génération (`courseGenerationSchema.js`) ou de toute
+  structure de données partagée.
 
 ---
 

@@ -17,12 +17,14 @@ Cette architecture transforme le dépôt en base de connaissances complète pour
 
 ```text
 .
+├── 00-systeme/
 ├── 01-strategie/
 ├── 02-marketing-et-vente/
 │   └── sites/
 ├── 03-pedagogie/
 │   ├── contenus/
 │   ├── docs/
+│   ├── examples/
 │   └── plateforme/
 │       ├── app/
 │       ├── examples/
@@ -48,12 +50,17 @@ Cette architecture transforme le dépôt en base de connaissances complète pour
 
 | Si tu ajoutes... | Range-le dans... |
 | --- | --- |
+| un agent, une règle de gouvernance du système agentique, un workflow | `00-systeme/` |
 | une vision, un objectif, une décision | `01-strategie/` |
 | une page de vente, un email, un script d'appel | `02-marketing-et-vente/` |
-| un cours, une méthode, un exercice ou du code pédagogique | `03-pedagogie/` |
+| un cours, une méthode, un exercice, un golden example ou du code pédagogique | `03-pedagogie/` |
 | une procédure, un guide de setup, une checklist | `04-operations/` |
 | un schéma, un seed, une demande IA, un export | `05-donnees/` |
 | un ancien document à conserver | `99-archives/` |
+
+> `03-pedagogie/examples/` (golden examples pédagogiques, lus par tous les agents de
+> production de contenu) est distinct de `03-pedagogie/plateforme/examples/` (exemples
+> techniques d'utilisation du code, lus par les développeurs).
 
 ## 4. Flux opérationnels clés
 
@@ -91,8 +98,12 @@ accueil, pages de vente, pages statiques et futurs tunnels
 
 ## 5. Prochaines extensions recommandées
 
-- Ajouter `01-strategie/vision.md` avec la direction à 3 ans.
 - Ajouter `02-marketing-et-vente/offres/` pour documenter les offres.
 - Ajouter `03-pedagogie/contenus/parcours/` pour structurer les parcours élèves.
+- Ajouter `03-pedagogie/langues/{fr,it,en}/` lorsque des contenus phonétiques et grammaticaux
+  spécifiques à chaque langue cible devront être déclinés (voir
+  `01-strategie/strategie_multilingue.md`).
 - Ajouter `04-operations/checklists/` pour les routines de publication et d'import.
 - Ajouter `05-donnees/indicateurs/` quand les premiers tableaux de bord seront versionnés.
+- Ajouter `01-strategie/personas_apprenants.md` pour détailler les profils d'apprenants au-delà
+  de `mission.md` (objectifs, blocages, contextes d'usage réels de la langue).
