@@ -32,6 +32,37 @@ const warningSection = object({
   content: { type: 'array', minItems: 1, items: nonEmptyString },
 });
 
+const analogySide = object({
+  icon: nonEmptyString,
+  label: nonEmptyString,
+  description: nonEmptyString,
+});
+
+const analogySection = object({
+  type: { type: 'string', enum: ['analogy'] },
+  title: nonEmptyString,
+  order_index: positiveInteger,
+  metaphor: nonEmptyString,
+  left: analogySide,
+  right: analogySide,
+});
+
+const storyCharacter = object({
+  name: nonEmptyString,
+  says: nonEmptyString,
+  label: nonEmptyString,
+});
+
+const storySection = object({
+  type: { type: 'string', enum: ['story'] },
+  title: nonEmptyString,
+  order_index: positiveInteger,
+  scenario: nonEmptyString,
+  characters: { type: 'array', minItems: 1, items: storyCharacter },
+});
+
+const EXERCISE_TYPES = ['FILL_IN', 'READ_ALOUD', 'TRANSFORM', 'FREE_PRODUCTION', 'ROLE_PLAY'];
+
 const mistakesSection = object({
   type: { type: 'string', enum: ['common_mistakes'] },
   title: nonEmptyString,
@@ -73,7 +104,7 @@ export const COURSE_GENERATION_SCHEMA = object({
           sections: {
             type: 'array',
             minItems: 1,
-            items: { anyOf: [lessonSection, tableSection('examples_table'), warningSection, mistakesSection, tableSection('comparison_table')] },
+            items: { anyOf: [lessonSection, tableSection('examples_table'), warningSection, mistakesSection, tableSection('comparison_table'), analogySection, storySection] },
           },
           exercises: {
             type: 'array',
@@ -81,7 +112,7 @@ export const COURSE_GENERATION_SCHEMA = object({
             items: object({
               internal_id: nonEmptyString,
               title: nonEmptyString,
-              type: nonEmptyString,
+              type: { type: 'string', enum: EXERCISE_TYPES },
               instructions: nonEmptyString,
               order_index: positiveInteger,
               questions: { type: 'array', minItems: 1, items: nonEmptyString },

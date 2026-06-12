@@ -85,10 +85,11 @@ et le document de référence concerné, et renvoie à l'agent compétent.
       (`01-strategie/strategie_multilingue.md` pour les nouvelles langues cibles).
 
 > Si un type de section ou de champ utilisé dans la production n'existe pas encore dans
-> le schéma technique (cas déjà observé : les types `analogy` et `story` présents dans
-> `seed-courses.json` mais absents de `courseGenerationSchema.js`), l'Agent Contrôle
-> Qualité ne bloque pas la production pour ce seul motif, mais le signale à l'Agent
-> Plateforme et à l'Agent Gestionnaire de Connaissances.
+> le schéma technique, l'Agent Contrôle Qualité ne bloque pas la production pour ce seul
+> motif, mais le signale à l'Agent Plateforme et à l'Agent Gestionnaire de Connaissances.
+> Cas déjà rencontré et résolu : les types `analogy` et `story`, d'abord présents dans
+> `seed-courses.json` sans être formellement décrits dans `courseGenerationSchema.js`,
+> y sont désormais pleinement supportés.
 
 ---
 

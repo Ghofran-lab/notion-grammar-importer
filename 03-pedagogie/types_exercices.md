@@ -52,9 +52,9 @@ prétexte qu'elle est plus simple à générer et à corriger automatiquement.
 
 ## Catalogue des types existants
 
-Ces trois types sont déjà utilisés dans `seed-courses.json` et reconnus par
-`courseGenerationSchema.js` (le champ `type` y est une chaîne libre, voir section
-"Format technique" ci-dessous).
+Ces cinq types sont déjà utilisés dans `seed-courses.json` et reconnus par
+`courseGenerationSchema.js`, où le champ `type` est désormais validé par l'enum
+`EXERCISE_TYPES` (voir section "Format technique" ci-dessous).
 
 ### FILL_IN — Texte à compléter
 
@@ -91,6 +91,34 @@ Ces trois types sont déjà utilisés dans `seed-courses.json` et reconnus par
   voudrait-on transformer cette phrase dans la vraie vie ?"), pas être un exercice
   mécanique gratuit.
 
+### FREE_PRODUCTION — Production libre
+
+- **Niveau d'autonomie** : réutilisation communicative.
+- **Compétence typique** : raconter, donner son avis, décrire, se présenter — sans
+  gabarit de réponse imposé.
+- **Principe** : l'apprenant produit librement plusieurs énoncés dans une situation
+  réelle, en réinvestissant la notion du module (ex. "E-A1-GRAM-003 — À toi de coller
+  tes propres étiquettes ! — présenter ses objets et sa famille avec mon/ma/mes").
+  Les consignes peuvent baliser légèrement la production (nombre minimal d'énoncés,
+  exemple d'amorce) sans proposer de réponse à compléter.
+- **Vigilance** : c'est l'étape qui boucle la leçon (`structure-des-cours.md`, section
+  9) ; elle ne doit jamais précéder une étape guidée. Comme la réponse est libre, la
+  consigne doit être suffisamment cadrée pour que l'apprenant sache quoi mobiliser.
+
+### ROLE_PLAY — Mini-dialogue / jeu de rôle
+
+- **Niveau d'autonomie** : réutilisation communicative.
+- **Compétence typique** : interaction orale ou écrite, tenir un rôle dans une scène
+  proche de la mise en situation initiale du module.
+- **Principe** : l'apprenant joue un personnage et produit ses répliques selon une
+  situation donnée, en mobilisant la notion travaillée (ex. "E-A2-GRAM-003 — Le
+  remplaçant entre en jeu — À qui est-ce, vraiment ? — désigner des objets et répondre
+  avec des pronoms possessifs"). Il prolonge naturellement une section `story` lorsque
+  le module en contient une.
+- **Vigilance** : la situation doit rester proche du vécu et de la mise en situation du
+  module (`structure-des-cours.md`, section 9) ; éviter les scénarios artificiels qui
+  servent de prétexte à aligner des formes grammaticales.
+
 ---
 
 ## Pistes d'évolution du catalogue
@@ -110,24 +138,31 @@ utilise pour la première fois, il doit :
 | `MATCH` (association) | Pratique guidée | Associer deux éléments (mot ↔ image, début ↔ fin de phrase, registre familier ↔ registre formel). |
 | `TRUE_FALSE` (vrai/faux) | Pratique guidée | Vérifier la compréhension d'une mise en situation (`structure-des-cours.md`, section 2), avant l'observation grammaticale. |
 | `OPEN_QUESTION` (question ouverte) | Pratique semi-autonome | Réponse courte rédigée par l'apprenant — première étape vers la production libre. |
-| `ROLE_PLAY` (mini-dialogue / jeu de rôle) | Réutilisation communicative | L'apprenant tient un rôle dans une situation proche de la mise en situation initiale du module — boucle la leçon (`structure-des-cours.md`, section 9). |
-| `FREE_PRODUCTION` (production libre) | Réutilisation communicative | Raconter, donner son avis, décrire — sans gabarit de réponse. |
 
 ---
 
 ## Format technique
 
-`03-pedagogie/plateforme/src/services/courseGenerationSchema.js` définit le champ
-`type` d'un exercice comme une chaîne non vide (`nonEmptyString`), sans liste fermée de
-valeurs au niveau du schéma de génération. Cela signifie que :
+`03-pedagogie/plateforme/src/services/courseGenerationSchema.js` valide désormais le
+champ `type` d'un exercice par un **enum fermé**, `EXERCISE_TYPES`, à la fois dans le
+schéma de génération (sortie structurée OpenAI) et à l'import
+(`courseSeedService.js`) :
 
-- **introduire un nouveau type ne casse pas la génération** ; mais
-- **rien ne garantit que la plateforme sait l'afficher ou le corriger** sans
-  développement côté Agent Plateforme.
+```js
+const EXERCISE_TYPES = ['FILL_IN', 'READ_ALOUD', 'TRANSFORM', 'FREE_PRODUCTION', 'ROLE_PLAY'];
+```
+
+Cela signifie que :
+
+- **un type absent de cet enum est désormais rejeté** par la génération comme par
+  l'import (la liste n'est plus une chaîne libre) ;
+- les cinq types du "Catalogue des types existants" ci-dessus correspondent exactement
+  à cet enum.
 
 Un nouveau type d'exercice doit donc toujours suivre ce chemin : proposition dans ce
 document → validation par l'Agent Contrôle Qualité → vérification de faisabilité avec
-l'Agent Plateforme → ajout au catalogue ci-dessus avec mention "supporté".
+l'Agent Plateforme → **ajout à l'enum `EXERCISE_TYPES`** côté plateforme → ajout au
+catalogue ci-dessus avec mention "supporté".
 
 ---
 

@@ -3,6 +3,7 @@ import { transaction } from '../db/connection.js';
 
 const LEVELS = new Set(['A1', 'A2', 'B1', 'B2', 'C1']);
 const SECTION_TYPES = new Set(['lesson', 'examples_table', 'warning', 'common_mistakes', 'comparison_table', 'story', 'analogy']);
+const EXERCISE_TYPES = new Set(['FILL_IN', 'READ_ALOUD', 'TRANSFORM', 'FREE_PRODUCTION', 'ROLE_PLAY']);
 
 function assert(condition, message) {
   if (!condition) throw new Error(message);
@@ -99,6 +100,7 @@ export function validateCourseSeedData(data) {
         registerId(exercise.internal_id, `${exercisePath}.internal_id`);
         requireString(exercise.title, `${exercisePath}.title`);
         requireString(exercise.type, `${exercisePath}.type`);
+        assert(EXERCISE_TYPES.has(exercise.type), `${exercisePath}.type n'est pas pris en charge.`);
         requireString(exercise.instructions, `${exercisePath}.instructions`);
         requirePositiveInteger(exercise.order_index, `${exercisePath}.order_index`);
         assert(Array.isArray(exercise.questions) && exercise.questions.length > 0, `${exercisePath}.questions doit contenir au moins une question.`);

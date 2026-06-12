@@ -35,6 +35,8 @@ Les types de sections acceptés sont :
 | `warning` | Point d'attention mis en évidence |
 | `common_mistakes` | Erreurs fréquentes structurées |
 | `comparison_table` | Tableau comparatif |
+| `analogy` | Métaphore illustrée en deux volets (volets `left`/`right` avec icône, intitulé et description) |
+| `story` | Mini-dialogue mettant en scène des personnages (`characters` avec nom, réplique et intitulé) |
 
 Le prototype disponible dans `seed-courses.json` contient le module **Prononciation** et le cours **Les lettres finales muettes**.
 

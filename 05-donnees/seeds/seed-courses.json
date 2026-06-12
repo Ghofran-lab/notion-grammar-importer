@@ -20,8 +20,16 @@
               "title": "La règle DePoSiTo",
               "order_index": 1,
               "metaphor": "Imagine les lettres D, P, S, T comme des invités timides à une fête : ils sont là, écrits sur le carton d'invitation, mais ils ne se lèvent jamais pour parler ! Le mot magique pour s'en souvenir : DePoSiTo.",
-              "left": { "icon": "✍️", "label": "À l'écrit", "description": "grand, beaucoup, temps, petit" },
-              "right": { "icon": "🗣️", "label": "À l'oral", "description": "gran, bocou, tan, peti" }
+              "left": {
+                "icon": "✍️",
+                "label": "À l'écrit",
+                "description": "grand, beaucoup, temps, petit"
+              },
+              "right": {
+                "icon": "🗣️",
+                "label": "À l'oral",
+                "description": "gran, bocou, tan, peti"
+              }
             },
             {
               "type": "lesson",
@@ -39,23 +47,63 @@
               "order_index": 3,
               "scenario": "Marie fait ses courses au marché. Elle doit prononcer correctement pour se faire comprendre.",
               "characters": [
-                { "name": "Marie", "says": "Bonjour, je voudrais deux kilos de pain de campagne, s'il vous plaît.", "label": "deux = deu (x muet) · pain = pan (in nasal) · campagne = kanpaïgn" },
-                { "name": "Le boulanger", "says": "Voilà ! C'est un grand choix !", "label": "grand = gran (d muet) · choix = choi (x muet)" },
-                { "name": "Marie (souriant)", "says": "Merci beaucoup !", "label": "beaucoup = bocou (p muet)" }
+                {
+                  "name": "Marie",
+                  "says": "Bonjour, je voudrais deux kilos de pain de campagne, s'il vous plaît.",
+                  "label": "deux = deu (x muet) · pain = pan (in nasal) · campagne = kanpaïgn"
+                },
+                {
+                  "name": "Le boulanger",
+                  "says": "Voilà ! C'est un grand choix !",
+                  "label": "grand = gran (d muet) · choix = choi (x muet)"
+                },
+                {
+                  "name": "Marie (souriant)",
+                  "says": "Merci beaucoup !",
+                  "label": "beaucoup = bocou (p muet)"
+                }
               ]
             },
             {
               "type": "examples_table",
               "title": "Exemples essentiels",
               "order_index": 4,
-              "columns": ["Écrit", "Oral", "Consonne muette"],
+              "columns": [
+                "Écrit",
+                "Oral",
+                "Consonne muette"
+              ],
               "rows": [
-                ["grand", "gran", "D"],
-                ["beaucoup", "bocou", "P"],
-                ["temps", "tan", "P + S"],
-                ["petit", "peti", "T"],
-                ["deux", "deu", "X"],
-                ["prix", "pri", "X"]
+                [
+                  "grand",
+                  "gran",
+                  "D"
+                ],
+                [
+                  "beaucoup",
+                  "bocou",
+                  "P"
+                ],
+                [
+                  "temps",
+                  "tan",
+                  "P + S"
+                ],
+                [
+                  "petit",
+                  "peti",
+                  "T"
+                ],
+                [
+                  "deux",
+                  "deu",
+                  "X"
+                ],
+                [
+                  "prix",
+                  "pri",
+                  "X"
+                ]
               ]
             },
             {
@@ -93,10 +141,490 @@
       ]
     },
     {
+      "internal_id": "MOD-GRAM-A1",
+      "title": "Grammaire A1",
+      "description": "Les premières structures grammaticales pour se présenter et décrire son environnement immédiat.",
+      "order_index": 2,
+      "rules": [
+        {
+          "internal_id": "R-A1-GRAM-001",
+          "level": "A1",
+          "title": "Les adjectifs possessifs",
+          "category": "Déterminants",
+          "learning_objective": "Utiliser mon/ma/mes, ton/ta/tes et son/sa/ses pour dire à qui appartiennent les personnes et les objets de son environnement immédiat.",
+          "short_description": "La petite étiquette qui dit 'à qui c'est' — et qui s'accorde avec l'objet, pas avec son propriétaire.",
+          "order_index": 1,
+          "sections": [
+            {
+              "type": "analogy",
+              "title": "L'étiquette \"à qui ?\"",
+              "order_index": 1,
+              "metaphor": "Imagine que chaque objet et chaque personne dont tu parles porte une petite étiquette invisible qui répond à une seule question : \"à qui c'est ?\". Cette étiquette peut dire MON, MA ou MES. Et voici le détail le plus important, celui qui va tout changer pour toi : la couleur de l'étiquette ne dépend PAS de la personne qui possède — elle dépend de l'objet sur lequel tu la colles. Un objet masculin reçoit l'étiquette 'mon', un objet féminin reçoit l'étiquette 'ma', plusieurs objets reçoivent l'étiquette 'mes'. Toute la leçon va consister à apprendre à lire ces étiquettes.",
+              "left": {
+                "icon": "🏷️",
+                "label": "Ce que tu pourrais croire",
+                "description": "L'étiquette change selon QUI possède : un homme dirait 'son', une femme dirait 'sa'."
+              },
+              "right": {
+                "icon": "🎯",
+                "label": "Ce qui se passe vraiment",
+                "description": "L'étiquette change selon CE QUI EST POSSÉDÉ : 'son sac' (sac = masculin) et 'sa clé' (clé = féminin), que le propriétaire soit un homme OU une femme."
+              }
+            },
+            {
+              "type": "lesson",
+              "title": "Le matin, tout le monde cherche ses affaires",
+              "order_index": 2,
+              "content": [
+                "Il est 8h. Léo est dans le couloir de son appartement et il est un peu en retard. Il crie : \"Où est mon téléphone ? Et ma clé, elle est où ? Mes papiers, je les ai mis où hier soir ?!\"",
+                "Sa colocataire Inès passe la tête par la porte de sa chambre et répond en riant : \"Ton téléphone est sur la table de la cuisine. Ta clé est dans ta veste, comme toujours. Et tes papiers... regarde dans ton sac, peut-être ?\"",
+                "Léo trouve tout, soulagé : \"Ah oui, voilà mon téléphone, ma clé, et... mes papiers étaient bien dans mon sac ! Merci Inès.\"",
+                "Tu remarques que Léo et Inès n'ont jamais dit simplement 'le téléphone' ou 'la clé' tout seuls : ils ont collé une étiquette devant chaque mot, pour dire à qui appartient chaque objet — sans même avoir besoin de dire 'le téléphone de Léo'. L'étiquette fait tout le travail toute seule.",
+                "Une petite question avant de continuer : as-tu remarqué que Léo dit 'mon téléphone' ET 'ma clé' ET 'mes papiers' — pour parler de SES affaires, à LUI ? Trois étiquettes différentes pour la même personne (Léo) ! Garde cette observation dans un coin de ta tête, on va l'éclairer juste après."
+              ]
+            },
+            {
+              "type": "lesson",
+              "title": "Le matériel pour coller tes étiquettes : famille et objets du quotidien",
+              "order_index": 3,
+              "content": [
+                "Avant de comprendre comment choisir la bonne étiquette, il te faut connaître quelques mots très utiles — ceux que tu utilises tout le temps pour parler de ta famille et de tes affaires. Pour chaque mot, retiens surtout une chose : est-ce qu'il est masculin (un) ou féminin (une) ? C'est cette information qui va décider de la couleur de ton étiquette.",
+                "Côté famille : un père, une mère, un frère, une sœur, des parents (ce mot est toujours au pluriel quand on parle de papa et maman ensemble), un ami, une amie.",
+                "Côté objets du quotidien : un téléphone, un sac, une clé, un livre, une maison, une voiture, une adresse.",
+                "Tu vois que certains mots sont masculins (un téléphone, un sac, un livre) et d'autres féminins (une clé, une maison, une voiture, une adresse). Pas besoin de tout mémoriser d'un coup : retiens simplement ce réflexe — avant de parler, je regarde si mon mot est 'un' ou 'une', 'des'."
+              ]
+            },
+            {
+              "type": "lesson",
+              "title": "Pourquoi 'mon frère' mais 'ma sœur' ? L'étiquette regarde l'objet, pas toi",
+              "order_index": 4,
+              "content": [
+                "Reviens un instant à Léo. Il a dit 'mon téléphone', 'ma clé' et 'mes papiers' — pour parler de SES affaires, à lui, un homme. Si l'étiquette dépendait du propriétaire (Léo, qui est un homme), elle serait toujours la même, non ? Mais ce n'est pas le cas : elle change à chaque mot !",
+                "Voici le secret, et c'est LE point le plus important de toute la leçon : en français, l'étiquette possessive ne regarde jamais qui possède. Elle regarde uniquement le mot qui la suit — l'objet ou la personne dont on parle.",
+                "Pourquoi le français fonctionne comme ça ? Imagine que tu es en train de parler, et que tu dois choisir ton étiquette à l'instant même où tu prononces le nom. Le mot qui est juste devant tes yeux (ou dans ta bouche) à ce moment-là, c'est le nom de l'objet — 'téléphone', 'clé', 'papiers'. C'est plus rapide et plus naturel pour ton cerveau de regarder ce mot-là, qui arrive tout de suite après, plutôt que de devoir se rappeler en permanence si la personne dont on parle est un homme ou une femme. L'étiquette s'accorde avec ce qu'elle touche directement.",
+                "La règle, formulée prudemment (parce qu'on parle d'une langue vivante, pas de mathématiques) : en général, l'adjectif possessif s'accorde en genre et en nombre avec le nom qui suit — c'est-à-dire avec l'objet ou la personne possédée — et non avec la personne qui possède.",
+                "Concrètement, pour 'mon/ma/mes' (quand TU es le possesseur) : devant un nom masculin singulier → mon (mon téléphone, mon frère) ; devant un nom féminin singulier → ma (ma clé, ma sœur) ; devant un nom pluriel, masculin ou féminin → mes (mes papiers, mes parents).",
+                "Et la grande nouvelle, c'est que 'ton/ta/tes' (pour parler des affaires de la personne à qui tu parles) et 'son/sa/ses' (pour parler des affaires de quelqu'un d'autre) suivent exactement la même logique : l'étiquette regarde l'objet, jamais le propriétaire. Tu n'as donc qu'UNE seule règle à retenir pour les trois !"
+              ]
+            },
+            {
+              "type": "examples_table",
+              "title": "Exemples guidés : à qui sont ces affaires ?",
+              "order_index": 5,
+              "introduction": "Reprenons les mots de famille et d'objets que tu connais déjà, et regardons comment l'étiquette change uniquement selon le mot qui suit — jamais selon la personne qui possède.",
+              "columns": [
+                "L'étiquette de base",
+                "+ nom masculin singulier",
+                "+ nom féminin singulier",
+                "+ nom pluriel"
+              ],
+              "rows": [
+                [
+                  "mon / ma / mes (à moi)",
+                  "mon père, mon téléphone",
+                  "ma mère, ma voiture",
+                  "mes parents, mes livres"
+                ],
+                [
+                  "ton / ta / tes (à toi)",
+                  "ton frère, ton sac",
+                  "ta sœur, ta clé",
+                  "tes amis, tes papiers"
+                ],
+                [
+                  "son / sa / ses (à lui / à elle)",
+                  "son père, son livre",
+                  "sa mère, sa maison",
+                  "ses parents, ses amis"
+                ]
+              ]
+            },
+            {
+              "type": "story",
+              "title": "Au bureau des objets trouvés : qui est le propriétaire ?",
+              "order_index": 6,
+              "scenario": "Camille travaille au bureau des objets trouvés d'une gare. Paul et Marie viennent récupérer leurs affaires perdues hier. Camille pose les objets sur le comptoir et demande à qui ils appartiennent.",
+              "characters": [
+                {
+                  "name": "Camille (en montrant un sac)",
+                  "says": "Ce sac, c'est à qui ?",
+                  "label": "Question pour faire deviner le possessif"
+                },
+                {
+                  "name": "Paul",
+                  "says": "C'est mon sac ! Merci, je le cherchais partout.",
+                  "label": "✅ 'sac' est masculin → mon sac (Paul, un homme, possesseur)"
+                },
+                {
+                  "name": "Camille (en montrant une clé)",
+                  "says": "Et cette clé, elle est à toi aussi, Paul ?",
+                  "label": "Question d'observation"
+                },
+                {
+                  "name": "Paul",
+                  "says": "Non ! Cette clé, c'est la clé de Marie. C'est SA clé.",
+                  "label": "✅ 'clé' est féminin → sa clé (même si Paul, un homme, parle de Marie)"
+                },
+                {
+                  "name": "Marie",
+                  "says": "Oui, c'est ma clé ! Et regarde, voilà aussi mon adresse, écrite sur ce papier.",
+                  "label": "✅ 'adresse' est féminin mais commence par une voyelle → mon adresse (à approfondir dans un point de vigilance séparé)"
+                },
+                {
+                  "name": "Camille (en souriant)",
+                  "says": "Parfait ! Et ces papiers, sur le côté, ce sont les vôtres aussi ?",
+                  "label": "Question de transition — elle introduit le pluriel 'nos', un aperçu volontairement non développé dans cette leçon."
+                },
+                {
+                  "name": "Paul et Marie (ensemble)",
+                  "says": "Oui, ce sont nos papiers à tous les deux !",
+                  "label": "Aperçu de 'nos' — non développé dans cette leçon, juste pour montrer que la famille des possessifs continue"
+                }
+              ]
+            },
+            {
+              "type": "warning",
+              "title": "Mon adresse, mon amie : pourquoi 'mon' devant un mot féminin ?",
+              "order_index": 7,
+              "content": [
+                "Tu te souviens de Marie, au bureau des objets trouvés ? Elle a dit : \"voilà mon adresse\". Mais 'adresse' est un mot féminin — tu pourrais t'attendre à 'ma adresse', non ?",
+                "En réalité, devant un nom féminin singulier qui commence par une voyelle (a, e, i, o, u) ou un 'h' muet — comme adresse, amie, école — on utilise mon, ton, son au lieu de ma, ta, sa. Exemples : mon amie, mon école, mon adresse.",
+                "Ce n'est PAS une exception qui casse la règle que tu viens d'apprendre : 'adresse' reste bien un mot féminin, et l'étiquette regarde toujours l'objet. C'est juste que 'ma adresse' obligerait à enchaîner deux voyelles qui se télescopent, alors que 'mon adresse' s'enchaîne tout seul à l'oral.",
+                "Cet enchaînement entre les mots aura un impact sur la prononciation (une liaison) — un point que tu approfondiras dans une prochaine leçon dédiée à l'oral.",
+                "Pour aujourd'hui, retiens simplement le réflexe : nom féminin singulier + voyelle au début → mon/ton/son, pas ma/ta/sa."
+              ]
+            },
+            {
+              "type": "common_mistakes",
+              "title": "Les pièges les plus courants",
+              "order_index": 8,
+              "items": [
+                {
+                  "audience": "Anglophones",
+                  "written_form": "Marie cherche son téléphone.",
+                  "correct_pronunciation": "ma-ri shèrsh son té-lé-fone",
+                  "common_mistake": "En anglais, 'his/her' s'accorde avec le SEXE du possesseur : 'her phone' (Marie est une femme → 'her'). Par transfert, tu pourrais être tenté de dire ❌ 'Marie cherche sa téléphone'. Mais en français, l'étiquette regarde 'téléphone' (masculin) — pas Marie. ✅ Marie cherche SON téléphone, même si Marie est une femme. De la même façon : ❌ 'Marie et son voiture' serait faux dans l'autre sens si on raisonnait sur Marie au lieu de 'voiture' (féminin) : ✅ Marie et SA voiture."
+                },
+                {
+                  "audience": "Italophones",
+                  "written_form": "C'est mon livre.",
+                  "correct_pronunciation": "sè mon livr",
+                  "common_mistake": "En italien, on met souvent un article devant le possessif ('il mio libro'). Par transfert, tu pourrais dire ❌ 'C'est le mon livre'. En français, l'étiquette possessive (mon/ma/mes...) remplace l'article — elle ne s'ajoute jamais à lui. ✅ C'est mon livre (jamais 'le mon livre')."
+                }
+              ]
+            },
+            {
+              "type": "lesson",
+              "title": "Ta carte mentale : l'étiquette suit toujours l'objet",
+              "order_index": 9,
+              "content": [
+                "Tu as maintenant toutes les pièces pour résoudre l'énigme du début : pourquoi Léo disait 'mon téléphone, ma clé, mes papiers' alors qu'il parlait toujours de lui-même ? Parce que l'étiquette ne parle pas de Léo — elle parle du téléphone (masculin), de la clé (féminin) et des papiers (pluriel).",
+                "La règle à garder en tête, dans une seule phrase mémorisable : L'ÉTIQUETTE POSSESSIVE S'ACCORDE AVEC CE QU'ELLE DÉSIGNE, PAS AVEC SON PROPRIÉTAIRE.",
+                "Pour t'aider à choisir vite : regarde le mot juste après l'étiquette. Masculin singulier → mon/ton/son. Féminin singulier → ma/ta/sa. Pluriel (masculin ou féminin) → mes/tes/ses.",
+                "Tu n'as pas besoin d'être parfait dès aujourd'hui : si tu te trompes entre 'son' et 'sa' au début, ce n'est absolument pas grave — la personne en face de toi comprendra très bien de qui ou de quoi tu parles. L'important, c'est que tu oses utiliser ces étiquettes pour parler de ta famille et de tes affaires : c'est exactement ce qui te permet, dès maintenant, de présenter les gens et les objets autour de toi en français.",
+                "Maintenant, à toi de coller tes propres étiquettes : pense à ta famille et à 3 ou 4 objets que tu as sur toi en ce moment, et essaie de les présenter à voix haute avec mon/ma/mes. C'est en t'entraînant sur TES affaires, pas sur des exemples abstraits, que la règle va devenir un réflexe."
+              ]
+            }
+          ],
+          "exercises": [
+            {
+              "internal_id": "E-A1-GRAM-001",
+              "title": "Choisis la bonne étiquette : mon, ma ou mes ?",
+              "type": "FILL_IN",
+              "instructions": "Regarde bien le mot qui suit (l'objet ou la personne) : c'est lui qui décide de la couleur de l'étiquette, jamais la personne qui possède. Complète avec mon, ma ou mes. Si tu hésites entre deux étiquettes, choisis celle qui te semble la plus naturelle à l'oral et continue : l'essentiel est de t'entraîner !",
+              "order_index": 1,
+              "questions": [
+                "Léo cherche ___ téléphone partout dans l'appartement. (téléphone = masculin)",
+                "Inès a perdu ___ clé ce matin. (clé = féminin)",
+                "Paul cherche ___ clé sur le comptoir. (clé = féminin, même si Paul est un homme)",
+                "Marie cherche ___ sac dans le bureau des objets trouvés. (sac = masculin, même si Marie est une femme)",
+                "Camille range ___ papiers avant de partir. (papiers = pluriel)",
+                "J'adore ___ frère, il est très drôle. (frère = masculin)",
+                "Tu connais ___ sœur ? Elle s'appelle Inès. (sœur = féminin)",
+                "Voici ___ parents : ils habitent à Lyon. (parents = pluriel)"
+              ]
+            },
+            {
+              "internal_id": "E-A1-GRAM-002",
+              "title": "Recolle l'étiquette : 'le sac de Paul' devient...",
+              "type": "TRANSFORM",
+              "instructions": "Au bureau des objets trouvés, Camille note d'abord à qui appartient chaque objet avec 'de'. Remplace ce groupe par la bonne étiquette possessive (son/sa/ses) — souviens-toi : elle s'accorde avec l'objet, pas avec son propriétaire.",
+              "order_index": 2,
+              "questions": [
+                "le sac de Paul → ...",
+                "la clé de Marie → ...",
+                "les papiers de Camille → ...",
+                "la voiture de Paul → ...",
+                "le téléphone de Marie → ...",
+                "l'adresse de Léo → ...",
+                "les amis d'Inès → ...",
+                "le livre de Marie → ..."
+              ]
+            },
+            {
+              "internal_id": "E-A1-GRAM-003",
+              "title": "À toi de coller tes propres étiquettes !",
+              "type": "FREE_PRODUCTION",
+              "instructions": "C'est ton tour ! Comme Léo le matin, prends 3 ou 4 objets que tu as sur toi ou autour de toi en ce moment (téléphone, clé, sac, livre...) et présente-les avec mon/ma/mes : 'Voici mon..., voici ma..., voici mes...'. Ensuite, présente aussi 1 ou 2 membres de ta famille (mon père, ma sœur, mes parents...). Pas besoin d'être parfait : si tu hésites entre 'mon' et 'ma', dis quand même ta phrase — l'important est d'oser coller tes étiquettes sur TES affaires et TA famille.",
+              "order_index": 3,
+              "questions": [
+                "Présente au moins 3 objets que tu as sur toi en ce moment, avec mon/ma/mes (ex. 'Voici mon téléphone, ma clé et mes papiers.').",
+                "Présente au moins 1 ou 2 membres de ta famille avec mon/ma/mes (ex. 'Voici ma sœur, elle s'appelle... Voici mon père, il habite à...').",
+                "Bonus : si tu connais quelqu'un de ta classe ou un ami, essaie une phrase avec 'son' ou 'sa' pour parler de ses affaires à lui/elle (ex. 'Son sac est bleu.')."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "internal_id": "MOD-GRAM-A2",
+      "title": "Grammaire A2",
+      "description": "Les structures grammaticales pour des tâches simples : comparer, contraster et préciser à qui appartiennent les choses.",
+      "order_index": 3,
+      "rules": [
+        {
+          "internal_id": "R-A2-GRAM-001",
+          "level": "A2",
+          "title": "Les pronoms possessifs",
+          "category": "Pronoms",
+          "learning_objective": "Remplacer un groupe 'adjectif possessif + nom' par un pronom possessif (le mien, la tienne, les siens...) pour comparer et distinguer des objets sans répéter leur nom.",
+          "short_description": "Le mot qui prend la place de 'mon sac', 'ta clé' ou 'ses amis' quand on n'a plus besoin de répéter le nom.",
+          "order_index": 1,
+          "sections": [
+            {
+              "type": "analogy",
+              "title": "Le remplaçant entre en scène",
+              "order_index": 1,
+              "metaphor": "Tu connais déjà 'mon sac', 'ta clé', 'ses amis' (le module A1). Ces mots — mon, ta, ses — sont comme des acteurs qui ne quittent jamais leur partenaire : l'adjectif possessif reste TOUJOURS collé au nom, sur scène, ensemble. Mais parfois, le nom a déjà été dit une fois : tout le monde sait de quel sac on parle. Inutile de le répéter ! C'est là qu'entre en scène LE REMPLAÇANT : 'le mien'. Il prend la place du duo 'mon sac' tout seul, sans le nom — mais il garde son 'costume', c'est-à-dire le genre et le nombre de l'objet qu'il remplace. Un sac (masculin) ? Le remplaçant porte le costume masculin : 'le mien'. Une clé (féminin) ? Costume féminin : 'la mienne'.",
+              "left": {
+                "icon": "🎭",
+                "label": "L'adjectif possessif (A1) = l'acteur qui reste avec son nom",
+                "description": "mon sac, ta clé, ses amis — le possessif et le nom ne se séparent jamais."
+              },
+              "right": {
+                "icon": "🎬",
+                "label": "Le pronom possessif (A2) = le remplaçant qui entre seul en scène",
+                "description": "le mien, la tienne, les siens — le nom est sous-entendu, le remplaçant garde son genre et son nombre."
+              }
+            },
+            {
+              "type": "lesson",
+              "title": "Mise en situation — Ce manteau, c'est le tien ou le mien ?",
+              "order_index": 2,
+              "content": [
+                "Imagine la scène : à la fin d'un dîner entre amis, tout le monde récupère son manteau dans l'entrée. Deux manteaux gris, presque identiques, sont posés sur la même chaise.",
+                "— Attends, ce manteau... c'est le tien ou le mien ? demande Léa.",
+                "— Hmm, regarde l'étiquette à l'intérieur. Le mien a une étiquette bleue, répond Karim.",
+                "— Alors celui-ci, c'est le tien ! Le mien doit être resté sur le canapé.",
+                "Tu as sans doute remarqué quelque chose : à aucun moment Léa et Karim ne disent 'mon manteau' ou 'ton manteau'. Pourtant, tout le monde comprend très bien de quoi ils parlent.",
+                "Petit rappel avant d'aller plus loin : tu connais déjà 'mon', 'ton', 'son' (le module A1) — ces mots accompagnent toujours un nom : mon manteau, ta veste, son sac. Aujourd'hui, tu vas rencontrer leurs 'remplaçants' : le mien, le tien, le sien. Ce sont eux les vedettes de cette leçon.",
+                "Observation guidée : reprends les phrases de Léa et Karim. 'Le mien' remplace quel groupe de mots, exactement ? Et si Léa parlait d'une ÉCHARPE au lieu d'un manteau, dirait-elle encore 'le mien' ? Essaie de formuler une réponse avant de continuer — même une réponse imparfaite est un excellent point de départ.",
+                "Tu remarques sûrement déjà une chose : quand on enlève le nom ('manteau'), il reste quelque chose à la place — un petit mot ('le') qui n'était pas là avant, collé devant 'mien'. C'est exactement ce petit mot qui va expliquer toute la règle de cette leçon."
+              ]
+            },
+            {
+              "type": "story",
+              "title": "Le remplaçant face à deux sacs identiques",
+              "order_index": 3,
+              "scenario": "À la sortie d'un cours de sport, Inès et Tom retrouvent leurs affaires dans le vestiaire. Deux sacs de sport, exactement du même modèle, sont posés côte à côte.",
+              "characters": [
+                {
+                  "name": "Inès",
+                  "says": "Oh non, nos sacs sont identiques ! Lequel est le mien ?",
+                  "label": "✅ 'le mien' remplace 'mon sac' — sac est masculin, le remplaçant porte donc le costume masculin : LE mien."
+                },
+                {
+                  "name": "Tom",
+                  "says": "Le tien a une petite tache sur la poche, je crois. Le mien est tout neuf.",
+                  "label": "✅ 'le tien' / 'le mien' remplacent 'ton sac' / 'mon sac' — toujours masculin, toujours 'le'."
+                },
+                {
+                  "name": "Inès (en ouvrant le sac taché)",
+                  "says": "Ah oui, voilà mes clés et ma gourde à l'intérieur... c'est confirmé, c'est le mien !",
+                  "label": "Adjectifs possessifs (A1) 'mes clés' / 'ma gourde' — le duo possessif + nom, toujours ensemble."
+                },
+                {
+                  "name": "Tom",
+                  "says": "Et cette gourde bleue, là, sur le banc — elle est à toi ou à moi ?",
+                  "label": "Sans pronom possessif, Tom doit répéter toute la phrase avec 'à toi' / 'à moi' — plus lourd !"
+                },
+                {
+                  "name": "Inès",
+                  "says": "Elle n'est pas à moi. La mienne est rose. Ce doit être la tienne.",
+                  "label": "✅ 'la mienne' / 'la tienne' remplacent 'ma gourde' / 'ta gourde' — gourde est féminin, le remplaçant porte le costume féminin : LA mienne, LA tienne."
+                }
+              ]
+            },
+            {
+              "type": "lesson",
+              "title": "Pourquoi le remplaçant porte-t-il un 'le', une 'la' ou des 'les' ?",
+              "order_index": 4,
+              "content": [
+                "Reprenons la question posée plus haut : qu'est-ce qui change quand on enlève le nom ?",
+                "'Mon sac' devient 'le mien'. 'Ma gourde' devient 'la mienne'. 'Mes clés' deviennent 'les miennes'. Tu as sans doute remarqué que dans les trois cas, on retrouve un petit mot familier : le, la, les — exactement les articles définis que tu utilises devant n'importe quel nom ('le sac', 'la gourde', 'les clés').",
+                "Voilà le 'pourquoi' de cette leçon, et il est très logique une fois qu'on l'a vu : quand le nom quitte la phrase, quelqu'un doit garder la trace de son genre et de son nombre — sinon, comment savoir si 'mien' renvoie à un objet masculin, féminin, singulier ou pluriel ? En français, c'est l'article (le/la/les) qui joue ce rôle de mémoire : il reste accroché devant 'mien', 'tienne', 'siens'... comme une étiquette qui dit 'attention, ce que je remplace était du masculin singulier' (le mien), 'du féminin singulier' (la mienne), 'du pluriel' (les miens / les miennes).",
+                "Concrètement : 'le mien' veut dire, mot pour mot, 'le [sac] à moi' — le nom 'sac' a disparu, mais sa marque de genre (masculin → 'le') reste collée au pronom. C'est pour ça qu'on dit que l'article est FUSIONNÉ dans le pronom possessif : il ne se promène plus tout seul devant un nom, il fait désormais partie intégrante du mot 'le mien', 'la tienne', 'les siens'.",
+                "Règle, formulée prudemment — comme souvent en français, retiens-la comme une tendance très fiable plutôt qu'une formule magique : le pronom possessif = (le / la / les) + (mien, tien, sien... au féminin/pluriel selon le cas), et il s'accorde généralement avec le nom REMPLACÉ — pas avec la personne qui possède l'objet.",
+                "C'est exactement ce qu'on a vu dans l'histoire des deux sacs : Inès dit 'le mien' (sac = masculin) puis 'la mienne' (gourde = féminin), alors qu'elle, Inès, est une femme dans les deux cas. Le remplaçant change de costume selon le RÔLE qu'il joue (l'objet remplacé), pas selon qui l'a engagé (le possesseur). Si cette logique te semble familière, c'est normal : c'est exactement le même principe que pour 'mon/ma/mes' en A1 — la possession s'accorde avec l'objet, pas avec le propriétaire. Le pronom possessif applique simplement cette même logique à un mot qui, cette fois, doit aussi porter l'article."
+              ]
+            },
+            {
+              "type": "comparison_table",
+              "title": "L'acteur et son remplaçant — récapitulatif",
+              "order_index": 5,
+              "introduction": "Tu viens de voir pourquoi le remplaçant porte un 'le', une 'la' ou des 'les'. Voici le tableau qui met les deux côte à côte : à gauche, l'acteur et son partenaire (l'adjectif possessif + le nom, vu en A1) ; à droite, le remplaçant qui entre seul en scène (le pronom possessif, vu aujourd'hui). Dans la plupart des cas, il suffit de repérer le genre et le nombre de l'objet pour choisir la bonne forme.",
+              "columns": [
+                "🎭 Adjectif possessif (+ nom) — A1",
+                "🎬 Pronom possessif (remplace le nom) — A2"
+              ],
+              "rows": [
+                [
+                  "mon sac",
+                  "le mien"
+                ],
+                [
+                  "ma clé",
+                  "la mienne"
+                ],
+                [
+                  "mes amis",
+                  "les miens"
+                ],
+                [
+                  "mes clés",
+                  "les miennes"
+                ],
+                [
+                  "ton sac",
+                  "le tien"
+                ],
+                [
+                  "ta clé",
+                  "la tienne"
+                ],
+                [
+                  "tes amis",
+                  "les tiens"
+                ],
+                [
+                  "tes clés",
+                  "les tiennes"
+                ],
+                [
+                  "son sac",
+                  "le sien"
+                ],
+                [
+                  "sa clé",
+                  "la sienne"
+                ],
+                [
+                  "ses amis",
+                  "les siens"
+                ],
+                [
+                  "ses clés",
+                  "les siennes"
+                ]
+              ]
+            },
+            {
+              "type": "warning",
+              "title": "Et 'le nôtre', 'le vôtre', 'le leur' ?",
+              "order_index": 6,
+              "content": [
+                "Tu te demandes peut-être déjà : et si l'objet appartient à 'nous', 'vous' ou 'eux/elles' ? Ces formes existent — le nôtre, le vôtre, le leur, et leurs variantes féminines/plurielles — mais elles suivent quelques subtilités supplémentaires (notamment un accent circonflexe à l'écrit) qui méritent une leçon à elles seules.",
+                "De la même façon, tu croiseras un jour des formes contractées comme 'au mien' ou 'du tien' (par exemple : 'Tu peux ajouter ton nom au mien sur la liste'). Ce sont des usages un peu plus avancés, qu'on retrouvera dans une prochaine leçon.",
+                "Pour l'instant, retiens simplement que la famille du 'remplaçant' est plus grande que les trois personnages que tu as rencontrés aujourd'hui (le mien, le tien, le sien) — et que tu es déjà prêt(e) à les comprendre quand ils arriveront."
+              ]
+            },
+            {
+              "type": "common_mistakes",
+              "title": "Le remplaçant, lui aussi, a ses pièges",
+              "order_index": 7,
+              "items": [
+                {
+                  "audience": "Anglophones",
+                  "written_form": "C'est le mien.",
+                  "correct_pronunciation": "sè luh myan",
+                  "common_mistake": "Deux réflexes venus de l'anglais peuvent persister sur le remplaçant. (1) Comme pour 'mon/son' en A1, la tentation d'accorder selon le possesseur : pour une femme parlant d'une voiture (féminin), dire 'le sien' au lieu de 'la sienne' (l'anglais dirait 'hers', qui pense à ELLE, pas à la voiture). (2) En anglais, le pronom possessif n'a pas d'article ('it's mine') : la tentation est alors de dire 'c'est mien' au lieu de 'c'est le mien'. Dis plutôt : le remplaçant garde toujours son article (le/la/les) ET s'habille selon l'objet, jamais selon son propriétaire."
+                },
+                {
+                  "audience": "Italophones",
+                  "written_form": "La mia è rosa. → La mienne est rose.",
+                  "correct_pronunciation": "la myèn è roz",
+                  "common_mistake": "La construction est très proche de l'italien (il mio / la mia + accord sur l'objet), donc le transfert est généralement positif. Le seul risque, mineur, est une confusion orthographique entre 'mio/mia' et 'mien/mienne' (par exemple écrire 'mienne' avec un seul 'n', ou hésiter sur la terminaison '-ien/-ienne'). Dis-toi simplement : à l'écrit, le féminin de 'mien' double le 'n' avant le 'e' — mienne, tienne, sienne. Ce double 'n' s'entend aussi à l'oral ('myan' → 'myèn') : un indice utile pour repérer le féminin, qu'on approfondira dans une prochaine leçon de prononciation."
+                }
+              ]
+            },
+            {
+              "type": "lesson",
+              "title": "Synthèse — Le remplaçant, en une phrase",
+              "order_index": 8,
+              "content": [
+                "Si tu ne devais retenir qu'une seule phrase de cette leçon, voici celle-ci : LE PRONOM POSSESSIF, C'EST 'ARTICLE + POSSESSIF', ET IL S'HABILLE COMME L'OBJET QU'IL REMPLACE, PAS COMME SON PROPRIÉTAIRE.",
+                "Autrement dit : dès que le nom a déjà été dit et que tu n'as plus besoin de le répéter, envoie le remplaçant — le mien, la tienne, les siens... — et laisse-le porter le costume (genre + nombre) de l'objet dont tu parles.",
+                "Tu peux maintenant relire la scène du début : 'Ce manteau, c'est le tien ou le mien ?'. Tu sais désormais exactement ce qui se cache derrière ces deux petits mots — et la prochaine fois que deux sacs, deux manteaux ou deux téléphones se ressembleront un peu trop, tu sauras dire calmement : 'Non, ce n'est pas le tien, c'est le mien' — sans répéter le nom une seule fois.",
+                "Une dernière chose, pour rester bienveillant avec toi-même : à ce niveau, se tromper d'accord (dire 'le mien' pour une clé au lieu de 'la mienne', par exemple) est une étape tout à fait normale. L'essentiel est que ton interlocuteur comprenne de quel objet tu parles — la précision viendra avec la pratique, pas d'un coup."
+              ]
+            }
+          ],
+          "exercises": [
+            {
+              "internal_id": "E-A2-GRAM-001",
+              "title": "Le remplaçant entre en piste",
+              "type": "FILL_IN",
+              "instructions": "Pour chaque phrase, remplace le groupe 'adjectif possessif + nom' par le pronom possessif qui convient (le mien, la tienne, les siens...). Attention : le remplaçant porte toujours le costume (genre + nombre) de l'OBJET remplacé — jamais celui de la personne à qui appartient l'objet.",
+              "order_index": 1,
+              "questions": [
+                "Le sac de Karim est resté sur la chaise. → C'est ___. (sac = masculin)",
+                "La gourde de Léa est sur la table du salon. → C'est ___. (gourde = féminin)",
+                "Inès a encore oublié ses clés sur le comptoir. → Ce sont ___. (clés = féminin pluriel)",
+                "Tom a laissé son manteau dans l'entrée hier soir. → C'est ___. (manteau = masculin)",
+                "— Ce téléphone, c'est ton téléphone, Léa ? — Oui, c'est ___. (téléphone = masculin)",
+                "— Ces papiers sur le bureau, ce sont tes papiers ? — Non, ce ne sont pas ___, ils sont à Karim. (papiers = masculin pluriel)",
+                "— Cette place à côté de la fenêtre, c'est ta place ? — Oui, c'est ___. (place = féminin)",
+                "Karim cherche sa veste depuis ce matin... — Elle est là, sous la tienne : c'est ___. (veste = féminin, possesseur = Karim, un homme)"
+              ]
+            },
+            {
+              "internal_id": "E-A2-GRAM-002",
+              "title": "Pas le tien, le mien ! — Mini-dialogues de contraste",
+              "type": "TRANSFORM",
+              "instructions": "Complète chaque mini-dialogue avec deux remplaçants : 'Ce n'est pas ___, c'est ___'. Comme dans la scène des manteaux et des sacs identiques, les deux objets se ressemblent — seul le pronom possessif permet de les distinguer sans répéter leur nom. Un peu d'aide en moins cette fois : à toi de choisir aussi le bon possesseur (mien / tien / sien) selon la situation.",
+              "order_index": 2,
+              "questions": [
+                "Deux écharpes identiques sont sur le canapé. Léa en prend une. Karim : « Attends, je crois que tu t'es trompée : ___ (à Karim), ___ (à Léa) est dans le sac. » → Karim veut dire : ce n'est pas la tienne, c'est la mienne.",
+                "Inès et Tom ont le même sac de sport. Inès ouvre celui qui a une tache et dit : « C'est ton sac, je crois ! » Tom répond : « Ah non, ___ (à Tom), regarde : ___ (à Inès) a une tache, le mien est tout neuf. » → Tom veut dire : ce n'est pas le mien, c'est le tien.",
+                "Deux gourdes, une rose et une bleue, sont posées sur le banc. Inès prend la bleue. Inès : « Non, attends... ___ (à Inès) est rose. ___ (à Tom), je crois. » → Inès veut dire : ce n'est pas la mienne, c'est la tienne.",
+                "Karim montre un téléphone à Léa : « C'est le tien, ce téléphone ? » Léa regarde l'étiquette et répond : « Non, ___ (à Léa)... ___ (à Karim), regarde, il y a ton nom dessus ! » → Léa veut dire : ce n'est pas le mien, c'est le tien.",
+                "Au vestiaire, deux manteaux gris sont sur la même chaise. Tom en prend un. Léa : « Hmm, je ne crois pas... ___ (à Tom) a une étiquette bleue. Celui-ci, ___ (à Léa). » → Léa veut dire : ce n'est pas le tien, c'est le mien."
+              ]
+            },
+            {
+              "internal_id": "E-A2-GRAM-003",
+              "title": "Le remplaçant entre en jeu — À qui est-ce, vraiment ?",
+              "type": "ROLE_PLAY",
+              "instructions": "Avec un partenaire (ou en imaginant les deux rôles), mettez en commun 5 à 6 objets qui se ressemblent (sacs, gourdes, clés, manteaux, téléphones, écharpes...). Mélangez-les sur la table. Tour à tour, désignez un objet et discutez à qui il appartient — sans jamais répéter son nom une deuxième fois dans la réponse. Utilisez le mien / la mienne / les miens / les miennes, le tien / la tienne / les tiens / les tiennes, le sien / la sienne / les siens / les siennes. Si un objet est ambigu (deux objets identiques !), imaginez un détail (une étiquette, une tache, une couleur) pour trancher, comme Inès et Tom au vestiaire.",
+              "order_index": 3,
+              "questions": [
+                "Désigne un premier objet et demande : « Celui-ci, c'est le tien ou le sien (celui de [prénom d'une troisième personne]) ? »",
+                "Réponds en utilisant un pronom possessif, sans répéter le nom de l'objet : « Non, ce n'est pas... C'est... »",
+                "Trouve au moins un objet où les deux pronoms possibles ont un genre différent (ex. comparer un sac et une gourde) pour vérifier que le remplaçant change bien de costume selon l'objet, pas selon la personne.",
+                "Termine le jeu en récapitulant à voix haute, pour chaque objet, à qui il appartient : « Ça, c'est le mien. Ça, c'est la tienne. Et ça... c'est le sien, je crois ! »",
+                "Si tu te trompes d'accord (par exemple 'le sien' pour une gourde au lieu de 'la sienne'), continue la conversation normalement : l'objectif est de te faire comprendre, la précision viendra avec la pratique."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "internal_id": "MOD-GRAM-B1",
       "title": "Grammaire B1",
       "description": "Les structures grammaticales intermédiaires pour s'exprimer avec précision et nuance.",
-      "order_index": 2,
+      "order_index": 4,
       "rules": [
         {
           "internal_id": "R-B1-GRAM-001",
@@ -112,8 +640,16 @@
               "title": "La peinture et la photo",
               "order_index": 1,
               "metaphor": "Imaginez deux artistes qui décrivent le même moment passé. Le premier PEINT l'ambiance générale — c'est l'imparfait. Le second PREND UNE PHOTO d'un événement précis — c'est le passé composé. La peinture montre ce qui durait ; la photo capture ce qui est arrivé.",
-              "left": { "icon": "🎨", "label": "L'imparfait = la peinture", "description": "Il faisait beau. Les enfants jouaient. La musique jouait doucement..." },
-              "right": { "icon": "📸", "label": "Le passé composé = la photo", "description": "Soudain, un chien est arrivé. Il a renversé le pique-nique !" }
+              "left": {
+                "icon": "🎨",
+                "label": "L'imparfait = la peinture",
+                "description": "Il faisait beau. Les enfants jouaient. La musique jouait doucement..."
+              },
+              "right": {
+                "icon": "📸",
+                "label": "Le passé composé = la photo",
+                "description": "Soudain, un chien est arrivé. Il a renversé le pique-nique !"
+              }
             },
             {
               "type": "lesson",
@@ -132,24 +668,82 @@
               "order_index": 3,
               "scenario": "Grand-mère sort son vieil album photo. Elle montre des photos en noir et blanc et raconte sa jeunesse à sa petite-fille Sofia.",
               "characters": [
-                { "name": "Grand-mère (en regardant une photo)", "says": "Quand j'étais petite, j'habitais dans un petit village. Tous les matins, je me levais à 6h et j'aidais ma mère à la boulangerie.", "label": "✅ Imparfait = habitudes répétées dans le passé" },
-                { "name": "Grand-mère (montrant une autre photo)", "says": "Un jour, un homme mystérieux est entré dans la boulangerie. Il a regardé ma mère et a dit : 'Mademoiselle, je voudrais acheter toute votre boulangerie !'", "label": "✅ Passé composé = événements ponctuels qui font avancer l'histoire" },
-                { "name": "Sofia", "says": "Et c'était qui ? (les yeux écarquillés)", "label": "Imparfait = état, description" },
-                { "name": "Grand-mère (souriant)", "says": "C'était ton grand-père !", "label": "✅ Imparfait = description d'identité" }
+                {
+                  "name": "Grand-mère (en regardant une photo)",
+                  "says": "Quand j'étais petite, j'habitais dans un petit village. Tous les matins, je me levais à 6h et j'aidais ma mère à la boulangerie.",
+                  "label": "✅ Imparfait = habitudes répétées dans le passé"
+                },
+                {
+                  "name": "Grand-mère (montrant une autre photo)",
+                  "says": "Un jour, un homme mystérieux est entré dans la boulangerie. Il a regardé ma mère et a dit : 'Mademoiselle, je voudrais acheter toute votre boulangerie !'",
+                  "label": "✅ Passé composé = événements ponctuels qui font avancer l'histoire"
+                },
+                {
+                  "name": "Sofia",
+                  "says": "Et c'était qui ? (les yeux écarquillés)",
+                  "label": "Imparfait = état, description"
+                },
+                {
+                  "name": "Grand-mère (souriant)",
+                  "says": "C'était ton grand-père !",
+                  "label": "✅ Imparfait = description d'identité"
+                }
               ]
             },
             {
               "type": "examples_table",
               "title": "Conjugaison à l'imparfait",
               "order_index": 4,
-              "columns": ["Pronom", "parler", "finir", "être", "avoir"],
+              "columns": [
+                "Pronom",
+                "parler",
+                "finir",
+                "être",
+                "avoir"
+              ],
               "rows": [
-                ["je", "parlais", "finissais", "étais", "avais"],
-                ["tu", "parlais", "finissais", "étais", "avais"],
-                ["il / elle", "parlait", "finissait", "était", "avait"],
-                ["nous", "parlions", "finissions", "étions", "avions"],
-                ["vous", "parliez", "finissiez", "étiez", "aviez"],
-                ["ils / elles", "parlaient", "finissaient", "étaient", "avaient"]
+                [
+                  "je",
+                  "parlais",
+                  "finissais",
+                  "étais",
+                  "avais"
+                ],
+                [
+                  "tu",
+                  "parlais",
+                  "finissais",
+                  "étais",
+                  "avais"
+                ],
+                [
+                  "il / elle",
+                  "parlait",
+                  "finissait",
+                  "était",
+                  "avait"
+                ],
+                [
+                  "nous",
+                  "parlions",
+                  "finissions",
+                  "étions",
+                  "avions"
+                ],
+                [
+                  "vous",
+                  "parliez",
+                  "finissiez",
+                  "étiez",
+                  "aviez"
+                ],
+                [
+                  "ils / elles",
+                  "parlaient",
+                  "finissaient",
+                  "étaient",
+                  "avaient"
+                ]
               ]
             },
             {
@@ -157,13 +751,31 @@
               "title": "Imparfait vs Passé composé — le tableau décisif",
               "order_index": 5,
               "introduction": "Une seule question à poser : est-ce que c'est le décor (imparfait) ou l'événement (passé composé) ?",
-              "columns": ["🎨 Imparfait (décor, durée, habitude)", "📸 Passé composé (événement, résultat)"],
+              "columns": [
+                "🎨 Imparfait (décor, durée, habitude)",
+                "📸 Passé composé (événement, résultat)"
+              ],
               "rows": [
-                ["Il faisait beau.", "Soudain, il a plu."],
-                ["Chaque matin, je buvais du café.", "Ce matin, j'ai bu du thé."],
-                ["Elle lisait quand...", "...le téléphone a sonné."],
-                ["Quand j'étais enfant, j'aimais...", "L'été dernier, j'ai adoré..."],
-                ["Marqueurs : toujours, souvent, d'habitude, autrefois", "Marqueurs : soudain, un jour, hier, à 14h"]
+                [
+                  "Il faisait beau.",
+                  "Soudain, il a plu."
+                ],
+                [
+                  "Chaque matin, je buvais du café.",
+                  "Ce matin, j'ai bu du thé."
+                ],
+                [
+                  "Elle lisait quand...",
+                  "...le téléphone a sonné."
+                ],
+                [
+                  "Quand j'étais enfant, j'aimais...",
+                  "L'été dernier, j'ai adoré..."
+                ],
+                [
+                  "Marqueurs : toujours, souvent, d'habitude, autrefois",
+                  "Marqueurs : soudain, un jour, hier, à 14h"
+                ]
               ]
             },
             {
@@ -220,8 +832,16 @@
               "title": "La boule de cristal",
               "order_index": 1,
               "metaphor": "Imaginez une voyante avec sa boule de cristal. Elle voit l'avenir et décrit tout ce qu'elle voit. Elle ne dit pas 'peut-être', elle dit 'CE SERA, TU PARTIRAS, NOUS VIVRONS...' — c'est le futur simple : des affirmations sur l'avenir, certaines ou promises.",
-              "left": { "icon": "🔮", "label": "La boule de cristal", "description": "Visions certaines de l'avenir — prédictions, promesses, certitudes" },
-              "right": { "icon": "⏰", "label": "Le futur simple", "description": "Infinitif + terminaisons : -ai, -as, -a, -ons, -ez, -ont" }
+              "left": {
+                "icon": "🔮",
+                "label": "La boule de cristal",
+                "description": "Visions certaines de l'avenir — prédictions, promesses, certitudes"
+              },
+              "right": {
+                "icon": "⏰",
+                "label": "Le futur simple",
+                "description": "Infinitif + terminaisons : -ai, -as, -a, -ons, -ez, -ont"
+              }
             },
             {
               "type": "lesson",
@@ -240,24 +860,89 @@
               "order_index": 3,
               "scenario": "Jean est anxieux pour son avenir. Il consulte Marie, une voyante réputée du quartier. Elle regarde dans sa boule de cristal...",
               "characters": [
-                { "name": "Marie la voyante (yeux fermés)", "says": "Je vois... tu PARTIRAS en voyage dans six mois. Tu RENCONTRERAS quelqu'un d'important. Vous SEREZ très heureux ensemble.", "label": "✅ Futur simple = prédictions certaines (partir, rencontrer, être)" },
-                { "name": "Jean (inquiet)", "says": "Et mon travail actuel ? Je ne l'aime pas...", "label": "Présent = situation actuelle" },
-                { "name": "Marie (avec assurance)", "says": "Tu TROUVERAS un nouveau travail avant Noël. Tu GAGNERAS plus d'argent. Mais tu DEVRAS travailler dur les premiers mois.", "label": "✅ Radicaux irréguliers : trouver→trouvera, gagner→gagnera, devoir→devra" },
-                { "name": "Jean (soulagé)", "says": "Merci ! Je reviendrai vous voir !", "label": "✅ Futur simple = promesse (revenir → reviendrai)" }
+                {
+                  "name": "Marie la voyante (yeux fermés)",
+                  "says": "Je vois... tu PARTIRAS en voyage dans six mois. Tu RENCONTRERAS quelqu'un d'important. Vous SEREZ très heureux ensemble.",
+                  "label": "✅ Futur simple = prédictions certaines (partir, rencontrer, être)"
+                },
+                {
+                  "name": "Jean (inquiet)",
+                  "says": "Et mon travail actuel ? Je ne l'aime pas...",
+                  "label": "Présent = situation actuelle"
+                },
+                {
+                  "name": "Marie (avec assurance)",
+                  "says": "Tu TROUVERAS un nouveau travail avant Noël. Tu GAGNERAS plus d'argent. Mais tu DEVRAS travailler dur les premiers mois.",
+                  "label": "✅ Radicaux irréguliers : trouver→trouvera, gagner→gagnera, devoir→devra"
+                },
+                {
+                  "name": "Jean (soulagé)",
+                  "says": "Merci ! Je reviendrai vous voir !",
+                  "label": "✅ Futur simple = promesse (revenir → reviendrai)"
+                }
               ]
             },
             {
               "type": "examples_table",
               "title": "Conjugaison au futur simple",
               "order_index": 4,
-              "columns": ["Pronom", "parler", "finir", "être", "avoir", "aller"],
+              "columns": [
+                "Pronom",
+                "parler",
+                "finir",
+                "être",
+                "avoir",
+                "aller"
+              ],
               "rows": [
-                ["je", "parlerai", "finirai", "serai", "aurai", "irai"],
-                ["tu", "parleras", "finiras", "seras", "auras", "iras"],
-                ["il / elle", "parlera", "finira", "sera", "aura", "ira"],
-                ["nous", "parlerons", "finirons", "serons", "aurons", "irons"],
-                ["vous", "parlerez", "finirez", "serez", "aurez", "irez"],
-                ["ils / elles", "parleront", "finiront", "seront", "auront", "iront"]
+                [
+                  "je",
+                  "parlerai",
+                  "finirai",
+                  "serai",
+                  "aurai",
+                  "irai"
+                ],
+                [
+                  "tu",
+                  "parleras",
+                  "finiras",
+                  "seras",
+                  "auras",
+                  "iras"
+                ],
+                [
+                  "il / elle",
+                  "parlera",
+                  "finira",
+                  "sera",
+                  "aura",
+                  "ira"
+                ],
+                [
+                  "nous",
+                  "parlerons",
+                  "finirons",
+                  "serons",
+                  "aurons",
+                  "irons"
+                ],
+                [
+                  "vous",
+                  "parlerez",
+                  "finirez",
+                  "serez",
+                  "aurez",
+                  "irez"
+                ],
+                [
+                  "ils / elles",
+                  "parleront",
+                  "finiront",
+                  "seront",
+                  "auront",
+                  "iront"
+                ]
               ]
             },
             {
@@ -306,8 +991,16 @@
               "title": "La baguette magique",
               "order_index": 1,
               "metaphor": "Fermez les yeux. Imaginez une baguette magique. Si vous l'agitez, le monde change. 'Si j'avais une baguette magique, je volerais, je rendrais tout le monde heureux, je voyagerais partout...' Ce monde imaginaire où tout est possible — c'est LE MONDE DU CONDITIONNEL. C'est aussi le mode de la politesse : au lieu de VOULOIR (trop direct), vous VOUDRIEZ (doux, poli, élégant).",
-              "left": { "icon": "🌍", "label": "La réalité (indicatif)", "description": "Je suis fatigué. Je veux du café. Il fait froid." },
-              "right": { "icon": "🪄", "label": "Le monde conditionnel", "description": "Si j'avais le temps... je voudrais... ce serait bien..." }
+              "left": {
+                "icon": "🌍",
+                "label": "La réalité (indicatif)",
+                "description": "Je suis fatigué. Je veux du café. Il fait froid."
+              },
+              "right": {
+                "icon": "🪄",
+                "label": "Le monde conditionnel",
+                "description": "Si j'avais le temps... je voudrais... ce serait bien..."
+              }
             },
             {
               "type": "lesson",
@@ -326,24 +1019,89 @@
               "order_index": 3,
               "scenario": "Sofia (8 ans) entre dans un café avec sa maman. C'est la première fois qu'elle commande seule. Sa maman lui apprend à être polie.",
               "characters": [
-                { "name": "Sofia (à voix haute)", "says": "Je veux un chocolat chaud et des gâteaux !", "label": "❌ Présent = trop direct, peut sembler impoli" },
-                { "name": "Maman (chuchotant à l'oreille de Sofia)", "says": "Sofia, au café on dit 'je voudrais' — c'est beaucoup plus poli. Le conditionnel, c'est comme mettre 'please' dans la grammaire !", "label": "💡 Conditionnel = politesse grammaticale" },
-                { "name": "Sofia (corrigeant, souriante)", "says": "Pardon ! Je voudrais un chocolat chaud et je prendrais bien un croissant, s'il vous plaît.", "label": "✅ Conditionnel = poli et naturel" },
-                { "name": "Le serveur (avec un grand sourire)", "says": "Mais bien sûr, mademoiselle ! Quelle politesse !", "label": "✅ Le conditionnel fait bonne impression !" }
+                {
+                  "name": "Sofia (à voix haute)",
+                  "says": "Je veux un chocolat chaud et des gâteaux !",
+                  "label": "❌ Présent = trop direct, peut sembler impoli"
+                },
+                {
+                  "name": "Maman (chuchotant à l'oreille de Sofia)",
+                  "says": "Sofia, au café on dit 'je voudrais' — c'est beaucoup plus poli. Le conditionnel, c'est comme mettre 'please' dans la grammaire !",
+                  "label": "💡 Conditionnel = politesse grammaticale"
+                },
+                {
+                  "name": "Sofia (corrigeant, souriante)",
+                  "says": "Pardon ! Je voudrais un chocolat chaud et je prendrais bien un croissant, s'il vous plaît.",
+                  "label": "✅ Conditionnel = poli et naturel"
+                },
+                {
+                  "name": "Le serveur (avec un grand sourire)",
+                  "says": "Mais bien sûr, mademoiselle ! Quelle politesse !",
+                  "label": "✅ Le conditionnel fait bonne impression !"
+                }
               ]
             },
             {
               "type": "examples_table",
               "title": "Conjugaison au conditionnel présent",
               "order_index": 4,
-              "columns": ["Pronom", "parler", "être", "avoir", "aller", "vouloir"],
+              "columns": [
+                "Pronom",
+                "parler",
+                "être",
+                "avoir",
+                "aller",
+                "vouloir"
+              ],
               "rows": [
-                ["je", "parlerais", "serais", "aurais", "irais", "voudrais"],
-                ["tu", "parlerais", "serais", "aurais", "irais", "voudrais"],
-                ["il / elle", "parlerait", "serait", "aurait", "irait", "voudrait"],
-                ["nous", "parlerions", "serions", "aurions", "irions", "voudrions"],
-                ["vous", "parleriez", "seriez", "auriez", "iriez", "voudriez"],
-                ["ils / elles", "parleraient", "seraient", "auraient", "iraient", "voudraient"]
+                [
+                  "je",
+                  "parlerais",
+                  "serais",
+                  "aurais",
+                  "irais",
+                  "voudrais"
+                ],
+                [
+                  "tu",
+                  "parlerais",
+                  "serais",
+                  "aurais",
+                  "irais",
+                  "voudrais"
+                ],
+                [
+                  "il / elle",
+                  "parlerait",
+                  "serait",
+                  "aurait",
+                  "irait",
+                  "voudrait"
+                ],
+                [
+                  "nous",
+                  "parlerions",
+                  "serions",
+                  "aurions",
+                  "irions",
+                  "voudrions"
+                ],
+                [
+                  "vous",
+                  "parleriez",
+                  "seriez",
+                  "auriez",
+                  "iriez",
+                  "voudriez"
+                ],
+                [
+                  "ils / elles",
+                  "parleraient",
+                  "seraient",
+                  "auraient",
+                  "iraient",
+                  "voudraient"
+                ]
               ]
             },
             {
@@ -411,8 +1169,16 @@
               "title": "Le monde des émotions",
               "order_index": 1,
               "metaphor": "Imaginez deux planètes. La planète des FAITS (indicatif) : 'Il VIENT. Elle EST là. Le soleil BRILLE.' Tout est certain. Et la planète des ÉMOTIONS (subjonctif) : dès que vous exprimez un DÉSIR, une PEUR, une NÉCESSITÉ ou un DOUTE pour quelqu'un d'autre, vous partez sur cette planète. 'Je veux qu'il VIENNE.' 'J'ai peur qu'il SOIT en danger.' 'Il faut que tu SOIS là.'",
-              "left": { "icon": "📰", "label": "Planète des faits (indicatif)", "description": "Il vient. Elle est là. C'est certain." },
-              "right": { "icon": "💭", "label": "Planète des émotions (subjonctif)", "description": "Je veux qu'il VIENNE. Il faut qu'elle SOIT là." }
+              "left": {
+                "icon": "📰",
+                "label": "Planète des faits (indicatif)",
+                "description": "Il vient. Elle est là. C'est certain."
+              },
+              "right": {
+                "icon": "💭",
+                "label": "Planète des émotions (subjonctif)",
+                "description": "Je veux qu'il VIENNE. Il faut qu'elle SOIT là."
+              }
             },
             {
               "type": "lesson",
@@ -431,25 +1197,73 @@
               "order_index": 3,
               "scenario": "Il est 23h. Thomas, 20 ans, n'est pas encore rentré. Sa mère, très inquiète, lui envoie des messages et appelle ses amis. Toutes ses phrases sont pleines d'émotions — toutes au subjonctif !",
               "characters": [
-                { "name": "Maman (message vocal)", "says": "Thomas, je VEUX que tu RENTRES maintenant ! Il faut que tu SOIS à la maison dans 20 minutes !", "label": "vouloir que + il faut que → subjonctif : rentres, sois" },
-                { "name": "Maman (à l'ami Pierre)", "says": "Pierre, j'ai PEUR qu'il lui SOIT arrivé quelque chose ! C'est important que tu me DISES où il est !", "label": "avoir peur que + être important que → subjonctif : soit, dises" },
-                { "name": "Pierre (rassurant)", "says": "Ne vous inquiétez pas, je SAIS qu'il EST dans le jardin, il regarde les étoiles !", "label": "savoir que + indicatif = certitude (pas de subjonctif !)" },
-                { "name": "Thomas (depuis le jardin)", "says": "Maman, je suis là ! Bien que tu SOIS inquiète, je vais très bien, je te promets !", "label": "bien que → subjonctif obligatoire : sois" }
+                {
+                  "name": "Maman (message vocal)",
+                  "says": "Thomas, je VEUX que tu RENTRES maintenant ! Il faut que tu SOIS à la maison dans 20 minutes !",
+                  "label": "vouloir que + il faut que → subjonctif : rentres, sois"
+                },
+                {
+                  "name": "Maman (à l'ami Pierre)",
+                  "says": "Pierre, j'ai PEUR qu'il lui SOIT arrivé quelque chose ! C'est important que tu me DISES où il est !",
+                  "label": "avoir peur que + être important que → subjonctif : soit, dises"
+                },
+                {
+                  "name": "Pierre (rassurant)",
+                  "says": "Ne vous inquiétez pas, je SAIS qu'il EST dans le jardin, il regarde les étoiles !",
+                  "label": "savoir que + indicatif = certitude (pas de subjonctif !)"
+                },
+                {
+                  "name": "Thomas (depuis le jardin)",
+                  "says": "Maman, je suis là ! Bien que tu SOIS inquiète, je vais très bien, je te promets !",
+                  "label": "bien que → subjonctif obligatoire : sois"
+                }
               ]
             },
             {
               "type": "examples_table",
               "title": "Les déclencheurs du subjonctif",
               "order_index": 4,
-              "columns": ["Catégorie", "Déclencheurs principaux", "Exemple"],
+              "columns": [
+                "Catégorie",
+                "Déclencheurs principaux",
+                "Exemple"
+              ],
               "rows": [
-                ["Volonté", "vouloir que, souhaiter que, préférer que", "Je veux qu'il vienne."],
-                ["Nécessité", "il faut que, il est nécessaire que", "Il faut que tu sois là."],
-                ["Émotion", "être content que, avoir peur que, regretter que", "Je suis content qu'il fasse beau."],
-                ["Doute", "douter que, ne pas croire que", "Je doute qu'il sache la réponse."],
-                ["But", "pour que, afin que", "Je parle lentement pour que tu comprennes."],
-                ["Concession", "bien que, quoique", "Bien qu'il soit fatigué, il travaille."],
-                ["Condition temporelle", "avant que, à moins que", "Pars avant qu'il arrive."]
+                [
+                  "Volonté",
+                  "vouloir que, souhaiter que, préférer que",
+                  "Je veux qu'il vienne."
+                ],
+                [
+                  "Nécessité",
+                  "il faut que, il est nécessaire que",
+                  "Il faut que tu sois là."
+                ],
+                [
+                  "Émotion",
+                  "être content que, avoir peur que, regretter que",
+                  "Je suis content qu'il fasse beau."
+                ],
+                [
+                  "Doute",
+                  "douter que, ne pas croire que",
+                  "Je doute qu'il sache la réponse."
+                ],
+                [
+                  "But",
+                  "pour que, afin que",
+                  "Je parle lentement pour que tu comprennes."
+                ],
+                [
+                  "Concession",
+                  "bien que, quoique",
+                  "Bien qu'il soit fatigué, il travaille."
+                ],
+                [
+                  "Condition temporelle",
+                  "avant que, à moins que",
+                  "Pars avant qu'il arrive."
+                ]
               ]
             },
             {
@@ -499,8 +1313,16 @@
               "title": "Les panneaux de signalisation des idées",
               "order_index": 1,
               "metaphor": "Quand tu conduis, les panneaux te disent : 'tournez à gauche', 'attention, danger', 'tout droit'. Les connecteurs logiques font pareil pour tes idées ! Ils disent à ton interlocuteur : 'voici LA RAISON' (car, parce que), 'voici LE RÉSULTAT' (donc, alors), 'voici LA SURPRISE' (mais, cependant). Sans connecteurs, c'est comme conduire sans panneaux — on se perd !",
-              "left": { "icon": "🧱🧱", "label": "Sans connecteur", "description": "Il pleut. Je reste à la maison. Ces deux faits sont séparés." },
-              "right": { "icon": "🌉", "label": "Avec connecteur", "description": "Il pleut, DONC je reste à la maison. Lien logique clair !" }
+              "left": {
+                "icon": "🧱🧱",
+                "label": "Sans connecteur",
+                "description": "Il pleut. Je reste à la maison. Ces deux faits sont séparés."
+              },
+              "right": {
+                "icon": "🌉",
+                "label": "Avec connecteur",
+                "description": "Il pleut, DONC je reste à la maison. Lien logique clair !"
+              }
             },
             {
               "type": "story",
@@ -508,26 +1330,78 @@
               "order_index": 2,
               "scenario": "Sofia rentre à la maison après une longue journée. Elle raconte tout à ses parents. Écoutez bien les connecteurs qu'elle utilise — ils montrent comment ses idées sont liées.",
               "characters": [
-                { "name": "Sofia", "says": "Je n'ai pas pu aller au cours PARCE QUE j'avais un rendez-vous médical inattendu.", "label": "parce que = cause (réponse directe à 'pourquoi ?')" },
-                { "name": "Papa", "says": "DONC tu as manqué la leçon d'aujourd'hui ?", "label": "donc = conséquence logique de ce qui précède" },
-                { "name": "Sofia", "says": "Oui, MAIS j'ai immédiatement demandé les notes à Marie.", "label": "mais = opposition, surprise positive" },
-                { "name": "Maman", "says": "BIEN QUE tu aies été absente, tu t'es bien organisée — j'en suis fière !", "label": "bien que + subjonctif = concession (admis même si...)" },
-                { "name": "Sofia (souriante)", "says": "En plus, le médecin a dit que j'allais très bien. DONC c'était une bonne journée finalement !", "label": "en plus = addition · donc = nouvelle conséquence" }
+                {
+                  "name": "Sofia",
+                  "says": "Je n'ai pas pu aller au cours PARCE QUE j'avais un rendez-vous médical inattendu.",
+                  "label": "parce que = cause (réponse directe à 'pourquoi ?')"
+                },
+                {
+                  "name": "Papa",
+                  "says": "DONC tu as manqué la leçon d'aujourd'hui ?",
+                  "label": "donc = conséquence logique de ce qui précède"
+                },
+                {
+                  "name": "Sofia",
+                  "says": "Oui, MAIS j'ai immédiatement demandé les notes à Marie.",
+                  "label": "mais = opposition, surprise positive"
+                },
+                {
+                  "name": "Maman",
+                  "says": "BIEN QUE tu aies été absente, tu t'es bien organisée — j'en suis fière !",
+                  "label": "bien que + subjonctif = concession (admis même si...)"
+                },
+                {
+                  "name": "Sofia (souriante)",
+                  "says": "En plus, le médecin a dit que j'allais très bien. DONC c'était une bonne journée finalement !",
+                  "label": "en plus = addition · donc = nouvelle conséquence"
+                }
               ]
             },
             {
               "type": "examples_table",
               "title": "Les connecteurs essentiels",
               "order_index": 3,
-              "columns": ["Relation", "Connecteurs", "Exemple"],
+              "columns": [
+                "Relation",
+                "Connecteurs",
+                "Exemple"
+              ],
               "rows": [
-                ["Cause", "car, parce que, puisque, comme", "Il est absent car il est malade."],
-                ["Conséquence", "donc, alors, c'est pourquoi, ainsi", "Il pleut, donc je reste."],
-                ["Opposition", "mais, cependant, en revanche, pourtant", "Il travaille beaucoup, mais sans résultat."],
-                ["Concession", "bien que + subj., quoique + subj., même si + ind.", "Bien qu'il soit fatigué, il continue."],
-                ["But", "pour que + subj., afin que + subj.", "Je parle lentement pour que tu comprennes."],
-                ["Addition", "de plus, en outre, également", "Il est intelligent. De plus, il est gentil."],
-                ["Alternative", "soit... soit, ou bien... ou bien", "Soit tu viens, soit tu restes."]
+                [
+                  "Cause",
+                  "car, parce que, puisque, comme",
+                  "Il est absent car il est malade."
+                ],
+                [
+                  "Conséquence",
+                  "donc, alors, c'est pourquoi, ainsi",
+                  "Il pleut, donc je reste."
+                ],
+                [
+                  "Opposition",
+                  "mais, cependant, en revanche, pourtant",
+                  "Il travaille beaucoup, mais sans résultat."
+                ],
+                [
+                  "Concession",
+                  "bien que + subj., quoique + subj., même si + ind.",
+                  "Bien qu'il soit fatigué, il continue."
+                ],
+                [
+                  "But",
+                  "pour que + subj., afin que + subj.",
+                  "Je parle lentement pour que tu comprennes."
+                ],
+                [
+                  "Addition",
+                  "de plus, en outre, également",
+                  "Il est intelligent. De plus, il est gentil."
+                ],
+                [
+                  "Alternative",
+                  "soit... soit, ou bien... ou bien",
+                  "Soit tu viens, soit tu restes."
+                ]
               ]
             },
             {
@@ -535,11 +1409,27 @@
               "title": "Car vs Parce que vs Puisque",
               "order_index": 4,
               "introduction": "Trois façons d'exprimer la cause — mais attention, elles ne s'utilisent pas dans les mêmes situations !",
-              "columns": ["Connecteur", "Situation d'emploi", "Exemple"],
+              "columns": [
+                "Connecteur",
+                "Situation d'emploi",
+                "Exemple"
+              ],
               "rows": [
-                ["parce que", "Réponse directe à 'pourquoi ?' — cause pas encore connue", "Pourquoi tu pars ? — Parce que je suis fatigué."],
-                ["car", "Explication ajoutée, registre écrit/formel — jamais en début de phrase", "Je pars, car je suis fatigué."],
-                ["puisque", "Cause évidente, connue des deux personnes", "Puisque tu es là, aide-moi !"]
+                [
+                  "parce que",
+                  "Réponse directe à 'pourquoi ?' — cause pas encore connue",
+                  "Pourquoi tu pars ? — Parce que je suis fatigué."
+                ],
+                [
+                  "car",
+                  "Explication ajoutée, registre écrit/formel — jamais en début de phrase",
+                  "Je pars, car je suis fatigué."
+                ],
+                [
+                  "puisque",
+                  "Cause évidente, connue des deux personnes",
+                  "Puisque tu es là, aide-moi !"
+                ]
               ]
             },
             {
@@ -587,8 +1477,16 @@
               "title": "La colle grammaticale",
               "order_index": 1,
               "metaphor": "Imaginez deux briques Lego séparées. 'J'ai une amie. Cette amie parle six langues.' C'est lourd, répétitif. Maintenant prenez la colle QUI : 'J'ai une amie QUI parle six langues.' Une seule belle phrase ! QUI, QUE, DONT et OÙ sont quatre types de colle — chacune sert à une situation différente.",
-              "left": { "icon": "🧱🧱", "label": "Deux phrases séparées", "description": "J'ai une amie. Cette amie parle six langues. (lourd, répétitif)" },
-              "right": { "icon": "🔗", "label": "Une seule phrase élégante", "description": "J'ai une amie QUI parle six langues. (fluide, naturel)" }
+              "left": {
+                "icon": "🧱🧱",
+                "label": "Deux phrases séparées",
+                "description": "J'ai une amie. Cette amie parle six langues. (lourd, répétitif)"
+              },
+              "right": {
+                "icon": "🔗",
+                "label": "Une seule phrase élégante",
+                "description": "J'ai une amie QUI parle six langues. (fluide, naturel)"
+              }
             },
             {
               "type": "lesson",
@@ -607,10 +1505,26 @@
               "order_index": 3,
               "scenario": "Le détective Dumont enquête sur le vol du diamant rouge. Il décrit les suspects à son équipe. Il utilise les pronoms relatifs pour être précis et élégant.",
               "characters": [
-                { "name": "Détective Dumont", "says": "La personne QUI a pris le diamant s'appelle Pierre. (Pierre a pris le diamant = sujet de 'prendre')", "label": "QUI = sujet — Pierre fait l'action" },
-                { "name": "Détective Dumont", "says": "Le diamant QUE nous cherchons était dans ce coffre. (nous cherchons le diamant = objet de 'chercher')", "label": "QUE = objet — le diamant reçoit l'action" },
-                { "name": "Détective Dumont", "says": "L'endroit OÙ il était caché est maintenant fermé à clé.", "label": "OÙ = lieu" },
-                { "name": "Détective Dumont", "says": "Le complice DONT je vous ai parlé hier a quitté le pays ce matin. (j'ai parlé DE ce complice)", "label": "DONT = complément de 'parler de'" }
+                {
+                  "name": "Détective Dumont",
+                  "says": "La personne QUI a pris le diamant s'appelle Pierre. (Pierre a pris le diamant = sujet de 'prendre')",
+                  "label": "QUI = sujet — Pierre fait l'action"
+                },
+                {
+                  "name": "Détective Dumont",
+                  "says": "Le diamant QUE nous cherchons était dans ce coffre. (nous cherchons le diamant = objet de 'chercher')",
+                  "label": "QUE = objet — le diamant reçoit l'action"
+                },
+                {
+                  "name": "Détective Dumont",
+                  "says": "L'endroit OÙ il était caché est maintenant fermé à clé.",
+                  "label": "OÙ = lieu"
+                },
+                {
+                  "name": "Détective Dumont",
+                  "says": "Le complice DONT je vous ai parlé hier a quitté le pays ce matin. (j'ai parlé DE ce complice)",
+                  "label": "DONT = complément de 'parler de'"
+                }
               ]
             },
             {
@@ -618,12 +1532,27 @@
               "title": "QUI vs QUE — le test infaillible",
               "order_index": 4,
               "introduction": "Question magique : dans la phrase relative, qui fait l'action ? → QUI. Qui reçoit l'action ? → QUE.",
-              "columns": ["QUI (sujet — fait l'action)", "QUE/QU' (objet — reçoit l'action)"],
+              "columns": [
+                "QUI (sujet — fait l'action)",
+                "QUE/QU' (objet — reçoit l'action)"
+              ],
               "rows": [
-                ["L'homme QUI parle... (il parle)", "L'homme QUE je vois... (je vois l'homme)"],
-                ["Le chat QUI dort... (le chat dort)", "Le chat QUE tu cherches... (tu cherches le chat)"],
-                ["La femme QUI chante... (elle chante)", "La femme QUE j'admire... (je l'admire)"],
-                ["Le train QUI arrive... (le train arrive)", "Le train QUE nous prenons... (nous le prenons)"]
+                [
+                  "L'homme QUI parle... (il parle)",
+                  "L'homme QUE je vois... (je vois l'homme)"
+                ],
+                [
+                  "Le chat QUI dort... (le chat dort)",
+                  "Le chat QUE tu cherches... (tu cherches le chat)"
+                ],
+                [
+                  "La femme QUI chante... (elle chante)",
+                  "La femme QUE j'admire... (je l'admire)"
+                ],
+                [
+                  "Le train QUI arrive... (le train arrive)",
+                  "Le train QUE nous prenons... (nous le prenons)"
+                ]
               ]
             },
             {
@@ -673,8 +1602,16 @@
               "title": "Le jeu du téléphone",
               "order_index": 1,
               "metaphor": "Tu connais le jeu du téléphone ? Un message passe de personne en personne. À chaque passage, les mots s'adaptent mais le sens reste. C'est exactement ça, le discours indirect ! Marie dit : 'JE suis heureuse.' Tu répètes à Pierre : Marie dit QU'ELLE est heureuse. Le 'JE' devient 'ELLE', les guillemets disparaissent, mais le message arrive intact.",
-              "left": { "icon": "🗣️", "label": "Discours DIRECT", "description": "Marie dit : « Je suis heureuse. » (guillemets, mots exacts)" },
-              "right": { "icon": "📞", "label": "Discours INDIRECT", "description": "Marie dit qu'elle est heureuse. (pas de guillemets, mots adaptés)" }
+              "left": {
+                "icon": "🗣️",
+                "label": "Discours DIRECT",
+                "description": "Marie dit : « Je suis heureuse. » (guillemets, mots exacts)"
+              },
+              "right": {
+                "icon": "📞",
+                "label": "Discours INDIRECT",
+                "description": "Marie dit qu'elle est heureuse. (pas de guillemets, mots adaptés)"
+              }
             },
             {
               "type": "story",
@@ -682,24 +1619,68 @@
               "order_index": 2,
               "scenario": "Le directeur Moreau donne des instructions à sa secrétaire Clara. Elle doit ensuite les transmettre à l'équipe. Regardez comment le message se transforme du discours direct au discours indirect.",
               "characters": [
-                { "name": "M. Moreau (direct)", "says": "Dites à l'équipe : 'La réunion commence à 14h. Apportez vos rapports. Est-ce que tout le monde sera présent ?'", "label": "Discours direct — guillemets, mots exacts" },
-                { "name": "Clara à l'équipe (indirect)", "says": "M. Moreau dit que la réunion commence à 14h. Il dit d'apporter vos rapports. Il demande si tout le monde sera présent.", "label": "Indirect : que + affirmation · de + infinitif pour l'ordre · si pour la question oui/non" },
-                { "name": "Un collègue", "says": "Où est-ce qu'on se retrouve exactement ?", "label": "Question directe avec 'où'" },
-                { "name": "Clara (indirect)", "says": "Il demande où on se retrouve exactement.", "label": "Indirect : demander + où (pas d'inversion sujet-verbe !)" }
+                {
+                  "name": "M. Moreau (direct)",
+                  "says": "Dites à l'équipe : 'La réunion commence à 14h. Apportez vos rapports. Est-ce que tout le monde sera présent ?'",
+                  "label": "Discours direct — guillemets, mots exacts"
+                },
+                {
+                  "name": "Clara à l'équipe (indirect)",
+                  "says": "M. Moreau dit que la réunion commence à 14h. Il dit d'apporter vos rapports. Il demande si tout le monde sera présent.",
+                  "label": "Indirect : que + affirmation · de + infinitif pour l'ordre · si pour la question oui/non"
+                },
+                {
+                  "name": "Un collègue",
+                  "says": "Où est-ce qu'on se retrouve exactement ?",
+                  "label": "Question directe avec 'où'"
+                },
+                {
+                  "name": "Clara (indirect)",
+                  "says": "Il demande où on se retrouve exactement.",
+                  "label": "Indirect : demander + où (pas d'inversion sujet-verbe !)"
+                }
               ]
             },
             {
               "type": "examples_table",
               "title": "Les transformations principales",
               "order_index": 3,
-              "columns": ["Type de phrase directe", "Transformation", "Exemple indirect"],
+              "columns": [
+                "Type de phrase directe",
+                "Transformation",
+                "Exemple indirect"
+              ],
               "rows": [
-                ["Affirmation", "dire QUE + phrase", "Il dit qu'il est content."],
-                ["Question oui/non", "demander SI + phrase", "Elle demande si tu viens."],
-                ["Question avec mot interrog.", "demander + MOT + phrase (sans inversion)", "Il demande où tu habites."],
-                ["Ordre / demande", "dire DE + infinitif", "Elle dit de venir à 14h."],
-                ["Qu'est-ce que...?", "demander CE QUE", "Il demande ce que tu fais."],
-                ["Qui est...?", "demander QUI + verbe", "Elle demande qui est là."]
+                [
+                  "Affirmation",
+                  "dire QUE + phrase",
+                  "Il dit qu'il est content."
+                ],
+                [
+                  "Question oui/non",
+                  "demander SI + phrase",
+                  "Elle demande si tu viens."
+                ],
+                [
+                  "Question avec mot interrog.",
+                  "demander + MOT + phrase (sans inversion)",
+                  "Il demande où tu habites."
+                ],
+                [
+                  "Ordre / demande",
+                  "dire DE + infinitif",
+                  "Elle dit de venir à 14h."
+                ],
+                [
+                  "Qu'est-ce que...?",
+                  "demander CE QUE",
+                  "Il demande ce que tu fais."
+                ],
+                [
+                  "Qui est...?",
+                  "demander QUI + verbe",
+                  "Elle demande qui est là."
+                ]
               ]
             },
             {
@@ -718,14 +1699,42 @@
               "title": "Verbes introducteurs selon le contexte",
               "order_index": 5,
               "introduction": "Le bon verbe introducteur dépend du type de message que l'on relaie.",
-              "columns": ["Verbe introducteur", "Pour quoi ?", "Exemple"],
+              "columns": [
+                "Verbe introducteur",
+                "Pour quoi ?",
+                "Exemple"
+              ],
               "rows": [
-                ["dire que", "Une affirmation", "Il dit qu'il part demain."],
-                ["demander si", "Une question fermée (oui/non)", "Elle demande si tu as faim."],
-                ["demander + mot interr.", "Une question ouverte", "Il demande quand tu arrives."],
-                ["demander de + inf.", "Un ordre ou une demande", "Elle demande de se taire."],
-                ["expliquer que", "Une explication", "Il explique qu'il est en retard."],
-                ["répondre que", "Une réponse", "Elle répond qu'elle ne sait pas."]
+                [
+                  "dire que",
+                  "Une affirmation",
+                  "Il dit qu'il part demain."
+                ],
+                [
+                  "demander si",
+                  "Une question fermée (oui/non)",
+                  "Elle demande si tu as faim."
+                ],
+                [
+                  "demander + mot interr.",
+                  "Une question ouverte",
+                  "Il demande quand tu arrives."
+                ],
+                [
+                  "demander de + inf.",
+                  "Un ordre ou une demande",
+                  "Elle demande de se taire."
+                ],
+                [
+                  "expliquer que",
+                  "Une explication",
+                  "Il explique qu'il est en retard."
+                ],
+                [
+                  "répondre que",
+                  "Une réponse",
+                  "Elle répond qu'elle ne sait pas."
+                ]
               ]
             }
           ],
